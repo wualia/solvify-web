@@ -16,19 +16,12 @@ export const metadata: Metadata = {
 const BlogPage = async ({ searchParams }: { searchParams: any }) => {
   let posts;
 
-  const categoria = await searchParams?.categoria;
+  const data = await fetch(`${process.env.BLOG_URL}/api/posts`);
+  posts = await data.json();
 
-  if (categoria) {
-    const data = await fetch(
-      `${process.env.BLOG_URL}/api/posts?where[categorySlug][equals]=${categoria}`
-    );
-    posts = await data.json();
-  } else {
-    const data = await fetch(`${process.env.BLOG_URL}/api/posts`);
-    posts = await data.json();
-  }
-
-  const categoriesData = await fetch(`${process.env.BLOG_URL}/api/categories`);
+  const categoriesData = await fetch(
+    `${process.env.BLOG_URL}/api/categories?sort=order`
+  );
   const categories = await categoriesData.json();
 
   return (

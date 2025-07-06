@@ -18,7 +18,9 @@ const BlogCategoryPage = async ({
   );
   const posts = await data.json();
 
-  const categoriesData = await fetch(`${process.env.BLOG_URL}/api/categories`);
+  const categoriesData = await fetch(
+    `${process.env.BLOG_URL}/api/categories?sort=order`
+  );
   const categories = await categoriesData.json();
 
   return (
