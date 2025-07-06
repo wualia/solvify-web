@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 
-const categories = ({ categories }: { categories: any }) => {
+const Categories = ({ categories }: { categories: any }) => {
   const router = useRouter();
   const pathname = usePathname();
 
@@ -42,4 +42,4 @@ const categories = ({ categories }: { categories: any }) => {
   );
 };
 
-export default categories;
+export default Categories;
