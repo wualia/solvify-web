@@ -55,7 +55,7 @@ const Header = () => {
       <motion.div
         ref={scrollRef}
         className={cn(
-          scrollYProgress > 20 &&
+          scrollYProgress > 10 &&
             "border-b duration-300 bg-white dark:bg-card border-gray-100",
           "fixed inset-x-0 z-50 py-4 px-4 2xl:px-0 duration-300"
         )}
@@ -152,10 +152,8 @@ const Header = () => {
           <div onClick={openMenu} className="cursor-pointer xl:hidden pl-4">
             <Menu
               className={cn(
-                scrollYProgress < 40
-                  ? "text-white"
-                  : "text-gray-500 dark:text-gray-200",
-                "h-8 w-8 "
+                "text-gray-500 dark:text-gray-200",
+                "h-8 w-8 hover:text-primary"
               )}
             />
           </div>
