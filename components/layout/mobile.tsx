@@ -16,29 +16,35 @@ const Mobile = () => {
   };
 
   return (
-    <div className="bg-black px-8 py-4 z-50 fixed top-0 left-0 w-full h-full">
-      <div className="flex justify-between items-center pb-8">
-        <p className="text-white text-2xl font-bold">Menú</p>
+    <div className="bg-black p-4 z-50 fixed inset-0 w-full h-full flex flex-col">
+      <div className="flex justify-between items-center pb-16">
+        <p className="text-gray-400 font-medium uppercase text-sm">Menú</p>
         <Button
           size="icon"
           onClick={() => setWebMobileOpen()}
           variant="ghost"
-          className="text-white"
+          className="text-gray-400"
         >
           <CircleXIcon className="w-4 h-4" />
         </Button>
       </div>
-      <ul className="text-white">
-        <li onClick={() => goTo("/")} className="pb-8">
+      <ul className="text-white flex-1">
+        <li onClick={() => goTo("/")} className="pb-8 text-xl font-medium">
           Inicio
         </li>
-        <li onClick={() => goTo("/servicios")} className="pb-8">
+        <li
+          onClick={() => goTo("/servicios")}
+          className="pb-8 text-xl font-medium"
+        >
           Servicios
         </li>
-        <li onClick={() => goTo("/blog")} className="pb-8">
+        <li onClick={() => goTo("/blog")} className="pb-8 text-xl font-medium">
           Blog
         </li>
-        <li onClick={() => goTo("/contacto")} className="pb-8">
+        <li
+          onClick={() => goTo("/contacto")}
+          className="pb-8 text-xl font-medium"
+        >
           Contacto
         </li>
       </ul>
