@@ -14,7 +14,7 @@ const ContactoPage = () => {
         className="absolute inset-0 z-10"
       > */}
       <div className="py-8 md:py-16 bg-gray-50">
-        <div className="mx-auto max-w-7xl grid lg:grid-cols-2 items-center gap-8 px-8 2xl:px-0">
+        <div className="mx-auto max-w-7xl grid lg:grid-cols-2 items-center gap-8 px-4 2xl:px-0">
           <div>
             <p className="text-primary pb-2 text-xs uppercase tracking-wider font-medium">
               CONTACTO

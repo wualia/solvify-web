@@ -22,9 +22,9 @@ const BlogCategoryPage = async ({
   const categories = await categoriesData.json();
 
   return (
-    <div className="mx-auto max-w-7xl px-8 2xl:px-0">
+    <div className="mx-auto max-w-7xl px-4 2xl:px-0 py-8">
       <Categories categories={categories} />
-      <div className=" grid md:grid-cols-2 gap-8 md:gap-16">
+      <div className=" grid md:grid-cols-2 gap-8 md:gap-16 py-8">
         {posts.docs?.map((post: any) => (
           <Link
             key={post.id}
@@ -46,15 +46,10 @@ const BlogCategoryPage = async ({
                     locale: es,
                   })}
                 </p>
-                <Badge variant="outline" className="text-sm">
-                  {post.category.name}
-                </Badge>
               </div>
 
-              <h2 className="text-2xl font-bold pb-2">{post.title}</h2>
-              <p className="text-sm text-muted-foreground">
-                {post.description}
-              </p>
+              <h2 className="text-xl font-medium pb-2">{post.title}</h2>
+              <p className="text-sm text-muted-foreground">{post.excerpt}</p>
             </div>
           </Link>
         ))}
