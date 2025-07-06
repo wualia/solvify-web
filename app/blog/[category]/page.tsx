@@ -1,32 +1,22 @@
-import Link from "next/link";
 import React from "react";
+import Categories from "@/components/blog/categories";
+import Link from "next/link";
 import Image from "next/image";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
 import { Badge } from "@/components/ui/badge";
-import Categories from "@/components/blog/categories";
 
-import type { Metadata } from "next";
+const BlogCategoryPage = async ({
+  params,
+}: {
+  params: Promise<{ category: string }>;
+}) => {
+  const { category } = await params;
 
-export const metadata: Metadata = {
-  title: "Solvify - Blog",
-  description: "Blog de Solvify",
-};
-
-const BlogPage = async ({ searchParams }: { searchParams: any }) => {
-  let posts;
-
-  const categoria = await searchParams?.categoria;
-
-  if (categoria) {
-    const data = await fetch(
-      `${process.env.BLOG_URL}/api/posts?where[categorySlug][equals]=${categoria}`
-    );
-    posts = await data.json();
-  } else {
-    const data = await fetch(`${process.env.BLOG_URL}/api/posts`);
-    posts = await data.json();
-  }
+  const data = await fetch(
+    `${process.env.BLOG_URL}/api/posts?where[categorySlug][equals]=${category}`
+  );
+  const posts = await data.json();
 
   const categoriesData = await fetch(`${process.env.BLOG_URL}/api/categories`);
   const categories = await categoriesData.json();
@@ -73,4 +63,4 @@ const BlogPage = async ({ searchParams }: { searchParams: any }) => {
   );
 };
 
-export default BlogPage;
+export default BlogCategoryPage;
