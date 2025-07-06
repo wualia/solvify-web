@@ -13,11 +13,9 @@ export const metadata: Metadata = {
   description: "Blog de Solvify",
 };
 
-const BlogPage = async ({ searchParams }: { searchParams: any }) => {
-  let posts;
-
+const BlogPage = async () => {
   const data = await fetch(`${process.env.BLOG_URL}/api/posts`);
-  posts = await data.json();
+  const posts = await data.json();
 
   const categoriesData = await fetch(
     `${process.env.BLOG_URL}/api/categories?sort=order`
