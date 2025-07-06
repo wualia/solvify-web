@@ -55,8 +55,8 @@ const Header = () => {
       <motion.div
         ref={scrollRef}
         className={cn(
-          scrollYProgress < 40 ? "bg-transparent" : "bg-white dark:bg-card",
-          scrollYProgress > 200 && "border-b duration-300",
+          scrollYProgress > 20 &&
+            "border-b duration-300 bg-white dark:bg-card border-gray-100",
           "fixed inset-x-0 z-50 py-4 px-4 2xl:px-0 duration-300"
         )}
       >

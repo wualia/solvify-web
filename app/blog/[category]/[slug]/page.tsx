@@ -62,16 +62,18 @@ const PostDetail = async ({
 
   return (
     <article className="mx-auto max-w-5xl px-8 2xl:px-0 pb-8">
-      <Image
-        src={process.env.BLOG_URL + post.docs[0].featuredImage.url}
-        alt={post.docs[0].featuredImage.alt}
-        width={400}
-        height={300}
-        className="w-full h-84 object-cover rounded-lg"
-      />
-      <Badge variant="secondary" className="text-sm">
-        {post.docs[0].category.name}
-      </Badge>
+      <div className="relative">
+        <Image
+          src={process.env.BLOG_URL + post.docs[0].featuredImage.url}
+          alt={post.docs[0].featuredImage.alt}
+          width={400}
+          height={300}
+          className="w-full h-84 object-cover rounded-lg"
+        />
+        <Badge variant="secondary" className="text-sm absolute top-4 right-4">
+          {post.docs[0].category.name}
+        </Badge>
+      </div>
       <header>
         <h1 className="text-3xl font-bold pt-4">{post.docs[0]?.title}</h1>
         <p className="pt-2">
