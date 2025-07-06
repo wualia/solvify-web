@@ -13,10 +13,14 @@ const ContactoPage = () => {
         animate={{ opacity: 1, transition: { duration: 1.5 } }}
         className="absolute inset-0 z-10"
       > */}
-      <div className="py-16 bg-gray-50">
+      <div className="py-8 md:py-16 bg-gray-50">
         <div className="mx-auto max-w-7xl grid lg:grid-cols-2 items-center gap-8 px-8 2xl:px-0">
           <div>
-            <h1 className="text-4xl font-medium pb-4 text-gray-700">
+            <p className="text-primary pb-2 text-xs uppercase tracking-wider font-medium">
+              CONTACTO
+            </p>
+            <div className="w-10 h-0.5 bg-primary rounded-full mb-4" />
+            <h1 className="text-4xl font-medium pb-6 text-gray-700">
               Escríbenos sin compromiso
             </h1>
             <p className="text-lg max-w-lg text-gray-500">
