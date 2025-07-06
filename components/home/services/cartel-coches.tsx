@@ -7,7 +7,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 
-const NegociacionDeudas = () => {
+const CartelCoches = () => {
   return (
     <div className="py-10 md:py-20">
       <div className="grid lg:grid-cols-2 gap-8 md:gap-16  max-w-7xl mx-auto items-center overflow-hidden px-4 2xl:px-0">
@@ -15,7 +15,7 @@ const NegociacionDeudas = () => {
           <div className="">
             <div className="flex items-start space-x-4">
               <h3 className="text-gray-700 dark:text-white text-2xl font-medium">
-                Negociación de deudas
+                Cartel de coches
               </h3>
             </div>
             <p className="pt-4 pb-4 flex-1 text-gray-500">
@@ -50,7 +50,7 @@ const NegociacionDeudas = () => {
             </ul>
 
             <Button asChild className=" w-full md:w-auto bg-black" size="lg">
-              <Link href="/servicios/negociacion-de-deudas">Saber más</Link>
+              <Link href="/servicios/cartel-coches">Saber más</Link>
             </Button>
           </div>
         </div>
@@ -66,7 +66,7 @@ const NegociacionDeudas = () => {
           <div className="relative h-[260px] md:h-[400px] rounded-lg overflow-hidden">
             <div className="absolute bg-gradient-to-b from-black/0 to-black/70 inset-0 h-full w-full z-30" />
             <Image
-              src="/services-negociacion-deuda.webp"
+              src="/services-cartel-coches.webp"
               width={1920}
               height={1080}
               alt="Libertad financiera con Solvify"
@@ -79,4 +79,4 @@ const NegociacionDeudas = () => {
   );
 };
 
-export default NegociacionDeudas;
+export default CartelCoches;

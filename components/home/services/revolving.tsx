@@ -7,7 +7,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 
-const LeySegundaOportunidad = () => {
+const Revolving = () => {
   return (
     <div className="bg-white dark:bg-card py-10 md:py-20">
       <div className="grid lg:grid-cols-2 gap-8 md:gap-16 dark:bg-card max-w-7xl mx-auto items-center overflow-hidden px-4 2xl:px-0">
@@ -23,7 +23,7 @@ const LeySegundaOportunidad = () => {
           <div className="relative h-[240px] md:h-[400px] rounded-lg overflow-hidden">
             <div className="absolute bg-gradient-to-b from-black/0 to-black/70 inset-0 h-full w-full z-30" />
             <Image
-              src="/services-lso.webp"
+              src="/services-revolving.webp"
               width={1920}
               height={1080}
               alt="Libertad financiera con Solvify"
@@ -35,7 +35,7 @@ const LeySegundaOportunidad = () => {
         <div className="">
           <div className="flex items-start space-x-4">
             <h3 className="text-gray-700 dark:text-white text-2xl font-medium">
-              Ley de Segunda Oportunidad
+              Tarjetas revolving
             </h3>
           </div>
           <p className="pt-4 pb-4 flex-1 text-gray-500">
@@ -68,25 +68,14 @@ const LeySegundaOportunidad = () => {
               </span>
             </li>
           </ul>
-          <div className="flex flex-col md:flex-row gap-4">
-            <Button asChild className=" w-full md:w-auto bg-black" size="lg">
-              <Link href="/servicios/ley-de-segunda-oportunidad">
-                Saber más
-              </Link>
-            </Button>
-            {/* <Button
-              asChild
-              className=" w-full md:w-auto"
-              variant="outline"
-              size="lg"
-            >
-              <Link href="/servicios/ley-de-segunda-oportunidad">Ver más</Link>
-            </Button> */}
-          </div>
+
+          <Button asChild className=" w-full md:w-auto bg-black" size="lg">
+            <Link href="/servicios/tarjetas-revolving">Saber más</Link>
+          </Button>
         </div>
       </div>
     </div>
   );
 };
 
-export default LeySegundaOportunidad;
+export default Revolving;

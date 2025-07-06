@@ -58,9 +58,8 @@ const Header = () => {
         <motion.div
           ref={scrollRef}
           className={cn(
-            scrollYProgress > 10 &&
-              "border-b duration-300 bg-white dark:bg-card border-gray-100",
-            "fixed inset-x-0 z-50 py-4 px-4 2xl:px-0 duration-300"
+            scrollYProgress > 10 && "border-b duration-300  border-gray-100",
+            "fixed inset-x-0 z-50 py-4 px-4 2xl:px-0 duration-300 bg-white dark:bg-card"
           )}
         >
           <div className="max-w-7xl mx-auto flex justify-between items-center">
