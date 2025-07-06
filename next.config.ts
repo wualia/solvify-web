@@ -12,6 +12,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "pgxwljoepbuflkeqtyif.supabase.co",
       },
+      {
+        protocol: "https",
+        hostname: "blog.solvify.es",
+      },
     ],
   },
 };
