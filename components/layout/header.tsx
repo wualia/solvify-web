@@ -78,7 +78,7 @@ const Header = () => {
             </Link>
             <div
               className={cn(
-                hiddenPaths.includes(pathname) ? "hidden" : "hidden xl:block"
+                hiddenPaths.includes(pathname) ? "hidden" : "hidden lg:block"
               )}
             >
               {
@@ -147,12 +147,12 @@ const Header = () => {
                 </div>
               }
             </div>
-            <div className="hidden xl:block">
+            <div className="hidden lg:block">
               <Button onClick={gotoAreaClientes} className="w-full">
                 Área clientes
               </Button>
             </div>
-            <div onClick={openMenu} className="cursor-pointer xl:hidden pl-4">
+            <div onClick={openMenu} className="cursor-pointer lg:hidden pl-4">
               <Menu
                 className={cn(
                   "text-gray-500 dark:text-gray-200",

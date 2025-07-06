@@ -3,23 +3,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-interface HeroHomeProps {
-  title?: string;
-  description?: string;
-  image: string;
-  link: string;
-  buttonText: string;
-  hasAction?: boolean;
-}
-
-const HeroHome = ({
-  title,
-  description,
-  image,
-  link,
-  buttonText,
-  hasAction,
-}: HeroHomeProps) => {
+const HeroHome = () => {
   return (
     <div className="py-8 md:py-16 bg-gray-50">
       <div className="mx-auto max-w-7xl grid lg:grid-cols-2 items-center gap-8 px-4 2xl:px-0">
