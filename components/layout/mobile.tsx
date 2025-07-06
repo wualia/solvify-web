@@ -16,8 +16,8 @@ const Mobile = () => {
   };
 
   return (
-    <div className="bg-black p-4 z-50 fixed inset-0 w-full h-full flex flex-col">
-      <div className="flex justify-between items-center pb-16">
+    <div className="bg-black px-4 py-8 z-50 fixed inset-0 w-full h-full flex flex-col">
+      <div className="flex justify-between items-center mb-16">
         <p className="text-gray-400 font-medium uppercase text-sm">Menú</p>
         <Button
           size="icon"
