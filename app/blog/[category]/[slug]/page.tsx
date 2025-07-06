@@ -50,7 +50,7 @@ const PostDetail = async ({
   );
 
   return (
-    <div className="mx-auto max-w-5xl px-8 2xl:px-0 pb-8">
+    <article className="mx-auto max-w-5xl px-8 2xl:px-0 pb-8">
       <Image
         src={process.env.BLOG_URL + post.docs[0].featuredImage.url}
         alt={post.docs[0].featuredImage.alt}
@@ -58,17 +58,19 @@ const PostDetail = async ({
         height={300}
         className="w-full h-84 object-cover rounded-lg"
       />
-      <div className="flex items-center gap-4 pb-2 pt-4">
-        <p className="text-sm text-primary">
+      <Badge variant="secondary" className="text-sm">
+        {post.docs[0].category.name}
+      </Badge>
+      <header>
+        <h1 className="text-3xl font-bold pt-4">{post.docs[0]?.title}</h1>
+        <p className="pt-2">
+          <strong>Publicado:</strong>{" "}
           {format(new Date(post.docs[0].updatedAt), "dd MMMM yyyy", {
             locale: es,
-          })}
-        </p>{" "}
-        <Badge variant="secondary" className="text-sm">
-          {post.docs[0].category.name}
-        </Badge>
-      </div>
-      <h1 className="text-3xl font-bold pt-2">{post.docs[0]?.title}</h1>
+          })}{" "}
+          | <strong>Tiempo de lectura:</strong> 4 minutos
+        </p>
+      </header>
       <div className="my-4">
         <p className="text-sm text-muted-foreground pb-4">
           {post.docs[0]?.description}
@@ -81,7 +83,7 @@ const PostDetail = async ({
       <div className="mt-8">
         <BackButton />
       </div>
-    </div>
+    </article>
   );
 };
 
