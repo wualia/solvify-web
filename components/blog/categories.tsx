@@ -14,7 +14,7 @@ const Categories = ({ categories }: { categories: any }) => {
   // const [activeCategory, setActiveCategory] = useState(categoria);
 
   return (
-    <div className="pb-8 flex gap-2">
+    <div className="py-4 flex gap-2 flex-wrap sticky bg-red-500 z-10 top-16 inset-x-0">
       <Link href="/blog" className="cursor-pointer">
         <Badge
           variant={pathname === "/blog" ? "default" : "secondary"}
