@@ -28,10 +28,15 @@ export async function generateMetadata(
   return {
     title: post.docs[0].meta.title,
     description: post.docs[0].meta.description,
+    metadataBase: new URL(`${process.env.SITE_URL}`),
     alternates: {
       canonical: `/blog/${post.docs[0].categorySlug}/${post.docs[0].slug}`,
     },
     openGraph: {
+      title: post.docs[0].meta.title,
+      description: post.docs[0].meta.description,
+      siteName: "Solvify",
+      type: "website",
       images: [process.env.BLOG_URL + post.docs[0].featuredImage.url],
     },
   };
