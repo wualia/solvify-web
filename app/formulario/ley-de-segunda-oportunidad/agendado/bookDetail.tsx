@@ -5,14 +5,17 @@ import { useFormStore } from "@/store/form";
 import { useAvailabilityStore } from "@/store/availability";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
+import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 const BookDetail = () => {
   const { lead, deal } = useFormStore();
   const { dueDate } = useAvailabilityStore();
+  const router = useRouter();
 
-  console.log("lead", lead);
-  console.log("deal", deal);
-  console.log("dueDate", dueDate);
+  const handleBack = () => {
+    router.push("/");
+  };
 
   return (
     <div>
@@ -24,6 +27,9 @@ const BookDetail = () => {
           <span className="text-gray-500 font-normal">con</span>{" "}
           {deal?.user_assigned?.first_name} {deal?.user_assigned?.last_name}
         </p>
+      </div>
+      <div className="flex justify-center mt-4">
+        <Button onClick={handleBack}>Volver al inicio</Button>
       </div>
     </div>
   );
