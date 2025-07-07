@@ -25,7 +25,7 @@ export async function generateMetadata(
 
   const post = await data.json();
 
-  console.log("post:", post);
+  // console.log("post:", post);
 
   return {
     title: post.docs[0].meta.title,
