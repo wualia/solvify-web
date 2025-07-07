@@ -90,7 +90,7 @@ const PostDetail = async ({
                   })}
                 </p>
                 <p className=" text-gray-500 dark:text-gray-400">|</p>
-                <p className=" text-gray-500">4 minutos de lectura</p>
+                <p className=" text-gray-500">4 minutos</p>
               </div>
               <Badge className="text-sm">{post.docs[0].category.name}</Badge>
             </div>
