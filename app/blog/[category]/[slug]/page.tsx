@@ -56,11 +56,11 @@ const PostDetail = async ({
 
   const post = await data.json();
 
-  console.log("post:", post);
-  console.log(
-    "post detail:",
-    post.docs[0].content.root.children[0].children[0].text
-  );
+  // console.log("post:", post);
+  // console.log(
+  //   "post detail:",
+  //   post.docs[0].content.root.children[0].children[0].text
+  // );
 
   return (
     <article className="mx-auto max-w-7xl px-8 2xl:px-0 py-8">
