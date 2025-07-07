@@ -8,7 +8,7 @@ const LeySegundaOportunidadPage = () => {
         title="Ley de la Segunda Oportunidad"
         description="A través de la Segunda Oportunidad eliminamos tus deudas personales de forma rápida y automática."
         image="/services-lso.webp"
-        link="/servicios"
+        link="/formulario/ley-de-segunda-oportunidad"
         hasAction={true}
         buttonText="Realizar estudio gratuito"
       />

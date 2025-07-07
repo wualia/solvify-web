@@ -5,6 +5,7 @@ import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "@/components/layout/theme-provider";
+import ReactQueryProvider from "./providers/reactQueryProvider";
 
 const plusJakarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
@@ -28,13 +29,15 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         > */}
-        <div className=" min-h-svh flex flex-col">
-          <Header />
-          <div className="flex-1 pt-18">{children}</div>
-          <Footer />
-          <Toaster />
-        </div>
-        {/* </ThemeProvider> */}
+        <ReactQueryProvider>
+          <div className=" min-h-svh flex flex-col">
+            <Header />
+            <div className="flex-1 pt-18">{children}</div>
+            <Footer />
+            <Toaster />
+          </div>
+          {/* </ThemeProvider> */}
+        </ReactQueryProvider>
       </body>
     </html>
   );

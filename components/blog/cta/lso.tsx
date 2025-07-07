@@ -17,7 +17,7 @@ const LsoCTA = () => {
         asChild
         className="w-full md:w-auto bg-white text-black hover:bg-white/80"
       >
-        <Link href="/lso">
+        <Link href="/formulario/ley-de-segunda-oportunidad">
           <span>Empezar cuestionario</span>{" "}
         </Link>
       </Button>
