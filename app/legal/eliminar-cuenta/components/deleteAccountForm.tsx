@@ -5,7 +5,7 @@ import { toast } from "sonner";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { useForm } from "react-hook-form";
-import { MessageSent } from "@/app/components/icons/web";
+import { MessageSent } from "@/components/icons";
 import { Textarea } from "@/components/ui/textarea";
 
 import {
@@ -18,20 +18,20 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { useMutation } from "@tanstack/react-query";
-import Loader from "@/app/components/layout/loaders/loader";
-import { createContact } from "@/api/contacts";
+// import { useMutation } from "@tanstack/react-query";
+import { createContact } from "@/api/contacts/index";
 import { Card, CardContent } from "@/components/ui/card";
+import Loader from "@/components/ui/loader";
+
+const formSchema = z.object({
+  name: z.string().min(2),
+  phone: z.string().min(2),
+  email: z.string().email(),
+  message: z.string().min(2),
+});
 
 const DeleteAccountForm = () => {
   const [formSent, setFormSent] = useState(false);
-
-  const formSchema = z.object({
-    name: z.string().min(2),
-    phone: z.string().min(2),
-    email: z.string().email(),
-    message: z.string().min(2),
-  });
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -43,18 +43,18 @@ const DeleteAccountForm = () => {
     },
   });
 
-  const mutation = useMutation({
-    mutationFn: (body: any) =>
-      createContact({
-        body,
-      }),
+  //  const mutation = useMutation({
+  //   //   mutationFn: (body: any) =>
+  //   //     createContact({
+  //   //       body,
+  //   //     }),
 
-    onSuccess() {
-      toast.success("Formulario recibido correctamente.");
-      form.reset();
-      setFormSent(true);
-    },
-  });
+  //   //   onSuccess() {
+  //   //     toast.success("Formulario recibido correctamente.");
+  //   //     form.reset();
+  //   //     setFormSent(true);
+  //   //   },
+  //   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     // const body = {
@@ -170,16 +170,16 @@ const DeleteAccountForm = () => {
                     <Button
                       className="w-full"
                       type="submit"
-                      disabled={mutation.isPending}
+                      // disabled={mutation.isPending}
                     >
-                      {mutation.isPending ? (
+                      {/* {mutation.isPending ? (
                         <>
                           <Loader size={16} color="#fff" lineWeight={3.5} />
                           <p className="pl-2">Enviando</p>
                         </>
-                      ) : (
-                        <p>Enviar petición</p>
-                      )}
+                      ) : ( */}
+                      <p>Enviar petición</p>
+                      {/* )} */}
                     </Button>
                   </div>
                 </form>
