@@ -90,7 +90,7 @@ const PostDetail = async ({
                   })}
                 </p>
                 <p className=" text-gray-500 dark:text-gray-400">|</p>
-                <p className=" text-gray-500">4 minutos</p>
+                <p className=" text-gray-500">{post.docs[0].time} minutos</p>
               </div>
               <Badge className="text-sm">{post.docs[0].category.name}</Badge>
             </div>
@@ -102,7 +102,11 @@ const PostDetail = async ({
         <TableOfContent content={post.docs[0].bloque} />
         <div className="col-span-2">
           {post.docs[0].bloque.map((child: any, index: number) => (
-            <section key={index} id={child.section} className="scroll-mt-24">
+            <section
+              key={index}
+              id={child.section}
+              className="scroll-mt-24 mb-8"
+            >
               {child.content.root.children.map((child: any, index: number) => (
                 <Content child={child} key={index} />
               ))}
