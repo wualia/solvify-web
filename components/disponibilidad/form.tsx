@@ -131,7 +131,7 @@ const DisponibilidadComponent = () => {
   };
 
   return (
-    <>
+    <div className="mt-4">
       {loadingInfo ? (
         <div className="flex justify-center items-center py-10 border rounded-lg">
           <div>
@@ -143,7 +143,7 @@ const DisponibilidadComponent = () => {
         </div>
       ) : (
         <div className="space-y-4">
-          <p className="md:text-lg font-medium">
+          <p className="md:text-lg font-medium text-center">
             Agendar llamada con {deal?.user_assigned?.first_name}
           </p>
 
@@ -244,7 +244,7 @@ const DisponibilidadComponent = () => {
           </Card>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

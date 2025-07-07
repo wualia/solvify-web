@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 
 const BookDetail = () => {
-  const { lead, deal } = useFormStore();
+  const { deal } = useFormStore();
   const { dueDate } = useAvailabilityStore();
   const router = useRouter();
 
