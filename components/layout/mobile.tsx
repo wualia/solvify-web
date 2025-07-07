@@ -32,16 +32,11 @@ const Mobile = () => {
           layout
           className="bg-black px-4 py-8 z-50 fixed inset-0 w-full h-full flex flex-col"
         >
-          <div className="flex justify-between items-center mb-16">
+          <div className="flex justify-between items-center mb-16 border-b pb-8 border-white/20">
             <p className="text-white font-medium uppercase text-sm">Menú</p>
-            <Button
-              size="icon"
-              onClick={() => setWebMobileOpen()}
-              variant="ghost"
-              className="text-white"
-            >
-              <CircleXIcon className="w-4 h-4" />
-            </Button>
+            <div onClick={() => setWebMobileOpen()} className="text-white">
+              <CircleXIcon className="w-6 h-6" />
+            </div>
           </div>
           <ul className="text-white flex-1">
             <li onClick={() => goTo("/")} className="pb-8 text-xl font-medium">
