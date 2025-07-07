@@ -29,9 +29,9 @@ const TableOfContent = ({ content }: { content: any }) => {
           <li
             key={link.id}
             className="pb-4 text-gray-500 dark:text-gray-400 cursor-pointer"
-            onClick={() => scrollTo(link.slug)}
+            onClick={() => scrollTo(link.section)}
           >
-            {link.title}
+            {link.blockName}
           </li>
         ))}
       </ul>

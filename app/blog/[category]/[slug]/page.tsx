@@ -58,7 +58,7 @@ const PostDetail = async ({
 
   const post = await data.json();
 
-  // console.log("post:", post);
+  console.log("post:", post);
   // console.log(
   //   "post detail:",
   //   post.docs[0].content.root.children[0].children[0].text
@@ -99,9 +99,9 @@ const PostDetail = async ({
         <BlogProgress />
       </div>
       <div className="py-8 grid grid-cols-1 md:grid-cols-3 gap-16 items-start">
-        <TableOfContent content={post.docs[0].tableOfContents} />
+        <TableOfContent content={post.docs[0].bloque} />
         <div className="col-span-2">
-          {post.docs[0].content.map((child: any, index: number) => (
+          {post.docs[0].bloque.map((child: any, index: number) => (
             <section key={index} id={child.section} className="scroll-mt-24">
               {child.content.root.children.map((child: any, index: number) => (
                 <Content child={child} key={index} />
