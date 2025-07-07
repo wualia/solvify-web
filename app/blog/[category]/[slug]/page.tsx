@@ -7,6 +7,7 @@ import Content from "@/components/blog/content";
 import type { Metadata, ResolvingMetadata } from "next";
 import { Badge } from "@/components/ui/badge";
 import CtaComponent from "@/components/blog/cta/ctaComponent";
+import TableOfContent from "@/components/blog/tableOfContent";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -25,7 +26,7 @@ export async function generateMetadata(
 
   const post = await data.json();
 
-  // console.log("post:", post);
+  console.log("post:", post);
 
   return {
     title: post.docs[0].meta.title,
@@ -95,24 +96,16 @@ const PostDetail = async ({
         </header>
       </div>
       <div className="py-8 grid grid-cols-1 md:grid-cols-3 gap-16 items-start">
-        <div className="sticky top-20 hidden md:block">
-          <h3 className="text-xl font-medium pb-4 text-gray-700">
-            Tabla de contenidos
-          </h3>
-          <ul>
-            {post.docs[0].tableOfContents.map((child: any, index: number) => (
-              <li key={index} className="pb-4 text-gray-500 dark:text-gray-400">
-                {child.title}
-              </li>
-            ))}
-          </ul>
-        </div>
+        <TableOfContent content={post.docs[0].tableOfContents} />
         <div className="col-span-2">
-          {post.docs[0].content.root.children.map(
-            (child: any, index: number) => (
-              <Content child={child} key={index} />
-            )
-          )}{" "}
+          {post.docs[0].content.map((child: any, index: number) => (
+            <section key={index} id={child.section} className="scroll-mt-24">
+              {child.content.root.children.map((child: any, index: number) => (
+                <Content child={child} key={index} />
+              ))}
+            </section>
+            //
+          ))}
           <CtaComponent category={post.docs[0].categorySlug} />
           <div className="mt-8">
             <BackButton />
