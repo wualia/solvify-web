@@ -42,12 +42,12 @@ const Mobile = () => {
             <li onClick={() => goTo("/")} className="pb-8 text-xl font-medium">
               Inicio
             </li>
-            <li
+            {/* <li
               onClick={() => goTo("/servicios")}
               className="pb-8 text-xl font-medium"
             >
               Servicios
-            </li>
+            </li> */}
             <li
               onClick={() => goTo("/blog")}
               className="pb-8 text-xl font-medium"
@@ -61,7 +61,7 @@ const Mobile = () => {
               Contacto
             </li>
           </ul>
-          <Button onClick={() => setWebMobileOpen()} className="w-full">
+          <Button onClick={() => setWebMobileOpen()} className="w-full py-6">
             Zona clientes
           </Button>
         </motion.div>

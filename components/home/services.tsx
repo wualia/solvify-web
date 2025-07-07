@@ -7,7 +7,7 @@ import ConcursoExpres from "./services/concurso-expres";
 
 const HomeServices = () => {
   return (
-    <div>
+    <div id="servicios" className="scroll-mt-8">
       <div className="py-20 bg-white dark:bg-card">
         <div className="mx-auto max-w-xl px-4 xl:px-0">
           <h2 className="text-center text-3xl pb-4 text-gray-700 font-medium">

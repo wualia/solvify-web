@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import HeroButton from "./heroButton";
 
 const HeroHome = () => {
   return (
@@ -53,13 +52,7 @@ const HeroHome = () => {
               financieras.
             </p>
             <div>
-              <Button
-                asChild
-                className=" w-full md:w-auto bg-white text-black"
-                size="lg"
-              >
-                <Link href="/servicios">Ver nuestros servicios</Link>
-              </Button>
+              <HeroButton />
             </div>
           </div>
           <div className="absolute inset-0 bg-black/30 z-10" />
