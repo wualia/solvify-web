@@ -25,6 +25,8 @@ export async function generateMetadata(
 
   const post = await data.json();
 
+  console.log("post:", post);
+
   return {
     title: post.docs[0].meta.title,
     description: post.docs[0].meta.description,
@@ -61,37 +63,58 @@ const PostDetail = async ({
   );
 
   return (
-    <article className="mx-auto max-w-5xl px-8 2xl:px-0 pb-8">
-      <div className="relative">
-        <Image
-          src={process.env.BLOG_URL + post.docs[0].featuredImage.url}
-          alt={post.docs[0].featuredImage.alt}
-          width={400}
-          height={300}
-          className="w-full h-84 object-cover rounded-lg"
-        />
-        <Badge variant="secondary" className="text-sm absolute top-4 right-4">
-          {post.docs[0].category.name}
-        </Badge>
+    <article className="mx-auto max-w-7xl px-8 2xl:px-0 py-8">
+      <div className="border-b border-gray-200 dark:border-gray-800 pb-4">
+        <header className="pb-8">
+          <h1 className="text-4xl font-medium pb-8 text-gray-700">
+            {post.docs[0]?.title}
+          </h1>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <Image
+              src={process.env.BLOG_URL + post.docs[0].featuredImage.url}
+              alt={post.docs[0].featuredImage.alt}
+              width={400}
+              height={300}
+              className="w-full h-56 object-cover rounded-lg"
+            />
+            <div>
+              <p className="text-gray-500 dark:text-gray-400 leading-relaxed text-lg">
+                {post.docs[0]?.excerpt}
+              </p>
+              <p className="py-6">
+                <strong>Publicado:</strong>{" "}
+                {format(new Date(post.docs[0].updatedAt), "dd MMMM yyyy", {
+                  locale: es,
+                })}{" "}
+                | <strong>Tiempo de lectura:</strong> 4 minutos
+              </p>
+              <Badge className="text-sm">{post.docs[0].category.name}</Badge>
+            </div>
+          </div>
+        </header>
       </div>
-      <header>
-        <h1 className="text-3xl font-bold pt-4">{post.docs[0]?.title}</h1>
-        <p className="pt-2">
-          <strong>Publicado:</strong>{" "}
-          {format(new Date(post.docs[0].updatedAt), "dd MMMM yyyy", {
-            locale: es,
-          })}{" "}
-          | <strong>Tiempo de lectura:</strong> 4 minutos
-        </p>
-      </header>
-      <div className="my-4">
-        <p className="text-sm text-muted-foreground pb-4">
-          {post.docs[0]?.description}
-        </p>
-        {post.docs[0].content.root.children.map((child: any, index: number) => (
-          <Content child={child} key={index} />
-        ))}
+      <div className="py-8 grid grid-cols-1 md:grid-cols-3 gap-16">
+        <div>
+          <h3 className="text-xl font-medium pb-4 text-gray-700">
+            Tabla de contenidos
+          </h3>
+          <ul>
+            {post.docs[0].tableOfContents.map((child: any, index: number) => (
+              <li key={index} className="pb-4 text-gray-500 dark:text-gray-400">
+                {child.title}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="col-span-2">
+          {post.docs[0].content.root.children.map(
+            (child: any, index: number) => (
+              <Content child={child} key={index} />
+            )
+          )}
+        </div>
       </div>
+
       <CtaComponent category={post.docs[0].categorySlug} />
       <div className="mt-8">
         <BackButton />

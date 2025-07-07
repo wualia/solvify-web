@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import { Toaster } from "@/components/ui/sonner";
+import { ThemeProvider } from "@/components/layout/theme-provider";
 
 const plusJakarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
@@ -21,12 +22,19 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${plusJakarta.className} antialiased`}>
+        {/* <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        > */}
         <div className=" min-h-svh flex flex-col">
           <Header />
           <div className="flex-1 pt-18">{children}</div>
           <Footer />
           <Toaster />
         </div>
+        {/* </ThemeProvider> */}
       </body>
     </html>
   );
