@@ -15,6 +15,7 @@ import { useAvailabilityStore } from "@/store/availability";
 import { createPublicTask } from "@/api/tasks";
 import { getPublicAnnotationsByDeal } from "@/api/annotations";
 import Loader from "@/components/ui/loader";
+import { editDealStatus } from "@/api/deals";
 
 const DisponibilidadComponent = () => {
   const router = useRouter();
@@ -124,6 +125,14 @@ const DisponibilidadComponent = () => {
       object_reference_type: "deals",
       object_reference_id: deal?.id,
       annotation_id: annotations[0]?.id,
+    });
+
+    await editDealStatus({
+      body: {
+        status: "Agendado",
+      },
+      lead_id: lead?.id,
+      deal_id: deal?.id,
     });
 
     setLoading(false);
