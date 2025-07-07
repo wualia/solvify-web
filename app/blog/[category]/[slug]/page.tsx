@@ -69,7 +69,7 @@ const PostDetail = async ({
           <h1 className="text-4xl font-medium pb-8 text-gray-700">
             {post.docs[0]?.title}
           </h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
             <Image
               src={process.env.BLOG_URL + post.docs[0].featuredImage.url}
               alt={post.docs[0].featuredImage.alt}
@@ -93,8 +93,8 @@ const PostDetail = async ({
           </div>
         </header>
       </div>
-      <div className="py-8 grid grid-cols-1 md:grid-cols-3 gap-16">
-        <div>
+      <div className="py-8 grid grid-cols-1 md:grid-cols-3 gap-16 items-start">
+        <div className="sticky top-20 hidden md:block">
           <h3 className="text-xl font-medium pb-4 text-gray-700">
             Tabla de contenidos
           </h3>
@@ -111,13 +111,12 @@ const PostDetail = async ({
             (child: any, index: number) => (
               <Content child={child} key={index} />
             )
-          )}
+          )}{" "}
+          <CtaComponent category={post.docs[0].categorySlug} />
+          <div className="mt-8">
+            <BackButton />
+          </div>
         </div>
-      </div>
-
-      <CtaComponent category={post.docs[0].categorySlug} />
-      <div className="mt-8">
-        <BackButton />
       </div>
     </article>
   );
