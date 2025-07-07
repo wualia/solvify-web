@@ -8,6 +8,7 @@ import type { Metadata, ResolvingMetadata } from "next";
 import { Badge } from "@/components/ui/badge";
 import CtaComponent from "@/components/blog/cta/ctaComponent";
 import TableOfContent from "@/components/blog/tableOfContent";
+import BlogProgress from "@/components/blog/progress";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -82,18 +83,20 @@ const PostDetail = async ({
               <p className="text-gray-500 dark:text-gray-400 leading-relaxed text-lg">
                 {post.docs[0]?.excerpt}
               </p>
-              <div></div>
-              <p className="py-6 text-gray-500 dark:text-gray-400">
-                {format(new Date(post.docs[0].updatedAt), "dd MMMM yyyy", {
-                  locale: es,
-                })}
-                {"  "}|{"  "}
-                <span className="font-semibold">4 minutos de lectura</span>
-              </p>
+              <div className="flex space-x-4 py-6">
+                <p className=" text-gray-500 dark:text-gray-400">
+                  {format(new Date(post.docs[0].updatedAt), "dd MMMM yyyy", {
+                    locale: es,
+                  })}
+                </p>
+                <p className=" text-gray-500 dark:text-gray-400">|</p>
+                <p className=" text-gray-500">4 minutos de lectura</p>
+              </div>
               <Badge className="text-sm">{post.docs[0].category.name}</Badge>
             </div>
           </div>
         </header>
+        <BlogProgress />
       </div>
       <div className="py-8 grid grid-cols-1 md:grid-cols-3 gap-16 items-start">
         <TableOfContent content={post.docs[0].tableOfContents} />
