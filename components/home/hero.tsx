@@ -44,12 +44,13 @@ const HeroHome = () => {
       <div className="mx-auto max-w-7xl px-4 2xl:px-0">
         <div className="rounded-lg overflow-hidden shadow-lg relative">
           <div className="absolute inset-0 z-20 h-full w-full flex flex-col justify-center px-4 md:px-16">
-            <h1 className="text-3xl md:text-5xl font-medium pb-6 text-white text-center md:text-left max-w-2xl leading-tight">
+            <h1 className="text-3xl md:text-5xl font-medium pb-6 text-white text-center md:text-left max-w-3xl leading-tight">
               Solventamos tus problemas económicos
             </h1>
-            <p className="text-lg max-w-xl text-white pb-8 text-center md:text-left">
-              Solvify solventará cualquier estrés económico, cancelando tus
-              deudas o bien resolviendo tus inquietudes financieras.
+            <p className="text-lg md:text-xl max-w-2xl text-white pb-8 text-center md:text-left">
+              En Solvify te ayudamos a solventar cualquier estrés económico,
+              cancelando tus deudas o bien resolviendo tus inquietudes
+              financieras.
             </p>
             <div>
               <Button

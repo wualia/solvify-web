@@ -5,9 +5,10 @@ import { Button } from "@/components/ui/button";
 import { useUiStore } from "@/store/ui";
 import { useRouter } from "next/navigation";
 import { CircleXIcon } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
 
 const Mobile = () => {
-  const { setWebMobileOpen } = useUiStore();
+  const { setWebMobileOpen, webMobileOpen } = useUiStore();
   const router = useRouter();
 
   const goTo = (path: string) => {
@@ -15,43 +16,62 @@ const Mobile = () => {
     setWebMobileOpen();
   };
 
+  const modalVariants = {
+    visible: { opacity: 1, transition: { when: "beforeChildren" } },
+    hidden: { opacity: 0, transition: { when: "afterChildren" } },
+  };
+
   return (
-    <div className="bg-black px-4 py-8 z-50 fixed inset-0 w-full h-full flex flex-col">
-      <div className="flex justify-between items-center mb-16">
-        <p className="text-gray-400 font-medium uppercase text-sm">Menú</p>
-        <Button
-          size="icon"
-          onClick={() => setWebMobileOpen()}
-          variant="ghost"
-          className="text-gray-400"
+    <AnimatePresence>
+      {webMobileOpen && (
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          exit="hidden"
+          variants={modalVariants}
+          layout
+          className="bg-black px-4 py-8 z-50 fixed inset-0 w-full h-full flex flex-col"
         >
-          <CircleXIcon className="w-4 h-4" />
-        </Button>
-      </div>
-      <ul className="text-white flex-1">
-        <li onClick={() => goTo("/")} className="pb-8 text-xl font-medium">
-          Inicio
-        </li>
-        <li
-          onClick={() => goTo("/servicios")}
-          className="pb-8 text-xl font-medium"
-        >
-          Servicios
-        </li>
-        <li onClick={() => goTo("/blog")} className="pb-8 text-xl font-medium">
-          Blog
-        </li>
-        <li
-          onClick={() => goTo("/contacto")}
-          className="pb-8 text-xl font-medium"
-        >
-          Contacto
-        </li>
-      </ul>
-      <Button onClick={() => setWebMobileOpen()} className="w-full">
-        Zona clientes
-      </Button>
-    </div>
+          <div className="flex justify-between items-center mb-16">
+            <p className="text-white font-medium uppercase text-sm">Menú</p>
+            <Button
+              size="icon"
+              onClick={() => setWebMobileOpen()}
+              variant="ghost"
+              className="text-white"
+            >
+              <CircleXIcon className="w-4 h-4" />
+            </Button>
+          </div>
+          <ul className="text-white flex-1">
+            <li onClick={() => goTo("/")} className="pb-8 text-xl font-medium">
+              Inicio
+            </li>
+            <li
+              onClick={() => goTo("/servicios")}
+              className="pb-8 text-xl font-medium"
+            >
+              Servicios
+            </li>
+            <li
+              onClick={() => goTo("/blog")}
+              className="pb-8 text-xl font-medium"
+            >
+              Blog
+            </li>
+            <li
+              onClick={() => goTo("/contacto")}
+              className="pb-8 text-xl font-medium"
+            >
+              Contacto
+            </li>
+          </ul>
+          <Button onClick={() => setWebMobileOpen()} className="w-full">
+            Zona clientes
+          </Button>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 

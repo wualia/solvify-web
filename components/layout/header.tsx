@@ -307,7 +307,7 @@ const Header = () => {
           )}
         </AnimatePresence>
       </div>
-      {webMobileOpen && <Mobile />}
+      <Mobile />
     </>
   );
 };

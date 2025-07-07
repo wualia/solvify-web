@@ -21,7 +21,7 @@ const ConcursoExpres = () => {
           className=""
         >
           <div className="relative h-[240px] md:h-[400px] rounded-lg overflow-hidden">
-            <div className="absolute bg-gradient-to-b from-black/0 to-black/70 inset-0 h-full w-full z-30" />
+            <div className="absolute bg-gradient-to-b from-black/0 to-black/30 inset-0 h-full w-full z-30" />
             <Image
               src="/services-concurso-expres.webp"
               width={1920}
