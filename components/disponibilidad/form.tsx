@@ -32,9 +32,6 @@ const DisponibilidadComponent = () => {
   const { setDueDate } = useAvailabilityStore();
   const [annotations, setAnnotations] = useState<any[]>([]);
 
-  console.log("deal", deal);
-  console.log("lead", lead);
-
   useEffect(() => {
     if (selectedDate) {
       getAvailability();

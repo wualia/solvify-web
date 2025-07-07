@@ -4,7 +4,7 @@ import HomeWhy from "@/components/home/why";
 
 export default function Home() {
   return (
-    <div className="font-[family-name:var(--font-geist-sans)]">
+    <div>
       <HeroHome />
       <HomeServices />
       <HomeWhy />

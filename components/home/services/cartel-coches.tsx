@@ -18,38 +18,42 @@ const CartelCoches = () => {
                 Cartel de coches
               </h3>
             </div>
-            <p className="pt-4 pb-4 flex-1 text-gray-500">
+            <p className="pt-4 pb-4 flex-1 text-gray-500 dark:text-gray-300">
               A través de la Segunda Oportunidad eliminamos tus deudas
               personales de forma rápida y automática.
             </p>
             <ul className="mt-4 mb-8 space-y-4">
               <li className="flex items-start gap-2">
                 <div className="bg-primary rounded-full p-1">
-                  <Check className="w-3 h-3 text-white" />
+                  <Check className="w-3 h-3 text-white dark:text-black" />
                 </div>
-                <span className="text-gray-500">
+                <span className="text-gray-500 dark:text-gray-300">
                   Cancelación total o parcial de tus deudas.
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <div className="bg-primary rounded-full p-1 ">
-                  <Check className="w-3 h-3 text-white" />
+                  <Check className="w-3 h-3 text-white dark:text-black" />
                 </div>
-                <span className="text-gray-500">
+                <span className="text-gray-500 dark:text-gray-300">
                   Paralización de embargos y llamadas de recobro
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <div className="bg-primary rounded-full p-1">
-                  <Check className="w-3 h-3 text-white" />
+                  <Check className="w-3 h-3 text-white dark:text-black" />
                 </div>
-                <span className="text-gray-500">
+                <span className="text-gray-500 dark:text-gray-300">
                   Posibilidad de conservar tu vivienda o vehículo.
                 </span>
               </li>
             </ul>
 
-            <Button asChild className=" w-full md:w-auto bg-black" size="lg">
+            <Button
+              asChild
+              className=" w-full md:w-auto bg-black dark:bg-white dark:text-black"
+              size="lg"
+            >
               <Link href="/servicios/cartel-coches">Saber más</Link>
             </Button>
           </div>

@@ -9,8 +9,8 @@ import { Check } from "lucide-react";
 
 const ConcursoExpres = () => {
   return (
-    <div className="bg-white dark:bg-card py-10 md:py-20">
-      <div className="grid lg:grid-cols-2 gap-8 md:gap-16 dark:bg-card max-w-7xl mx-auto items-center overflow-hidden px-4 2xl:px-0">
+    <div className="py-10 md:py-20">
+      <div className="grid lg:grid-cols-2 gap-8 md:gap-16 max-w-7xl mx-auto items-center overflow-hidden px-4 2xl:px-0">
         <motion.div
           initial={{ opacity: 0, transform: "translateX(-50px)" }}
           whileInView={{
@@ -38,38 +38,42 @@ const ConcursoExpres = () => {
               Concurso exprés
             </h3>
           </div>
-          <p className="pt-4 pb-4 flex-1 text-gray-500">
+          <p className="pt-4 pb-4 flex-1 text-gray-500 dark:text-gray-300">
             A través de la Segunda Oportunidad eliminamos tus deudas personales
             de forma rápida y automática.
           </p>
           <ul className="mt-4 mb-8 space-y-4">
             <li className="flex items-start gap-2">
               <div className="bg-primary rounded-full p-1">
-                <Check className="w-3 h-3 text-white" />
+                <Check className="w-3 h-3 text-white dark:text-black" />
               </div>
-              <span className="text-gray-500">
+              <span className="text-gray-500 dark:text-gray-300">
                 Cancelación total o parcial de tus deudas.
               </span>
             </li>
             <li className="flex items-start gap-2">
               <div className="bg-primary rounded-full p-1 ">
-                <Check className="w-3 h-3 text-white" />
+                <Check className="w-3 h-3 text-white dark:text-black" />
               </div>
-              <span className="text-gray-500">
+              <span className="text-gray-500 dark:text-gray-300">
                 Paralización de embargos y llamadas de recobro
               </span>
             </li>
             <li className="flex items-start gap-2">
               <div className="bg-primary rounded-full p-1">
-                <Check className="w-3 h-3 text-white" />
+                <Check className="w-3 h-3 text-white dark:text-black" />
               </div>
-              <span className="text-gray-500">
+              <span className="text-gray-500 dark:text-gray-300">
                 Posibilidad de conservar tu vivienda o vehículo.
               </span>
             </li>
           </ul>
           <div className="flex flex-col md:flex-row gap-4">
-            <Button asChild className=" w-full md:w-auto bg-black" size="lg">
+            <Button
+              asChild
+              className=" w-full md:w-auto bg-black dark:bg-white dark:text-black"
+              size="lg"
+            >
               <Link href="/servicios/concurso-expres">Saber más</Link>
             </Button>
             {/* <Button

@@ -7,19 +7,19 @@ const Content = ({ child }: { child: any }) => {
   return (
     <>
       {child?.type === "heading" && child?.tag === "h2" && (
-        <h2 className="text-2xl font-semibold text-gray-700 pb-4">
+        <h2 className="text-2xl font-semibold text-gray-700 dark:text-white pb-4">
           {child?.children[0]?.text}
         </h2>
       )}
 
       {child?.type === "heading" && child?.tag === "h3" && (
-        <h3 className="text-xl font-semibold text-gray-700 pb-4">
+        <h3 className="text-xl font-semibold text-gray-700 dark:text-white pb-4">
           {child?.children[0]?.text}
         </h3>
       )}
 
       {child?.type === "heading" && child?.tag === "h4" && (
-        <h4 className="text-lg font-semibold text-gray-700 pb-4">
+        <h4 className="text-lg font-semibold text-gray-700 dark:text-white pb-4">
           {child?.children[0]?.text}
         </h4>
       )}

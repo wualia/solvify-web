@@ -68,7 +68,7 @@ const PostDetail = async ({
     <article className="mx-auto max-w-7xl px-4 2xl:px-0 py-8">
       <div className="border-b border-gray-200 dark:border-gray-800 pb-4">
         <header className="pb-8">
-          <h1 className="text-3xl md:text-4xl font-medium pb-8 text-gray-700">
+          <h1 className="text-3xl md:text-4xl font-medium pb-8 text-gray-700 dark:text-white">
             {post.docs[0]?.title}
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
@@ -80,17 +80,19 @@ const PostDetail = async ({
               className="w-full h-56 object-cover rounded-lg"
             />
             <div>
-              <p className="text-gray-500 dark:text-gray-400 leading-relaxed text-lg">
+              <p className="text-gray-500 dark:text-gray-300 leading-relaxed text-lg">
                 {post.docs[0]?.excerpt}
               </p>
               <div className="flex space-x-4 py-6">
-                <p className=" text-gray-500 dark:text-gray-400">
+                <p className=" text-gray-500 dark:text-gray-300">
                   {format(new Date(post.docs[0].updatedAt), "dd MMMM yyyy", {
                     locale: es,
                   })}
                 </p>
-                <p className=" text-gray-500 dark:text-gray-400">|</p>
-                <p className=" text-gray-500">{post.docs[0].time} minutos</p>
+                <p className=" text-gray-500 dark:text-gray-300">|</p>
+                <p className=" text-gray-500 dark:text-gray-300">
+                  {post.docs[0].time} minutos
+                </p>
               </div>
               <Badge className="text-sm">{post.docs[0].category.name}</Badge>
             </div>

@@ -23,20 +23,20 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${plusJakarta.className} antialiased`}>
-        {/* <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        > */}
         <ReactQueryProvider>
-          <div className=" min-h-svh flex flex-col">
-            <Header />
-            <div className="flex-1 pt-18">{children}</div>
-            <Footer />
-            <Toaster />
-          </div>
-          {/* </ThemeProvider> */}
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <div className=" min-h-svh flex flex-col">
+              <Header />
+              <div className="flex-1 pt-18">{children}</div>
+              <Footer />
+              <Toaster />
+            </div>
+          </ThemeProvider>
         </ReactQueryProvider>
       </body>
     </html>
