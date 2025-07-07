@@ -81,12 +81,13 @@ const PostDetail = async ({
               <p className="text-gray-500 dark:text-gray-400 leading-relaxed text-lg">
                 {post.docs[0]?.excerpt}
               </p>
-              <p className="py-6">
-                <strong>Publicado:</strong>{" "}
+              <div></div>
+              <p className="py-6 text-gray-500 dark:text-gray-400">
                 {format(new Date(post.docs[0].updatedAt), "dd MMMM yyyy", {
                   locale: es,
-                })}{" "}
-                | <strong>Tiempo de lectura:</strong> 4 minutos
+                })}
+                {"  "}|{"  "}
+                <span className="font-semibold">4 minutos de lectura</span>
               </p>
               <Badge className="text-sm">{post.docs[0].category.name}</Badge>
             </div>
