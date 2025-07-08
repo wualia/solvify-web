@@ -67,7 +67,7 @@ const BlogCategoryPage = async ({
       <div className="hidden lg:block sticky top-20">
         <DesktopCategories />
       </div>
-      <div className="sticky top-16 flex lg:hidden overflow-x-scroll no-scrollbar border-b border-gray-100 dark:border-gray-800 ">
+      <div className="sticky top-16 flex lg:hidden overflow-x-scroll no-scrollbar border-b border-gray-100 dark:border-white/10">
         <MobileCategories />
       </div>
       <div className="lg:col-span-3 space-y-4 px-4 2xl:px-0">
