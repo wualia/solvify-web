@@ -12,7 +12,7 @@ export const questions = [
   {
     slug: "importe-deuda-privada",
     question:
-      "¿ De estas deudas tienes más de 6.000€ de deuda privada esto es con bancos , financieras , procedentes de tarjetas de crédito…?",
+      "¿ De estas deudas tienes más de 6.000€ de deuda privada esto es con bancos, financieras, tarjetas de crédito…?",
     answers: ["Sí", "No"],
   },
   {

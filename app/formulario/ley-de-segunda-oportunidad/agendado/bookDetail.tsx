@@ -8,6 +8,7 @@ import { es } from "date-fns/locale";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { track } from "@vercel/analytics";
+import { Calendar, User } from "@/components/icons";
 
 const BookDetail = () => {
   const { deal } = useFormStore();
@@ -31,19 +32,24 @@ const BookDetail = () => {
 
   return (
     <div>
-      <div className="flex flex-col gap-2 text-center mt-4">
-        <p className=" text-gray-700 dark:text-white  font-semibold">
-          {format(dueDate, "d MMMM yyyy", { locale: es })}
-          <span className="text-gray-500 dark:text-gray-300 font-normal">
-            {" "}
-            a las{" "}
-          </span>
-          {format(dueDate, "HH:mm", { locale: es })}h{" "}
-          <span className="text-gray-500 dark:text-gray-300 font-normal">
-            con
-          </span>{" "}
-          {deal?.user_assigned?.first_name} {deal?.user_assigned?.last_name}
-        </p>
+      <div className="flex flex-col gap-3 text-center mt-6">
+        <div className="flex items-center justify-center gap-2">
+          <Calendar className="w-6 h-6 text-primary dark:text-white" />
+          <p className="text-gray-700 dark:text-white  font-medium">
+            {format(dueDate, "d MMMM yyyy", { locale: es })}{" "}
+            <span className="text-gray-500 dark:text-gray-300 font-normal">
+              a las
+            </span>{" "}
+            {format(dueDate, "HH:mm", { locale: es })}h
+          </p>
+        </div>
+
+        <div className="flex items-center justify-center gap-2">
+          <User className="w-6 h-6 text-primary dark:text-white" />
+          <p className="text-gray-700 dark:text-white  font-medium">
+            {deal?.user_assigned?.first_name} {deal?.user_assigned?.last_name}
+          </p>
+        </div>
       </div>
       <div className="flex justify-center mt-8">
         <Button className="w-full md:w-auto md:px-16" onClick={handleBack}>
