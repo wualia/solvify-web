@@ -30,9 +30,9 @@ const Mobile = () => {
           exit="hidden"
           variants={modalVariants}
           layout
-          className="bg-black py-8 z-50 fixed inset-0 w-full h-full flex flex-col"
+          className="bg-black z-50 fixed inset-0 w-full h-full flex flex-col"
         >
-          <div className="flex justify-between items-center mb-8 border-b pb-4 border-white/20 px-4">
+          <div className="flex justify-between items-center mb-8 border-b border-white/20 px-4 py-5">
             <p className="text-white font-medium uppercase text-sm">Menú</p>
             <div onClick={() => setWebMobileOpen()} className="text-white">
               <CircleXIcon className="w-6 h-6" />
