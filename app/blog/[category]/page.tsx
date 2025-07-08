@@ -1,5 +1,6 @@
 import React from "react";
-import Categories from "@/components/blog/desktopCategories";
+import DesktopCategories from "@/components/blog/desktopCategories";
+import MobileCategories from "@/components/blog/mobileCategories";
 import Link from "next/link";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
@@ -62,11 +63,14 @@ const BlogCategoryPage = async ({
   const categories = await categoriesData.json();
 
   return (
-    <div className="mx-auto max-w-7xl px-4 2xl:px-0 py-8 grid lg:grid-cols-4 gap-4 items-start">
+    <div className="mx-auto max-w-7xl lg:py-8 grid lg:grid-cols-4 gap-4 items-start">
       <div className="hidden lg:block sticky top-20">
-        <Categories />
+        <DesktopCategories />
       </div>
-      <div className="col-span-3 space-y-4">
+      <div className="sticky top-16 flex lg:hidden overflow-x-scroll no-scrollbar border-b border-gray-100 dark:border-gray-800 ">
+        <MobileCategories />
+      </div>
+      <div className="lg:col-span-3 space-y-4 px-4 2xl:px-0">
         {posts.docs?.map((post: any) => (
           <div key={post.id} className="border-b last-of-type:border-b-0 py-4">
             <Link href={`/blog/${post.categorySlug}/${post.slug}`} className="">

@@ -10,7 +10,7 @@ const MobileCategories = () => {
   const pathname = usePathname();
 
   return (
-    <div className="  bg-white dark:bg-background flex space-x-2 pb-4 px-4 2xl:px-0">
+    <div className="  bg-white dark:bg-background flex space-x-2 pb-4 pt-5 px-4 2xl:px-0">
       <Link href="/blog" className="cursor-pointer">
         <Badge
           variant={pathname === "/blog" ? "default" : "secondary"}

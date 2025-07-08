@@ -19,11 +19,11 @@ const BlogPage = async () => {
   const posts = await data.json();
 
   return (
-    <div className="mx-auto max-w-7xl py-6 lg:py-8 grid lg:grid-cols-4 gap-4 items-start">
+    <div className="mx-auto max-w-7xl lg:py-8 grid lg:grid-cols-4 gap-4 items-start">
       <div className="hidden lg:block sticky top-20">
         <DesktopCategories />
       </div>
-      <div className="flex lg:hidden overflow-x-scroll no-scrollbar border-b">
+      <div className="sticky top-16 flex lg:hidden overflow-x-scroll no-scrollbar border-b border-gray-100 dark:border-gray-800 ">
         <MobileCategories />
       </div>
 
