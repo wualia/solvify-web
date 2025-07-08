@@ -1,7 +1,7 @@
 export const questions = [
   {
     slug: "tienes-importe-deudas",
-    question: "¿ Tienes más de 12.000€ de deudas ?",
+    question: "¿ Tienes más de 8.000€ de deudas ?",
     answers: ["Sí", "No"],
   },
   {
@@ -10,15 +10,9 @@ export const questions = [
     answers: ["Sí", "No"],
   },
   {
-    slug: "mas-de-6000-deuda-privada",
+    slug: "importe-deuda-privada",
     question:
       "¿ De estas deudas tienes más de 6.000€ de deuda privada esto es con bancos , financieras , procedentes de tarjetas de crédito…?",
-    answers: ["Sí", "No"],
-  },
-  {
-    slug: "prestamo-empresa",
-    question:
-      "¿ Has pedido algún préstamo a través de tu empresa (sociedad) y ahora te lo están reclamando personalmente?",
     answers: ["Sí", "No"],
   },
   {

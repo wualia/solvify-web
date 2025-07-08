@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { useForm } from "react-hook-form";
-
+import { track } from "@vercel/analytics";
 import {
   Form,
   FormControl,
@@ -89,6 +89,10 @@ const LeadForm = () => {
     });
 
     setDeal(leadDeals[0].deals[0]);
+
+    track("Rellena datos personales", {
+      formulario: "LSO",
+    });
 
     form.reset();
     router.push(`/formulario/ley-de-segunda-oportunidad/completado`);

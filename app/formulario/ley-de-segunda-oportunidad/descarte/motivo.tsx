@@ -1,11 +1,23 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import { track } from "@vercel/analytics";
+import { useFormStore } from "@/store/form";
 
 const MotivoDescarte = () => {
+  const { reason } = useFormStore();
   const router = useRouter();
+
+  useEffect(() => {
+    if (reason) {
+      track("Descarte formulario", {
+        motivo: reason,
+        formulario: "LSO",
+      });
+    }
+  }, [reason]);
 
   const handleVolver = () => {
     router.push("/servicios/ley-de-segunda-oportunidad/");

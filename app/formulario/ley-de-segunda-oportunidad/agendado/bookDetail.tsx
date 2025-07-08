@@ -1,17 +1,24 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { useFormStore } from "@/store/form";
 import { useAvailabilityStore } from "@/store/availability";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import { track } from "@vercel/analytics";
 
 const BookDetail = () => {
   const { deal } = useFormStore();
   const { dueDate } = useAvailabilityStore();
   const router = useRouter();
+
+  useEffect(() => {
+    track("Llamada agendada", {
+      formulario: "LSO",
+    });
+  }, []);
 
   const handleBack = () => {
     router.push("/");

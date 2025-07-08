@@ -8,6 +8,7 @@ type State = {
   source: any;
   lead: any;
   deal: any;
+  reason: any;
 };
 
 type Actions = {
@@ -17,6 +18,7 @@ type Actions = {
   setSource: (source: any) => void;
   setLead: (lead: any) => void;
   setDeal: (deal: any) => void;
+  setReason: (reason: any) => void;
 };
 
 const initialState: State = {
@@ -26,6 +28,7 @@ const initialState: State = {
   source: null,
   lead: null,
   deal: null,
+  reason: null,
 };
 
 export const useFormStore = create<State & Actions>()(
@@ -49,6 +52,9 @@ export const useFormStore = create<State & Actions>()(
       },
       setDeal: (deal: any) => {
         set((state) => ({ deal: deal }));
+      },
+      setReason: (reason: any) => {
+        set((state) => ({ reason: reason }));
       },
     }),
     {

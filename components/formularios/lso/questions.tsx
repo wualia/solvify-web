@@ -9,7 +9,7 @@ import { Checked } from "@/components/icons";
 import { questions } from "./data";
 
 const QuestionsLSO = () => {
-  const { actualQuestion, setActualQuestion, setType, setProgress } =
+  const { actualQuestion, setActualQuestion, setProgress, setReason } =
     useFormStore();
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const router = useRouter();
@@ -26,6 +26,7 @@ const QuestionsLSO = () => {
           setSelectedAnswer(null);
           setProgress(20);
         } else {
+          setReason("El importe de las deudas no es suficiente");
           router.push(`/formulario/ley-de-segunda-oportunidad/descarte`);
         }
         break;
@@ -33,47 +34,36 @@ const QuestionsLSO = () => {
         if (selectedAnswer === "Sí") {
           setActualQuestion(
             questions.find(
-              (question) => question.slug === "mas-de-6000-deuda-privada"
+              (question) => question.slug === "importe-deuda-privada"
             )
           );
           setSelectedAnswer(null);
           setProgress(40);
         } else {
+          setReason("Tienes menos de 2 acreedores");
           router.push(`/formulario/ley-de-segunda-oportunidad/descarte`);
         }
         break;
-      case "mas-de-6000-deuda-privada":
+      case "importe-deuda-privada":
         if (selectedAnswer === "Sí") {
           setActualQuestion(
-            questions.find((question) => question.slug === "prestamo-empresa")
+            questions.find((question) => question.slug === "ingresos")
           );
           setProgress(60);
           setSelectedAnswer(null);
         } else {
+          setReason("No tiene importe suficiente de deuda privada");
           router.push(`/formulario/ley-de-segunda-oportunidad/descarte`);
         }
-        break;
-      case "prestamo-empresa":
-        if (selectedAnswer === "Sí") {
-          setType("NEGO");
-        } else {
-          setType("LSO");
-        }
-
-        setActualQuestion(
-          questions.find((question) => question.slug === "ingresos")
-        );
-        setSelectedAnswer(null);
-        setProgress(80);
         break;
       case "ingresos":
         if (selectedAnswer === "Sí") {
-          setProgress(100);
+          setProgress(80);
           router.push(`/formulario/ley-de-segunda-oportunidad/resultado`);
         } else {
+          setReason("No tiene ingresos suficientes");
           router.push(`/formulario/ley-de-segunda-oportunidad/descarte`);
         }
-
         break;
     }
   };

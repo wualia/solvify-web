@@ -3,8 +3,15 @@ import React, { useEffect } from "react";
 import QuestionsLSO from "./questions";
 import { useFormStore } from "@/store/form";
 import { questions } from "./data";
+import { track } from "@vercel/analytics";
 
 const LSOForm = () => {
+  useEffect(() => {
+    track("Empieza formulario", {
+      formulario: "LSO",
+    });
+  }, []);
+
   const { setActualQuestion } = useFormStore();
 
   useEffect(() => {
