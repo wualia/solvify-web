@@ -29,7 +29,10 @@ const MotivoDescarte = () => {
         No puedes acogerte a la Ley de Segunda Oportunidad
       </p>
       <div className="flex justify-center">
-        <Button className="mt-8 w-full md:w-auto" onClick={handleVolver}>
+        <Button
+          className="mt-8 w-full md:w-auto  md:px-16"
+          onClick={handleVolver}
+        >
           Volver al inicio
         </Button>
       </div>
