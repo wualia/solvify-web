@@ -68,7 +68,7 @@ const CartelCoches = () => {
           }}
           className=""
         >
-          <div className="relative h-[260px] md:h-[400px] rounded-lg overflow-hidden">
+          <div className="relative h-[200px] md:h-[400px] rounded-lg overflow-hidden">
             <div className="absolute bg-gradient-to-b from-black/0 to-black/30 inset-0 h-full w-full z-30" />
             <Image
               src="/services-cartel-coches.webp"
