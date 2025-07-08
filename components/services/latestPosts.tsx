@@ -8,15 +8,15 @@ const LatestPosts = ({ relatedPosts }: { relatedPosts: any }) => {
   return (
     <div className=" py-8 mt-8">
       <div className="container mx-auto">
-        <h3 className="text-2xl font-semibold text-gray-700 pb-8">
+        <h3 className="text-2xl font-semibold text-gray-700 dark:text-white pb-8">
           Últimos artículos sobre la Ley de Segunda Oportunidad
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {relatedPosts.map((post: any) => (
             <Link
               key={post.id}
               href={`/blog/${post.categorySlug}/${post.slug}`}
-              className=""
+              className="bg-card p-4 rounded-lg"
             >
               <Image
                 src={process.env.BLOG_URL + post.featuredImage.url}
