@@ -17,6 +17,11 @@ const BookDetail = () => {
   useEffect(() => {
     track("Llamada agendada", {
       formulario: "LSO",
+      agendado: `con ${deal?.user_assigned?.first_name} el ${format(
+        dueDate,
+        "d MMMM yyyy",
+        { locale: es }
+      )} a las ${format(dueDate, "HH:mm", { locale: es })}h`,
     });
   }, []);
 

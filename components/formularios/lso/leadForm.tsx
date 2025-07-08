@@ -92,6 +92,7 @@ const LeadForm = () => {
 
     track("Rellena datos personales", {
       formulario: "LSO",
+      lead: `${values.first_name} ${values.last_name}`,
     });
 
     form.reset();
