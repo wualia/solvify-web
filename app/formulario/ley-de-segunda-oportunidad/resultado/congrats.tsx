@@ -19,7 +19,10 @@ const Congrats = () => {
   };
   return (
     <div className="flex justify-center">
-      <Button className="mt-8 w-full md:w-auto" onClick={handleContinuar}>
+      <Button
+        className="mt-8 w-full md:w-auto md:px-16"
+        onClick={handleContinuar}
+      >
         Continuar
       </Button>
     </div>

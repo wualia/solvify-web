@@ -82,8 +82,8 @@ const QuestionsLSO = () => {
                 className={cn(
                   selectedAnswer === answer
                     ? "border-primary bg-primary/10"
-                    : "bg-gray-50",
-                  "w-full text-black border-2 rounded-lg p-3 text-center relative hover:bg-gray-100 dark:hover:bg-black cursor-pointer duration-200 bg-card"
+                    : "bg-white dark:bg-black",
+                  "w-full text-black border-2 rounded-lg px-3 py-2 text-center relative hover:bg-gray-100 dark:hover:bg-black cursor-pointer duration-200"
                 )}
                 onClick={() => setSelectedAnswer(answer)}
               >
@@ -97,8 +97,8 @@ const QuestionsLSO = () => {
                   {answer}
                 </p>
                 {selectedAnswer === answer && (
-                  <div className="absolute inset-x-0 right-2 top-3 flex justify-end">
-                    <Checked className="h-6 w-6 text-primary" />
+                  <div className="absolute inset-x-0 right-2 top-2.5 flex justify-end">
+                    <Checked className="h-5 w-5 text-primary" />
                   </div>
                 )}
               </div>
@@ -107,7 +107,7 @@ const QuestionsLSO = () => {
           {selectedAnswer && (
             <div className="2xl:px-0">
               <div
-                className="w-full mt-8 bg-primary rounded-lg text-white p-3 flex justify-center items-center cursor-pointer dark:bg-white dark:text-black"
+                className="w-full mt-6 bg-primary rounded-lg text-white px-3 py-2 flex justify-center items-center cursor-pointer dark:bg-white dark:text-black"
                 onClick={nextQuestion}
               >
                 Continuar

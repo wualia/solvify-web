@@ -32,16 +32,23 @@ const BookDetail = () => {
   return (
     <div>
       <div className="flex flex-col gap-2 text-center mt-4">
-        <p className=" text-gray-700 font-semibold">
+        <p className=" text-gray-700 dark:text-white  font-semibold">
           {format(dueDate, "d MMMM yyyy", { locale: es })}
-          <span className="text-gray-500 font-normal"> a las </span>
+          <span className="text-gray-500 dark:text-gray-300 font-normal">
+            {" "}
+            a las{" "}
+          </span>
           {format(dueDate, "HH:mm", { locale: es })}h{" "}
-          <span className="text-gray-500 font-normal">con</span>{" "}
+          <span className="text-gray-500 dark:text-gray-300 font-normal">
+            con
+          </span>{" "}
           {deal?.user_assigned?.first_name} {deal?.user_assigned?.last_name}
         </p>
       </div>
-      <div className="flex justify-center mt-4">
-        <Button onClick={handleBack}>Volver al inicio</Button>
+      <div className="flex justify-center mt-8">
+        <Button className="w-full md:w-auto md:px-16" onClick={handleBack}>
+          Volver al inicio
+        </Button>
       </div>
     </div>
   );

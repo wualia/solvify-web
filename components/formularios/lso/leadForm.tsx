@@ -101,7 +101,7 @@ const LeadForm = () => {
 
   return (
     <>
-      <div className="mt-4 mx-auto max-w-2xl">
+      <div className="my-4 mx-auto max-w-2xl">
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
@@ -115,7 +115,7 @@ const LeadForm = () => {
                   <FormControl>
                     <Input
                       {...field}
-                      className="text-base sm:text-sm"
+                      className="text-base sm:text-sm bg-white"
                       placeholder="Nombre"
                     />
                   </FormControl>
@@ -132,7 +132,7 @@ const LeadForm = () => {
                   <FormControl>
                     <Input
                       {...field}
-                      className="text-base sm:text-sm"
+                      className="text-base sm:text-sm bg-white"
                       placeholder="Apellidos"
                     />
                   </FormControl>
@@ -149,7 +149,7 @@ const LeadForm = () => {
                   <FormControl>
                     <Input
                       {...field}
-                      className="text-base sm:text-sm"
+                      className="text-base sm:text-sm bg-white"
                       placeholder="Teléfono"
                     />
                   </FormControl>
@@ -167,7 +167,7 @@ const LeadForm = () => {
                     <Input
                       {...field}
                       type="email"
-                      className="text-base sm:text-sm"
+                      className="text-base sm:text-sm bg-white"
                       placeholder="Email"
                     />
                   </FormControl>
