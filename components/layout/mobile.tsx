@@ -43,20 +43,35 @@ const Mobile = () => {
               Inicio
             </li>
             <li className=" pb-4 text-xl font-medium">Servicios</li>
-            <ul className="space-y-4 pl-2 pb-8 text-gray-300">
-              <li onClick={() => goTo("/servicios/ley-de-segunda-oportunidad")}>
+            <ul className="pb-8 text-gray-300">
+              <li
+                onClick={() => goTo("/servicios/ley-de-segunda-oportunidad")}
+                className="border-b border-white/20 py-4"
+              >
                 Ley de segunda oportunidad
               </li>
-              <li onClick={() => goTo("/servicios/negociacion-de-deudas")}>
+              <li
+                onClick={() => goTo("/servicios/negociacion-de-deudas")}
+                className="border-b border-white/20 py-4"
+              >
                 Negociación de deuda
               </li>
-              <li onClick={() => goTo("/servicios/tarjetas-revolving")}>
+              <li
+                onClick={() => goTo("/servicios/tarjetas-revolving")}
+                className="border-b border-white/20 py-4"
+              >
                 Tarjetas revolving
               </li>
-              <li onClick={() => goTo("/servicios/cartel-coches")}>
+              <li
+                onClick={() => goTo("/servicios/cartel-coches")}
+                className="border-b border-white/20 py-4"
+              >
                 Cártel de coches
               </li>
-              <li onClick={() => goTo("/servicios/concurso-expres")}>
+              <li
+                onClick={() => goTo("/servicios/concurso-expres")}
+                className="border-b border-white/20 py-4"
+              >
                 Concurso exprés
               </li>
             </ul>
