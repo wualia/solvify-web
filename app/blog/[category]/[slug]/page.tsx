@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import CtaComponent from "@/components/blog/cta/ctaComponent";
 import TableOfContent from "@/components/blog/tableOfContent";
 import BlogProgress from "@/components/blog/progress";
+import RelatedPosts from "@/components/blog/relatedPosts";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -26,8 +27,6 @@ export async function generateMetadata(
   );
 
   const post = await data.json();
-
-  console.log("post:", post);
 
   return {
     title: post.docs[0].meta.title,
@@ -59,10 +58,6 @@ const PostDetail = async ({
   const post = await data.json();
 
   console.log("post:", post);
-  // console.log(
-  //   "post detail:",
-  //   post.docs[0].content.root.children[0].children[0].text
-  // );
 
   return (
     <article className="mx-auto max-w-7xl px-4 2xl:px-0 py-8">
@@ -121,6 +116,7 @@ const PostDetail = async ({
           </div>
         </div>
       </div>
+      <RelatedPosts relatedPosts={post.docs[0].relatedPosts} />
     </article>
   );
 };

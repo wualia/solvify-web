@@ -5,7 +5,7 @@ import { scrollTo } from "@/lib/functions";
 
 const TableOfContent = ({ content }: { content: any }) => {
   return (
-    <div className="sticky top-24 hidden md:block">
+    <div className="sticky top-24 hidden md:block bg-gray-50 dark:bg-card p-4 rounded-lg">
       <h3 className="text-xl font-medium pb-4 text-gray-700 dark:text-white">
         Tabla de contenidos
       </h3>
