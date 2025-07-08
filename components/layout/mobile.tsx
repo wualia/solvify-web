@@ -30,24 +30,36 @@ const Mobile = () => {
           exit="hidden"
           variants={modalVariants}
           layout
-          className="bg-black px-4 py-8 z-50 fixed inset-0 w-full h-full flex flex-col"
+          className="bg-black py-8 z-50 fixed inset-0 w-full h-full flex flex-col"
         >
-          <div className="flex justify-between items-center mb-16 border-b pb-8 border-white/20">
+          <div className="flex justify-between items-center mb-8 border-b pb-4 border-white/20 px-4">
             <p className="text-white font-medium uppercase text-sm">Menú</p>
             <div onClick={() => setWebMobileOpen()} className="text-white">
               <CircleXIcon className="w-6 h-6" />
             </div>
           </div>
-          <ul className="text-white flex-1">
+          <ul className="text-white flex-1 px-4">
             <li onClick={() => goTo("/")} className="pb-8 text-xl font-medium">
               Inicio
             </li>
-            {/* <li
-              onClick={() => goTo("/servicios")}
-              className="pb-8 text-xl font-medium"
-            >
-              Servicios
-            </li> */}
+            <li className=" pb-4 text-xl font-medium">Servicios</li>
+            <ul className="space-y-4 pl-2 pb-8 text-gray-300">
+              <li onClick={() => goTo("/servicios/ley-de-segunda-oportunidad")}>
+                Ley de segunda oportunidad
+              </li>
+              <li onClick={() => goTo("/servicios/negociacion-de-deudas")}>
+                Negociación de deuda
+              </li>
+              <li onClick={() => goTo("/servicios/tarjetas-revolving")}>
+                Tarjetas revolving
+              </li>
+              <li onClick={() => goTo("/servicios/cartel-coches")}>
+                Cártel de coches
+              </li>
+              <li onClick={() => goTo("/servicios/concurso-expres")}>
+                Concurso exprés
+              </li>
+            </ul>
             <li
               onClick={() => goTo("/blog")}
               className="pb-8 text-xl font-medium"
@@ -61,9 +73,11 @@ const Mobile = () => {
               Contacto
             </li>
           </ul>
-          <Button onClick={() => setWebMobileOpen()} className="w-full py-6">
-            Zona clientes
-          </Button>
+          <div className="px-4">
+            <Button onClick={() => setWebMobileOpen()} className="w-full py-5">
+              Zona clientes
+            </Button>
+          </div>
         </motion.div>
       )}
     </AnimatePresence>
