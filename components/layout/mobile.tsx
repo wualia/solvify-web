@@ -74,7 +74,10 @@ const Mobile = () => {
             </li>
           </ul>
           <div className="px-4 mb-8">
-            <Button onClick={() => setWebMobileOpen()} className="w-full py-5">
+            <Button
+              onClick={() => setWebMobileOpen()}
+              className="w-full py-5 bg-white text-black"
+            >
               Zona clientes
             </Button>
           </div>
