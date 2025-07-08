@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { blogCategories } from "@/lib/data";
 
-const Categories = () => {
+const DesktopCategories = () => {
   const pathname = usePathname();
 
   return (
@@ -38,4 +38,4 @@ const Categories = () => {
   );
 };
 
-export default Categories;
+export default DesktopCategories;

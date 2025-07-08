@@ -1,5 +1,5 @@
 import React from "react";
-import Categories from "@/components/blog/categories";
+import Categories from "@/components/blog/desktopCategories";
 import Link from "next/link";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";

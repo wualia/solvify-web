@@ -3,10 +3,10 @@ import React, { Suspense } from "react";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
 import { Badge } from "@/components/ui/badge";
-import Categories from "@/components/blog/categories";
+import DesktopCategories from "@/components/blog/desktopCategories";
+import MobileCategories from "@/components/blog/mobileCategories";
 
 import type { Metadata } from "next";
-import Loading from "@/components/blog/loading";
 
 export const metadata: Metadata = {
   title: "Blog | Solvify",
@@ -19,12 +19,15 @@ const BlogPage = async () => {
   const posts = await data.json();
 
   return (
-    <div className="mx-auto max-w-7xl px-4 2xl:px-0 py-8 grid lg:grid-cols-4 gap-4 items-start">
+    <div className="mx-auto max-w-7xl py-6 lg:py-8 grid lg:grid-cols-4 gap-4 items-start">
       <div className="hidden lg:block sticky top-20">
-        <Categories />
+        <DesktopCategories />
+      </div>
+      <div className="flex lg:hidden overflow-x-scroll no-scrollbar border-b">
+        <MobileCategories />
       </div>
 
-      <div className="col-span-3 space-y-4">
+      <div className="lg:col-span-3 space-y-4 px-4 2xl:px-0">
         {posts.docs?.map((post: any) => (
           <div key={post.id} className="border-b last-of-type:border-b-0 py-4">
             <Link href={`/blog/${post.categorySlug}/${post.slug}`}>

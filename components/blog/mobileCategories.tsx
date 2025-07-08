@@ -1,0 +1,41 @@
+"use client";
+
+import React from "react";
+import { Badge } from "@/components/ui/badge";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
+import { blogCategories } from "@/lib/data";
+
+const MobileCategories = () => {
+  const pathname = usePathname();
+
+  return (
+    <div className="  bg-white dark:bg-background flex space-x-2 pb-4 px-4 2xl:px-0">
+      <Link href="/blog" className="cursor-pointer">
+        <Badge
+          variant={pathname === "/blog" ? "default" : "secondary"}
+          className="text-sm"
+        >
+          Todos
+        </Badge>
+      </Link>
+      {blogCategories.map((category: any) => (
+        <Link
+          key={category.id}
+          href={`/blog/${category.slug}`}
+          className="cursor-pointer"
+        >
+          <Badge
+            key={category.id}
+            variant={pathname.includes(category.slug) ? "default" : "secondary"}
+            className="text-sm"
+          >
+            {category.name}
+          </Badge>
+        </Link>
+      ))}
+    </div>
+  );
+};
+
+export default MobileCategories;
