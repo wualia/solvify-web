@@ -4,7 +4,47 @@ import Link from "next/link";
 import Image from "next/image";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
-import { Badge } from "@/components/ui/badge";
+import type { Metadata, ResolvingMetadata } from "next";
+
+type Props = {
+  params: Promise<{ category: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const category = (await params).category;
+
+  const data = await fetch(
+    `${process.env.BLOG_URL}/api/posts?where[categorySlug][equals]=${category}`
+  );
+
+  const categoriesData = await fetch(
+    `${process.env.BLOG_URL}/api/categories?where[slug][equals]=${category}`
+  );
+  const categoryData = await categoriesData.json();
+
+  console.log("categoryData:", categoryData);
+
+  const post = await data.json();
+
+  return {
+    title: `Blog | ${categoryData.docs[0].name} | Solvify`,
+    description: `Blog de Solvify, noticias y artículos sobre ${categoryData.docs[0].name}`,
+    metadataBase: new URL(`${process.env.SITE_URL}`),
+    alternates: {
+      canonical: `/blog/${post.docs[0].categorySlug}`,
+    },
+    openGraph: {
+      title: `Blog ${post.docs[0].categorySlug} | Solvify`,
+      description: `Blog de Solvify, noticias y artículos sobre ${post.docs[0].categorySlug}`,
+      siteName: "Solvify",
+      type: "website",
+    },
+  };
+}
 
 const BlogCategoryPage = async ({
   params,

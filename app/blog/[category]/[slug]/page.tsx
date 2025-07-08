@@ -4,12 +4,13 @@ import Image from "next/image";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
 import Content from "@/components/blog/content";
-import type { Metadata, ResolvingMetadata } from "next";
+
 import { Badge } from "@/components/ui/badge";
 import CtaComponent from "@/components/blog/cta/ctaComponent";
 import TableOfContent from "@/components/blog/tableOfContent";
 import BlogProgress from "@/components/blog/progress";
 import RelatedPosts from "@/components/blog/relatedPosts";
+import type { Metadata, ResolvingMetadata } from "next";
 
 type Props = {
   params: Promise<{ slug: string }>;
