@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import HeroButton from "./heroButton";
 
 interface HeroServicesProps {
   title?: string;
@@ -37,15 +36,7 @@ const HeroServices = ({
           <p className="text-lg max-w-lg text-gray-500 dark:text-gray-300 pb-8 text-center md:text-left">
             {description}
           </p>
-          {hasAction && (
-            <Button
-              asChild
-              className=" w-full md:w-auto bg-black dark:bg-white dark:text-black"
-              size="lg"
-            >
-              <Link href={link}>{buttonText}</Link>
-            </Button>
-          )}
+          {hasAction && <HeroButton buttonText={buttonText} link={link} />}
         </div>
         <div className="rounded-lg overflow-hidden shadow-lg">
           <Image
