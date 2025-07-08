@@ -95,7 +95,7 @@ const Mobile = () => {
           </ul>
           <div className="px-4 mb-8">
             <Button
-              onClick={() => router.push("https://app.solvify.es")}
+              onClick={() => router.push("https://app.solvify.es/admin")}
               className="w-full py-5 bg-white text-black"
             >
               Zona clientes

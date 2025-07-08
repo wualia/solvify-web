@@ -31,7 +31,7 @@ const Header = () => {
   const scrollRef = useRef(null);
 
   const gotoAreaClientes = () => {
-    router.push("https://app.solvify.es");
+    router.push("https://app.solvify.es/admin");
   };
 
   const openMenu = () => {
