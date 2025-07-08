@@ -5,6 +5,7 @@ import Image from "next/image";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
 import type { Metadata, ResolvingMetadata } from "next";
+import { Badge } from "@/components/ui/badge";
 
 type Props = {
   params: Promise<{ category: string }>;
@@ -64,45 +65,41 @@ const BlogCategoryPage = async ({
   const categories = await categoriesData.json();
 
   return (
-    <>
-      <Categories categories={categories} />
-      <div className="mx-auto max-w-7xl px-4 2xl:px-0 py-8">
-        <div className=" grid md:grid-cols-2 gap-8 md:gap-16 md:py-8">
-          {posts.docs?.map((post: any) => (
+    <div className="mx-auto max-w-7xl px-4 2xl:px-0 py-8 grid lg:grid-cols-4 gap-4 items-start">
+      <div className="hidden lg:block sticky top-20">
+        <Categories categories={categories} />
+      </div>
+      <div className="col-span-3 space-y-4">
+        {posts.docs?.map((post: any) => (
+          <div className="border-b last-of-type:border-b-0 py-4">
             <Link
               key={post.id}
               href={`/blog/${post.categorySlug}/${post.slug}`}
               className=""
             >
-              <div className="flex items-center gap-4">
-                <Image
-                  src={process.env.BLOG_URL + post.featuredImage.url}
-                  alt={post.featuredImage.alt}
-                  width={400}
-                  height={300}
-                  className="h-16 w-16 object-cover rounded-lg"
-                />
-                <div>
-                  <div className="flex items-center gap-4 pb-2">
-                    <p className="text-sm text-primary">
-                      {format(new Date(post.updatedAt), "dd MMMM yyyy", {
-                        locale: es,
-                      })}
-                    </p>
-                  </div>
-
-                  <h2 className="md:text-xl font-medium pb-2">{post.title}</h2>
-                </div>
+              <div>
+                <Badge variant="outline" className="text-sm">
+                  {post.category.name}
+                </Badge>
+                <h2 className="md:text-2xl font-medium py-4 text-gray-700 dark:text-white">
+                  {post.title}
+                </h2>
+                <p className="text-muted-foreground max-w-3xl">
+                  {post.excerpt}
+                </p>
               </div>
-
-              {/* <div className="mt-4">
-            <p className="text-sm text-muted-foreground">{post.excerpt}</p>
-          </div> */}
+              <div className="flex items-center gap-4 py-4">
+                <p className="text-sm text-primary">
+                  {format(new Date(post.updatedAt), "dd MMMM yyyy", {
+                    locale: es,
+                  })}
+                </p>
+              </div>
             </Link>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
-    </>
+    </div>
   );
 };
 

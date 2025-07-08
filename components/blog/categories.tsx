@@ -1,20 +1,15 @@
 "use client";
 
-import React, { useCallback, useState } from "react";
+import React from "react";
 import { Badge } from "@/components/ui/badge";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 const Categories = ({ categories }: { categories: any }) => {
-  const router = useRouter();
   const pathname = usePathname();
 
-  console.log("pathname:", pathname);
-
-  // const [activeCategory, setActiveCategory] = useState(categoria);
-
   return (
-    <div className="py-4 px-4 2xl:px-0 flex gap-2 sticky bg-white dark:bg-background z-10 top-16 inset-x-0 overflow-x-auto border-b mx-auto max-w-7xl md:border-none">
+    <div className="py-4 px-4 2xl:px-0 flex flex-col gap-6  bg-white dark:bg-background ">
       <Link href="/blog" className="cursor-pointer">
         <Badge
           variant={pathname === "/blog" ? "default" : "secondary"}
