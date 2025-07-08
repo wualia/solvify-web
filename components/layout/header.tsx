@@ -217,7 +217,10 @@ const Header = () => {
                     </h3>
                   </div>
                   <div className="p-4">
-                    <Link href="/servicios/revolving" onClick={setBigMenuOpen}>
+                    <Link
+                      href="/servicios/tarjetas-revolving"
+                      onClick={setBigMenuOpen}
+                    >
                       <div className="mb-1 hover:bg-accent hover:text-accent-foreground p-4 rounded-lg transition-colors cursor-pointer">
                         <h4 className="pb-2 text-sm font-semibold">
                           Reclamación tarjetas revolving

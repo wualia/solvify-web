@@ -1,6 +1,14 @@
 import React from "react";
 import HeroServices from "@/components/services/hero";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Concurso exprés | Solvify",
+  description:
+    "Si tienes una sociedad que tiene deudas y quieres cancelarlas, también tienes la oportunidad de hacerlo legalmente.",
+};
+
 const ConcursoExpres = () => {
   return (
     <div>

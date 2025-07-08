@@ -9,8 +9,9 @@ import Categories from "@/components/blog/categories";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Solvify - Blog",
-  description: "Blog de Solvify",
+  title: "Blog | Solvify",
+  description:
+    "Blog de Solvify, noticias y artículos sobre la ley de segunda oportunidad, tarjetas revolving, negociación de deuda, etc.",
 };
 
 const BlogPage = async () => {

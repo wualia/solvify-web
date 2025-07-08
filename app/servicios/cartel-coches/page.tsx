@@ -1,6 +1,14 @@
 import React from "react";
 import HeroServices from "@/components/services/hero";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Cartel de coches | Solvify",
+  description:
+    "Si compraste un coche entre 2006 y 2013 podrías recuperar hasta el 15% del precio que pagaste por él.",
+};
+
 const CartelCochesPage = () => {
   return (
     <div>

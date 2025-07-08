@@ -5,6 +5,14 @@ import CTA_Services_LSO from "@/components/services/cta/lso";
 import LatestPosts from "@/components/services/latestPosts";
 import { LSO_FAQ } from "@/lib/data";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Ley de la Segunda Oportunidad | Solvify",
+  description:
+    "A través de la Segunda Oportunidad eliminamos tus deudas personales de forma rápida y automática.",
+};
+
 const LeySegundaOportunidadPage = async () => {
   const data = await fetch(
     `${process.env.BLOG_URL}/api/posts?where[categorySlug][equals]=ley-de-segunda-oportunidad&limit=3`

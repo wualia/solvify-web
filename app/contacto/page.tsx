@@ -2,8 +2,13 @@ import React from "react";
 import { Map, Phone, Mail } from "lucide-react";
 import Link from "next/link";
 import NewContactForm from "@/components/contact/contactForm";
-import { motion } from "framer-motion";
+import { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Contacto | Solvify",
+  description: "Contacta con Solvify para resolver tus dudas y consultas.",
+};
 
 const ContactoPage = () => {
   return (
@@ -16,13 +21,13 @@ const ContactoPage = () => {
       <div className="py-8 md:py-16 bg-gray-50 dark:bg-background">
         <div className="mx-auto max-w-7xl grid lg:grid-cols-2 items-center gap-8 px-4 2xl:px-0">
           <div>
-            <p className="text-primary pb-2 text-xs uppercase tracking-wider font-medium">
+            <h1 className="text-primary pb-2 text-xs uppercase tracking-wider font-medium">
               CONTACTO
-            </p>
-            <div className="w-10 h-0.5 bg-primary rounded-full mb-4" />
-            <h1 className="text-4xl font-medium pb-6 text-gray-700 dark:text-white">
-              Escríbenos sin compromiso
             </h1>
+            <div className="w-10 h-0.5 bg-primary rounded-full mb-4" />
+            <h2 className="text-4xl font-medium pb-6 text-gray-700 dark:text-white">
+              Escríbenos sin compromiso
+            </h2>
             <p className="text-lg max-w-lg text-gray-500 dark:text-gray-300">
               Nuestro equipo de profesionales está a tu disposición para
               resolver cualquier duda o consulta que tengas.
