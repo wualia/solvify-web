@@ -1,8 +1,15 @@
 import React from "react";
 import HeroServices from "@/components/services/hero";
 import Accordion from "@/components/layout/accordion";
+import CTA_Services_LSO from "@/components/services/cta/lso";
+import LatestPosts from "@/components/services/latestPosts";
 
-const LeySegundaOportunidadPage = () => {
+const LeySegundaOportunidadPage = async () => {
+  const data = await fetch(
+    `${process.env.BLOG_URL}/api/posts?where[categorySlug][equals]=ley-de-segunda-oportunidad&limit=3`
+  );
+  const posts = await data.json();
+
   return (
     <div>
       <HeroServices
@@ -13,7 +20,7 @@ const LeySegundaOportunidadPage = () => {
         hasAction={true}
         buttonText="Realizar estudio gratuito"
       />
-      <section className="mx-auto max-w-7xl px-4 2xl:px-0 py-16">
+      <section className="mx-auto max-w-7xl px-4 2xl:px-0 pt-16">
         <h2 className="text-2xl font-medium pb-6 text-gray-700 dark:text-white">
           ¿Qué es la Ley de la Segunda Oportunidad?
         </h2>
@@ -56,6 +63,10 @@ const LeySegundaOportunidadPage = () => {
           </ul>
         </section>
       </div>
+      <div className="mx-auto max-w-7xl px-4 2xl:px-0">
+        <CTA_Services_LSO />
+      </div>
+
       <div className=" py-16">
         <section className="mx-auto max-w-7xl px-4 2xl:px-0 ">
           <h2 className="text-2xl font-medium pb-6 text-gray-700 dark:text-white">
@@ -85,6 +96,9 @@ const LeySegundaOportunidadPage = () => {
           Preguntas frecuentes
         </h2>
         <Accordion />
+      </div>
+      <div className="mx-auto max-w-7xl px-4 2xl:px-0 mb-16">
+        <LatestPosts relatedPosts={posts.docs} />
       </div>
     </div>
   );
