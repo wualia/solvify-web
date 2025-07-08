@@ -64,31 +64,15 @@ function Item({ header, children }: PropsWithChildren<{ header: string }>) {
   );
 }
 
-export default function Accordion() {
+export default function Accordion({ faqs }: { faqs: any }) {
   return (
     <>
       <div className="accordion border border-gray-200 dark:border-gray-800 rounded-lg">
-        <Item header="What is Motion+?">
-          <p className="text-gray-500 dark:text-gray-300">
-            Motion+ is a one-time fee, lifetime access membership that unlocks
-            the source code for all Motion examples, early access features,
-            premium components, and an exclusive Discord community.
-          </p>
-        </Item>
-        <Item header={`What does "lifetime access" mean?`}>
-          <p className="text-gray-500 dark:text-gray-300">
-            Just that! No one needs another subscription in their life.
-          </p>
-          <p className="text-gray-500 dark:text-gray-300">
-            {`Lifetime access means you'll receive all updates to Motion+ as they're released.`}
-          </p>
-        </Item>
-        <Item header="How does the team package work?">
-          <p className="text-gray-500 dark:text-gray-300">
-            After purchase, you can nominate up to 10 team members to join
-            Motion+.
-          </p>
-        </Item>
+        {faqs.map((faq: any) => (
+          <Item key={faq.id} header={faq.question}>
+            <p className="text-gray-500 dark:text-gray-300">{faq.answer}</p>
+          </Item>
+        ))}
       </div>
       <StyleSheet />
     </>

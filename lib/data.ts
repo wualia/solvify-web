@@ -31,3 +31,38 @@ export const services = [
     category_id_dev: "2154ca24-1a99-4d4a-b858-939b1871a54b",
   },
 ];
+
+export const LSO_FAQ = [
+  {
+    id: 1,
+    question:
+      "¿Puedo acogerme a la Ley de la Segunda Oportunidad si tengo una nómina o ingresos?",
+    answer:
+      "Sí. Tener ingresos no impide acogerse, siempre que estés en situación de insolvencia real, es decir, que tus ingresos no sean suficientes para pagar tus deudas.",
+  },
+  {
+    id: 2,
+    question: "¿Qué deudas se pueden cancelar con esta ley?",
+    answer:
+      "Préstamos personales, tarjetas de crédito y revolving, créditos rápidos y parte de las deudas con Hacienda y Seguridad Social (hasta 10.000 € por organismo).",
+  },
+  {
+    id: 3,
+    question: "¿Voy a perder mi casa o mi coche si me acojo?",
+    answer:
+      "No necesariamente. Si tu vivienda habitual o vehículo no tienen un alto valor o están hipotecados, puedes negociar conservarlos mediante un plan de pagos o demostrando que no tienen valor de liquidación suficiente.",
+  },
+  {
+    id: 4,
+    question: "¿Cuánto tiempo tarda el procedimiento completo?",
+    answer:
+      "Depende del caso. Si no tienes bienes ni oposición de acreedores, el proceso puede tardar entre 2 y 4 meses. Si hay bienes o plan de pagos, puede durar hasta 12 meses.",
+  },
+  {
+    id: 5,
+    question:
+      "¿La Ley de la Segunda Oportunidad borra mis datos de ASNEF o ficheros de morosos?",
+    answer:
+      "Sí. Una vez se concede el BEPI (Beneficio de Exoneración del Pasivo Insatisfecho), puedes solicitar que te eliminen de registros como ASNEF, Experian o Rai de forma inmediata.",
+  },
+];

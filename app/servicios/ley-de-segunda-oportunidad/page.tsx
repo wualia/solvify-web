@@ -3,6 +3,7 @@ import HeroServices from "@/components/services/hero";
 import Accordion from "@/components/layout/accordion";
 import CTA_Services_LSO from "@/components/services/cta/lso";
 import LatestPosts from "@/components/services/latestPosts";
+import { LSO_FAQ } from "@/lib/data";
 
 const LeySegundaOportunidadPage = async () => {
   const data = await fetch(
@@ -95,7 +96,7 @@ const LeySegundaOportunidadPage = async () => {
         <h2 className="text-2xl font-medium pb-6 text-gray-700 dark:text-white">
           Preguntas frecuentes
         </h2>
-        <Accordion />
+        <Accordion faqs={LSO_FAQ} />
       </div>
       <div className="mx-auto max-w-7xl px-4 2xl:px-0 mb-16">
         <LatestPosts relatedPosts={posts.docs} />
