@@ -5,6 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
+import { Textarea } from "@/components/ui/textarea";
 
 import {
   Select,
@@ -27,8 +28,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Loader from "@/components/ui/loader";
-// import { MessageSent } from "@/components/icons/web";
 import { services } from "@/lib/data";
+import { MessageSent } from "../icons";
 // import useLeads from "@/hooks/useLeads";
 
 const phoneRegex = new RegExp(
@@ -44,11 +45,12 @@ const formSchema = z.object({
     .min(9, { message: "número de teléfono inválido" })
     .max(9, { message: "número de teléfono inválido" }),
   email: z.string().email({ message: "Email obligatorio" }),
-  category_id: z.string().min(1, { message: "Servicio obligatorio" }),
+  subject: z.string().min(1, { message: "Asunto obligatorio" }),
+  message: z.string().min(1, { message: "Mensaje obligatorio" }),
 });
 
 const NewContactForm = () => {
-  //   const { createLeadMutation } = useLeads({});
+  const [loading, setLoading] = useState(false);
   const [formSent, setFormSent] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -58,41 +60,46 @@ const NewContactForm = () => {
       last_name: "",
       email: "",
       phone: "",
+      subject: "",
+      message: "",
     },
   });
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    setLoading(true);
     const body = {
       first_name: values.first_name,
       last_name: values.last_name,
       email: values.email,
       phone: values.phone,
-      channel: "web",
-      campaign: "web-form",
+      subject: values.subject,
+      message: values.message,
     };
 
-    // console.log(values);
+    const response = await fetch("/api/emails/contact", {
+      method: "POST",
+      body: JSON.stringify(body),
+    });
 
-    // const response = await createLeadMutation.mutateAsync({
-    //   body,
-    //   categoryId: values.category_id,
-    // });
-
-    // if (response) {
-    toast.success("Formulario recibido correctamente.");
-    form.reset();
-    setFormSent(true);
-    // }
+    if (response.ok) {
+      toast.success("Formulario recibido correctamente.");
+      form.reset();
+      setFormSent(true);
+      setLoading(false);
+    } else {
+      toast.error("Error al enviar el formulario.");
+      setLoading(false);
+    }
   };
 
   return (
     <>
       {formSent ? (
-        <div className="border rounded-lg p-10 md:p-16 bg-card dark:bg-background">
+        <div className="rounded-lg p-10 md:p-16 bg-card">
           <div className="flex justify-center">
             <div className="mb-4 bg-primary/5 p-2 rounded-full mx-auto">
               <div className="bg-primary/10 p-3 rounded-full mx-auto flex justify-center items-center">
-                {/* <MessageSent className="text-primary w-8 h-8 mx-auto" /> */}
+                <MessageSent className="text-primary w-8 h-8 mx-auto" />
               </div>
             </div>
           </div>
@@ -100,7 +107,7 @@ const NewContactForm = () => {
           <h3 className="text-center font-bold text-lg pb-2">
             Mensaje recibido
           </h3>
-          <p className="text-center text-gray-500 dark:text-gray-400 text-sm">
+          <p className="text-center text-gray-500 dark:text-gray-300">
             En breves nos pondremos en contacto contigo para solventar tus
             problemas.
           </p>
@@ -169,10 +176,10 @@ const NewContactForm = () => {
 
             <FormField
               control={form.control}
-              name="category_id"
+              name="subject"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Servicio</FormLabel>
+                  <FormLabel>En que te podemos ayudar?</FormLabel>
                   <Select
                     onValueChange={field.onChange}
                     defaultValue={field.value}
@@ -186,16 +193,9 @@ const NewContactForm = () => {
                       <SelectGroup>
                         <SelectLabel>Selecciona</SelectLabel>
 
-                        {services.map((task: any) => (
-                          <SelectItem
-                            key={task.id}
-                            value={
-                              process.env.NEXT_PUBLIC_ENV == "prod"
-                                ? task.category_id_prod
-                                : task.category_id_dev
-                            }
-                          >
-                            {task.name}
+                        {services.map((service: any) => (
+                          <SelectItem key={service.id} value={service.name}>
+                            {service.name}
                           </SelectItem>
                         ))}
                       </SelectGroup>
@@ -205,20 +205,31 @@ const NewContactForm = () => {
               )}
             />
 
+            <FormField
+              control={form.control}
+              name="message"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Mensaje</FormLabel>
+                  <FormControl>
+                    <Textarea className="resize-none" {...field} />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
             <div className="pt-4">
-              <Button
-                className="w-full"
-                type="submit"
-                // disabled={createLeadMutation.isPending}
-              >
-                {/* {createLeadMutation.isPending ? ( */}
-                {/* <>
+              <Button className="w-full" type="submit" disabled={loading}>
+                {loading ? (
+                  <>
                     <Loader size={16} color="#fff" lineWeight={3.5} />
                     <p className="pl-2">Enviando</p>
                   </>
-                ) : ( */}
-                <p>Enviar comentario</p>
-                {/* )} */}
+                ) : (
+                  <p>Enviar comentario</p>
+                )}
               </Button>
             </div>
           </form>
