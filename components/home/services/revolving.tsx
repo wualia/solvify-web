@@ -39,8 +39,9 @@ const Revolving = () => {
             </h3>
           </div>
           <p className="pt-4 pb-4 flex-1 text-gray-500 dark:text-gray-300">
-            A través de la Segunda Oportunidad eliminamos tus deudas personales
-            de forma rápida y automática.
+            Si tienes una tarjeta revolving, probablemente estés pagando
+            intereses abusivos. En Solvify revisamos tu caso y reclamamos la
+            devolución del dinero cobrado de forma indebida.
           </p>
           <ul className="mt-4 mb-8 space-y-4">
             <li className="flex items-start gap-2">
@@ -48,7 +49,7 @@ const Revolving = () => {
                 <Check className="w-3 h-3 text-white dark:text-black" />
               </div>
               <span className="text-gray-500 dark:text-gray-300">
-                Cancelación total o parcial de tus deudas.
+                Recuperación de intereses usurarios (hasta el 30 % o más).
               </span>
             </li>
             <li className="flex items-start gap-2">
@@ -56,7 +57,7 @@ const Revolving = () => {
                 <Check className="w-3 h-3 text-white dark:text-black" />
               </div>
               <span className="text-gray-500 dark:text-gray-300">
-                Paralización de embargos y llamadas de recobro
+                Reclamación judicial completa sin pagos por adelantado.
               </span>
             </li>
             <li className="flex items-start gap-2">
@@ -64,7 +65,7 @@ const Revolving = () => {
                 <Check className="w-3 h-3 text-white dark:text-black" />
               </div>
               <span className="text-gray-500 dark:text-gray-300">
-                Posibilidad de conservar tu vivienda o vehículo.
+                Anulación del contrato si se demuestra falta de transparencia.
               </span>
             </li>
           </ul>

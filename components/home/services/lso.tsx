@@ -39,8 +39,9 @@ const LeySegundaOportunidad = () => {
             </h3>
           </div>
           <p className="pt-4 pb-4 flex-1 text-gray-500 dark:text-gray-300">
-            A través de la Segunda Oportunidad eliminamos tus deudas personales
-            de forma rápida y automática.
+            Te ayudamos a cancelar tus deudas legalmente mediante la Ley de la
+            Segunda Oportunidad, una vía judicial que permite a particulares y
+            autónomos liberarse de cargas económicas y empezar desde cero.
           </p>
           <ul className="mt-4 mb-8 space-y-4">
             <li className="flex items-start gap-2">

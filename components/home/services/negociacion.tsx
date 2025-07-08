@@ -19,8 +19,9 @@ const NegociacionDeudas = () => {
               </h3>
             </div>
             <p className="pt-4 pb-4 flex-1 text-gray-500 dark:text-gray-300">
-              A través de la Segunda Oportunidad eliminamos tus deudas
-              personales de forma rápida y automática.
+              En Solvify negociamos directamente con tus acreedores para reducir
+              tus deudas, refinanciar pagos o alcanzar acuerdos sin tener que
+              acudir a procesos judiciales largos o costosos.
             </p>
             <ul className="mt-4 mb-8 space-y-4">
               <li className="flex items-start gap-2">
@@ -28,7 +29,7 @@ const NegociacionDeudas = () => {
                   <Check className="w-3 h-3 text-white dark:text-black" />
                 </div>
                 <span className="text-gray-500 dark:text-gray-300">
-                  Cancelación total o parcial de tus deudas.
+                  Reducción o fraccionamiento del total adeudado.
                 </span>
               </li>
               <li className="flex items-start gap-2">
@@ -36,7 +37,7 @@ const NegociacionDeudas = () => {
                   <Check className="w-3 h-3 text-white dark:text-black" />
                 </div>
                 <span className="text-gray-500 dark:text-gray-300">
-                  Paralización de embargos y llamadas de recobro
+                  Evita juicios y mejora tu situación sin manchar tu historial.
                 </span>
               </li>
               <li className="flex items-start gap-2">
@@ -44,7 +45,7 @@ const NegociacionDeudas = () => {
                   <Check className="w-3 h-3 text-white dark:text-black" />
                 </div>
                 <span className="text-gray-500 dark:text-gray-300">
-                  Posibilidad de conservar tu vivienda o vehículo.
+                  Soluciones personalizadas según tu capacidad real de pago.
                 </span>
               </li>
             </ul>

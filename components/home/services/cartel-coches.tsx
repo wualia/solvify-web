@@ -19,8 +19,9 @@ const CartelCoches = () => {
               </h3>
             </div>
             <p className="pt-4 pb-4 flex-1 text-gray-500 dark:text-gray-300">
-              A través de la Segunda Oportunidad eliminamos tus deudas
-              personales de forma rápida y automática.
+              Si compraste un coche entre 2006 y 2013, puedes reclamar una
+              indemnización por prácticas ilegales de los fabricantes. En
+              Solvify gestionamos todo el proceso sin coste inicial.
             </p>
             <ul className="mt-4 mb-8 space-y-4">
               <li className="flex items-start gap-2">
@@ -28,7 +29,7 @@ const CartelCoches = () => {
                   <Check className="w-3 h-3 text-white dark:text-black" />
                 </div>
                 <span className="text-gray-500 dark:text-gray-300">
-                  Cancelación total o parcial de tus deudas.
+                  Hasta 15 % de indemnización sobre el precio del vehículo.
                 </span>
               </li>
               <li className="flex items-start gap-2">
@@ -36,7 +37,7 @@ const CartelCoches = () => {
                   <Check className="w-3 h-3 text-white dark:text-black" />
                 </div>
                 <span className="text-gray-500 dark:text-gray-300">
-                  Paralización de embargos y llamadas de recobro
+                  Tramitación 100 % online y sin adelantar dinero.
                 </span>
               </li>
               <li className="flex items-start gap-2">
@@ -44,7 +45,7 @@ const CartelCoches = () => {
                   <Check className="w-3 h-3 text-white dark:text-black" />
                 </div>
                 <span className="text-gray-500 dark:text-gray-300">
-                  Posibilidad de conservar tu vivienda o vehículo.
+                  Aceptamos turismos, furgonetas y vehículos de empresa.
                 </span>
               </li>
             </ul>
