@@ -23,37 +23,33 @@ const BlogPage = async () => {
       <div className="hidden lg:block sticky top-20">
         <Categories />
       </div>
-      <Suspense fallback={<Loading />}>
-        <div className="col-span-3 space-y-4">
-          {posts.docs?.map((post: any) => (
-            <div
-              key={post.id}
-              className="border-b last-of-type:border-b-0 py-4"
-            >
-              <Link href={`/blog/${post.categorySlug}/${post.slug}`}>
-                <div>
-                  <Badge variant="outline" className="text-sm">
-                    {post.category.name}
-                  </Badge>
-                  <h2 className="text-2xl md:text-2xl font-medium py-4 text-gray-700 dark:text-white">
-                    {post.title}
-                  </h2>
-                  <p className="text-muted-foreground max-w-3xl">
-                    {post.excerpt}
-                  </p>
-                </div>
-                <div className="flex items-center gap-4 py-4">
-                  <p className="text-sm text-primary">
-                    {format(new Date(post.updatedAt), "dd MMMM yyyy", {
-                      locale: es,
-                    })}
-                  </p>
-                </div>
-              </Link>
-            </div>
-          ))}
-        </div>
-      </Suspense>
+
+      <div className="col-span-3 space-y-4">
+        {posts.docs?.map((post: any) => (
+          <div key={post.id} className="border-b last-of-type:border-b-0 py-4">
+            <Link href={`/blog/${post.categorySlug}/${post.slug}`}>
+              <div>
+                <Badge variant="outline" className="text-sm">
+                  {post.category.name}
+                </Badge>
+                <h2 className="text-2xl md:text-2xl font-medium py-4 text-gray-700 dark:text-white">
+                  {post.title}
+                </h2>
+                <p className="text-muted-foreground max-w-3xl">
+                  {post.excerpt}
+                </p>
+              </div>
+              <div className="flex items-center gap-4 py-4">
+                <p className="text-sm text-primary">
+                  {format(new Date(post.updatedAt), "dd MMMM yyyy", {
+                    locale: es,
+                  })}
+                </p>
+              </div>
+            </Link>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
