@@ -24,24 +24,24 @@ const NegociacionDeudas = () => {
               acudir a procesos judiciales largos o costosos.
             </p>
             <ul className="mt-4 mb-8 space-y-4">
-              <li className="flex items-start gap-2">
-                <div className="bg-primary rounded-full p-1">
+              <li className="flex items-start gap-3">
+                <div className="bg-primary rounded-full p-0.5 mt-1">
                   <Check className="w-3 h-3 text-white dark:text-black" />
                 </div>
                 <span className="text-gray-500 dark:text-gray-300">
                   Reducción o fraccionamiento del total adeudado.
                 </span>
               </li>
-              <li className="flex items-start gap-2">
-                <div className="bg-primary rounded-full p-1 ">
+              <li className="flex items-start gap-3">
+                <div className="bg-primary rounded-full p-0.5 mt-1">
                   <Check className="w-3 h-3 text-white dark:text-black" />
                 </div>
                 <span className="text-gray-500 dark:text-gray-300">
                   Evita juicios y mejora tu situación sin manchar tu historial.
                 </span>
               </li>
-              <li className="flex items-start gap-2">
-                <div className="bg-primary rounded-full p-1">
+              <li className="flex items-start gap-3">
+                <div className="bg-primary rounded-full p-0.5 mt-1">
                   <Check className="w-3 h-3 text-white dark:text-black" />
                 </div>
                 <span className="text-gray-500 dark:text-gray-300">

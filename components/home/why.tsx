@@ -26,7 +26,7 @@ const HomeWhy = () => {
 
   return (
     <div className="pb-20 px-4 2xl:px-0">
-      <div className="mx-auto max-w-7xl bg-black dark:bg-background p-16 rounded-xl">
+      <div className="mx-auto max-w-7xl bg-black dark:bg-background px-8 py-16 md:p-16 rounded-xl">
         <div className="mx-auto max-w-3xl mb-16 text-center">
           <h2 className="text-3xl pb-4 font-medium text-white dark:text-white">
             Por qué Solvify

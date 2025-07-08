@@ -44,24 +44,24 @@ const ConcursoExpres = () => {
             personales. Ideal para autónomos y sociedades inactivas.
           </p>
           <ul className="mt-4 mb-8 space-y-4">
-            <li className="flex items-start gap-2">
-              <div className="bg-primary rounded-full p-1">
+            <li className="flex items-start gap-3">
+              <div className="bg-primary rounded-full p-0.5 mt-1">
                 <Check className="w-3 h-3 text-white dark:text-black" />
               </div>
               <span className="text-gray-500 dark:text-gray-300">
                 Cancelación de actividad sin necesidad de liquidación compleja.
               </span>
             </li>
-            <li className="flex items-start gap-2">
-              <div className="bg-primary rounded-full p-1 ">
+            <li className="flex items-start gap-3">
+              <div className="bg-primary rounded-full p-0.5 mt-1">
                 <Check className="w-3 h-3 text-white dark:text-black" />
               </div>
               <span className="text-gray-500 dark:text-gray-300">
                 Exoneración rápida si no hay bienes ni empleados.
               </span>
             </li>
-            <li className="flex items-start gap-2">
-              <div className="bg-primary rounded-full p-1">
+            <li className="flex items-start gap-3">
+              <div className="bg-primary rounded-full p-0.5 mt-1">
                 <Check className="w-3 h-3 text-white dark:text-black" />
               </div>
               <span className="text-gray-500 dark:text-gray-300">

@@ -44,24 +44,24 @@ const LeySegundaOportunidad = () => {
             autónomos liberarse de cargas económicas y empezar desde cero.
           </p>
           <ul className="mt-4 mb-8 space-y-4">
-            <li className="flex items-start gap-2">
-              <div className="bg-primary rounded-full p-1">
+            <li className="flex items-start gap-3">
+              <div className="bg-primary rounded-full p-0.5 mt-1">
                 <Check className="w-3 h-3 text-white dark:text-black" />
               </div>
               <span className="text-gray-500 dark:text-gray-300">
                 Cancelación total o parcial de tus deudas.
               </span>
             </li>
-            <li className="flex items-start gap-2">
-              <div className="bg-primary rounded-full p-1 ">
+            <li className="flex items-start gap-3">
+              <div className="bg-primary rounded-full p-0.5 mt-1">
                 <Check className="w-3 h-3 text-white dark:text-black" />
               </div>
               <span className="text-gray-500 dark:text-gray-300">
                 Paralización de embargos y llamadas de recobro
               </span>
             </li>
-            <li className="flex items-start gap-2">
-              <div className="bg-primary rounded-full p-1">
+            <li className="flex items-start gap-3">
+              <div className="bg-primary rounded-full p-0.5 mt-1">
                 <Check className="w-3 h-3 text-white dark:text-black" />
               </div>
               <span className="text-gray-500 dark:text-gray-300">
