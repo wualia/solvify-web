@@ -30,7 +30,6 @@ import { Button } from "@/components/ui/button";
 import Loader from "@/components/ui/loader";
 import { services } from "@/lib/data";
 import { MessageSent } from "../icons";
-// import useLeads from "@/hooks/useLeads";
 
 const phoneRegex = new RegExp(
   /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/
