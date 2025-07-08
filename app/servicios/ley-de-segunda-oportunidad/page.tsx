@@ -10,7 +10,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Ley de la Segunda Oportunidad | Solvify",
   description:
-    "A través de la Segunda Oportunidad eliminamos tus deudas personales de forma rápida y automática.",
+    "Descubre cómo Solvify puede ayudarte a cancelar tus deudas con la Ley de la Segunda Oportunidad. Estudio gratuito y atención en toda España. Empieza hoy tu nueva vida financiera.",
 };
 
 const LeySegundaOportunidadPage = async () => {
@@ -29,77 +29,81 @@ const LeySegundaOportunidadPage = async () => {
         hasAction={true}
         buttonText="Realizar estudio gratuito"
       />
-      <section className="mx-auto max-w-7xl px-4 2xl:px-0 pt-16">
+      <section className="mx-auto max-w-7xl px-4 2xl:px-0 py-12">
         <h2 className="text-2xl font-medium pb-6 text-gray-700 dark:text-white">
           ¿Qué es la Ley de la Segunda Oportunidad?
         </h2>
-        <p className=" text-gray-500 dark:text-gray-300 pb-8">
-          Es un mecanismo legal pensado para particulares, autónomos y pequeños
-          empresarios que no pueden pagar sus deudas. Gracias a esta ley, puedes
-          obtener una exoneración total o parcial de tus deudas y empezar de
-          nuevo.
+        <p className=" text-gray-500 dark:text-gray-300 pb-8 text-lg">
+          La Ley de la Segunda Oportunidad permite a personas insolventes
+          liberarse legalmente de sus deudas. En Solvify analizamos tu caso y
+          gestionamos todo el proceso para que recuperes tu estabilidad
+          económica sin riesgos.
         </p>
-        <p className=" text-gray-500 dark:text-gray-300">
-          En 2023, más de{" "}
-          <strong className="text-black dark:text-white">
-            17.000 personas en España
+        <p className=" text-gray-500 dark:text-gray-300 text-lg">
+          En 2024, más de{" "}
+          <strong className="text-gray-700 dark:text-white">
+            50.000 personas en España
           </strong>{" "}
           se acogieron con éxito a este proceso. Quieres ser el próximo ?
         </p>
       </section>
-      <div className=" py-16">
+      <div className=" pb-12">
         <section className="mx-auto max-w-7xl px-4 2xl:px-0 ">
           <h2 className="text-2xl font-medium pb-6 text-gray-700 dark:text-white">
             ¿Qué beneficios obtienes?
           </h2>
-          <ul className="list-disc list-outside pl-4 ">
+          <ul className="list-disc list-outside pl-4 text-lg">
             <li className="text-gray-500 dark:text-gray-300 pb-4">
-              Cancelación de deudas financieras, personales e incluso parte de
-              las deudas públicas (Hacienda y Seguridad Social).
+              Cancelación legal de deudas personales, tarjetas, préstamos e
+              incluso parte de las deudas con Hacienda.
             </li>
             <li className="text-gray-500 dark:text-gray-300 pb-4">
-              Paralización de embargos y llamadas de recobro.
+              Paralización de embargos, ejecuciones y llamadas de recobro.
             </li>
             <li className="text-gray-500 dark:text-gray-300 pb-4">
-              Posibilidad de conservar tu vivienda o vehículo.
-            </li>
-            <li className="text-gray-500 dark:text-gray-300 pb-4">
-              Fin de la presión de bancos, financieras y acreedores.
-            </li>
-            <li className="text-gray-500 dark:text-gray-300 pb-4">
-              Recuperación de tu tranquilidad y capacidad económica.
+              Conservación de la vivienda habitual en muchos casos.
             </li>
           </ul>
         </section>
       </div>
-      <div className="mx-auto max-w-7xl px-4 2xl:px-0">
-        <CTA_Services_LSO />
-      </div>
-
-      <div className=" py-16">
+      <div className=" pb-12">
         <section className="mx-auto max-w-7xl px-4 2xl:px-0 ">
           <h2 className="text-2xl font-medium pb-6 text-gray-700 dark:text-white">
             ¿Quién puede acogerse?
           </h2>
-          <p className="text-gray-500 dark:text-gray-300 pb-4">
-            Pueden acogerse a la Ley de la Segunda Oportunidad personas que:
-          </p>
-          <ul className="list-disc list-outside pl-4 ">
+          <ul className="list-disc list-outside pl-4 text-lg">
             <li className="text-gray-500 dark:text-gray-300 pb-4">
-              Estén en situación de insolvencia (no pueden pagar sus deudas)
+              Particulares y autónomos sin recursos para pagar sus deudas.
             </li>
             <li className="text-gray-500 dark:text-gray-300 pb-4">
-              Hayan actuado de buena fe (no haber ocultado bienes ni generado
-              deuda con mala intención)
+              Personas que actúen de buena fe y no hayan cometido delitos
+              económicos.
             </li>
             <li className="text-gray-500 dark:text-gray-300 pb-4">
-              No hayan sido condenadas por delitos económicos graves en los
-              últimos 10 años
+              Incluso si tienes ingresos o bienes modestos.
             </li>
           </ul>
         </section>
       </div>
-      <div className="mx-auto max-w-7xl px-4 2xl:px-0 mb-16">
+      <div className=" pb-12">
+        <section className="mx-auto max-w-7xl px-4 2xl:px-0 ">
+          <h2 className="text-2xl font-medium pb-6 text-gray-700 dark:text-white">
+            ¿Cual es la duración media?
+          </h2>
+          <ul className="list-disc list-outside pl-4 text-lg">
+            <li className="text-gray-500 dark:text-gray-300 pb-4">
+              Sin bienes: 3 a 6 meses.
+            </li>
+            <li className="text-gray-500 dark:text-gray-300 pb-4">
+              Con plan de pagos o bienes: hasta 12 meses.
+            </li>
+          </ul>
+        </section>
+      </div>{" "}
+      <div className="mx-auto max-w-7xl px-4 2xl:px-0">
+        <CTA_Services_LSO />
+      </div>
+      <div className="mx-auto max-w-7xl px-4 2xl:px-0 my-16">
         <h2 className="text-2xl font-medium pb-6 text-gray-700 dark:text-white">
           Preguntas frecuentes
         </h2>

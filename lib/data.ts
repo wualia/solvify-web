@@ -54,12 +54,6 @@ export const LSO_FAQ = [
   },
   {
     id: 4,
-    question: "¿Cuánto tiempo tarda el procedimiento completo?",
-    answer:
-      "Depende del caso. Si no tienes bienes ni oposición de acreedores, el proceso puede tardar entre 2 y 4 meses. Si hay bienes o plan de pagos, puede durar hasta 12 meses.",
-  },
-  {
-    id: 5,
     question:
       "¿La Ley de la Segunda Oportunidad borra mis datos de ASNEF o ficheros de morosos?",
     answer:
