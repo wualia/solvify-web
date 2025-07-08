@@ -60,3 +60,21 @@ export const LSO_FAQ = [
       "Sí. Una vez se concede el BEPI (Beneficio de Exoneración del Pasivo Insatisfecho), puedes solicitar que te eliminen de registros como ASNEF, Experian o Rai de forma inmediata.",
   },
 ];
+
+export const blogCategories = [
+  {
+    id: 1,
+    name: "Ley de segunda oportunidad",
+    slug: "ley-de-segunda-oportunidad",
+  },
+  {
+    id: 2,
+    name: "Negociación de deuda",
+    slug: "negociacion-de-deuda",
+  },
+  {
+    id: 3,
+    name: "Tarjetas revolving",
+    slug: "tarjetas-revolving",
+  },
+];

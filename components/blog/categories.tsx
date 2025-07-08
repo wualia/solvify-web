@@ -4,8 +4,9 @@ import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { blogCategories } from "@/lib/data";
 
-const Categories = ({ categories }: { categories: any }) => {
+const Categories = () => {
   const pathname = usePathname();
 
   return (
@@ -18,7 +19,7 @@ const Categories = ({ categories }: { categories: any }) => {
           Todos
         </Badge>
       </Link>
-      {categories.docs.map((category: any) => (
+      {blogCategories.map((category: any) => (
         <Link
           key={category.id}
           href={`/blog/${category.slug}`}

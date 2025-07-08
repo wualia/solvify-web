@@ -1,7 +1,6 @@
 import React from "react";
 import Categories from "@/components/blog/categories";
 import Link from "next/link";
-import Image from "next/image";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
 import type { Metadata, ResolvingMetadata } from "next";
@@ -26,8 +25,6 @@ export async function generateMetadata(
     `${process.env.BLOG_URL}/api/categories?where[slug][equals]=${category}`
   );
   const categoryData = await categoriesData.json();
-
-  console.log("categoryData:", categoryData);
 
   const post = await data.json();
 
@@ -67,7 +64,7 @@ const BlogCategoryPage = async ({
   return (
     <div className="mx-auto max-w-7xl px-4 2xl:px-0 py-8 grid lg:grid-cols-4 gap-4 items-start">
       <div className="hidden lg:block sticky top-20">
-        <Categories categories={categories} />
+        <Categories />
       </div>
       <div className="col-span-3 space-y-4">
         {posts.docs?.map((post: any) => (
