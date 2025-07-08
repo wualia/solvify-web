@@ -81,7 +81,7 @@ const QuestionsLSO = () => {
   return (
     <div>
       <div className="px-4 2xl:px-0">
-        <h2 className="text-center text-lg pb-4 text-gray-700 mx-auto max-w-2xl">
+        <h2 className="text-center text-lg pb-4 text-gray-700 dark:text-white mx-auto max-w-2xl">
           {actualQuestion?.question}
         </h2>
         <div className="max-w-sm mx-auto">
@@ -117,7 +117,7 @@ const QuestionsLSO = () => {
           {selectedAnswer && (
             <div className="2xl:px-0">
               <div
-                className="w-full mt-8 bg-primary rounded-lg text-white p-3 flex justify-center items-center cursor-pointer"
+                className="w-full mt-8 bg-primary rounded-lg text-white p-3 flex justify-center items-center cursor-pointer dark:bg-white dark:text-black"
                 onClick={nextQuestion}
               >
                 Continuar

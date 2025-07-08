@@ -6,6 +6,7 @@ import Footer from "@/components/layout/footer";
 import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "@/components/layout/theme-provider";
 import ReactQueryProvider from "./providers/reactQueryProvider";
+import { Analytics } from "@vercel/analytics/next";
 
 const plusJakarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
@@ -36,6 +37,7 @@ export default function RootLayout({
               <Footer />
               <Toaster />
             </div>
+            <Analytics />
           </ThemeProvider>
         </ReactQueryProvider>
       </body>
