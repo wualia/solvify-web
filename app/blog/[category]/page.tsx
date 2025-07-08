@@ -71,12 +71,8 @@ const BlogCategoryPage = async ({
       </div>
       <div className="col-span-3 space-y-4">
         {posts.docs?.map((post: any) => (
-          <div className="border-b last-of-type:border-b-0 py-4">
-            <Link
-              key={post.id}
-              href={`/blog/${post.categorySlug}/${post.slug}`}
-              className=""
-            >
+          <div key={post.id} className="border-b last-of-type:border-b-0 py-4">
+            <Link href={`/blog/${post.categorySlug}/${post.slug}`} className="">
               <div>
                 <Badge variant="outline" className="text-sm">
                   {post.category.name}

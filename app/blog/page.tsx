@@ -31,16 +31,13 @@ const BlogPage = async () => {
 
       <div className="col-span-3 space-y-4">
         {posts.docs?.map((post: any) => (
-          <div className="border-b last-of-type:border-b-0 py-4">
-            <Link
-              key={post.id}
-              href={`/blog/${post.categorySlug}/${post.slug}`}
-            >
+          <div key={post.id} className="border-b last-of-type:border-b-0 py-4">
+            <Link href={`/blog/${post.categorySlug}/${post.slug}`}>
               <div>
                 <Badge variant="outline" className="text-sm">
                   {post.category.name}
                 </Badge>
-                <h2 className="md:text-2xl font-medium py-4 text-gray-700 dark:text-white">
+                <h2 className="text-2xl md:text-2xl font-medium py-4 text-gray-700 dark:text-white">
                   {post.title}
                 </h2>
                 <p className="text-muted-foreground max-w-3xl">
