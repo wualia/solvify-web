@@ -1,5 +1,4 @@
 import React from "react";
-import { Badge } from "../ui/badge";
 import { es } from "date-fns/locale";
 import { format } from "date-fns";
 import Image from "next/image";
@@ -9,7 +8,7 @@ const RelatedPosts = ({ relatedPosts }: { relatedPosts: any }) => {
   return (
     <div className="border-t py-8 mt-8">
       <div className="container mx-auto">
-        <h3 className="text-2xl font-semibold text-gray-700 pb-8">
+        <h3 className="text-2xl font-semibold text-gray-700 dark:text-white pb-8">
           También te puede interesar
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

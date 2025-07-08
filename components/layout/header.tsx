@@ -31,15 +31,7 @@ const Header = () => {
   const scrollRef = useRef(null);
 
   const gotoAreaClientes = () => {
-    // if (profile?.role_name == "CUSTOMER") {
-    //   router.push("/cliente");
-    // }
-    // if (profile?.role_name == "PROFESSIONAL" || profile?.role_name == "ADMIN") {
-    //   router.push("/admin/leads");
-    // }
-    // if (!profile) {
-    //   router.push("/login");
-    // }
+    router.push("https://app.solvify.es");
   };
 
   const openMenu = () => {

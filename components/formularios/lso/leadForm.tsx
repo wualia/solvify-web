@@ -73,6 +73,7 @@ const LeadForm = () => {
       phone: values.phone,
       channel: "web",
       campaign: "web",
+      company_id: "a9242a58-4f5d-494c-8a74-45f8cee150e6",
     };
 
     const response = await createLeadMutation({
