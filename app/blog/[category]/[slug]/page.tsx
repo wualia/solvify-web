@@ -96,9 +96,9 @@ const PostDetail = async ({
         </header>
         <BlogProgress />
       </div>
-      <div className="py-8 grid grid-cols-1 md:grid-cols-3 gap-16 items-start">
+      <div className="py-8 grid grid-cols-1 md:grid-cols-4 gap-16 items-start">
         <TableOfContent content={post.docs[0].bloque} />
-        <div className="col-span-2">
+        <div className="lg:col-span-3">
           {post.docs[0].bloque.map((child: any, index: number) => (
             <section
               key={index}
