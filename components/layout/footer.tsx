@@ -82,6 +82,7 @@ const Footer = ({
       links: [
         { text: "Blog", url: "/blog" },
         { text: "Contacto", url: "/contacto" },
+        { text: "Quienes somos", url: "/quienes-somos" },
       ],
     },
   ],
