@@ -10,6 +10,10 @@ type State = {
   deal: any;
   reason: any;
   creditors: any;
+  paymentOptions: any;
+  comisionNegociacion: number;
+  cuotaNegociacion: any;
+  numCuotasNegociacion: any;
 };
 
 type Actions = {
@@ -23,6 +27,9 @@ type Actions = {
   setCreditors: (creditors: any) => void;
   addCreditor: (creditor: any) => void;
   removeCreditor: (index: number) => void;
+  setPaymentOptions: (paymentOptions: any) => void;
+  setCuotaNegociacion: (cuotaNegociacion: any) => void;
+  setNumCuotasNegociacion: (numCuotasNegociacion: any) => void;
 };
 
 const initialState: State = {
@@ -34,6 +41,10 @@ const initialState: State = {
   deal: null,
   reason: null,
   creditors: [],
+  paymentOptions: null,
+  comisionNegociacion: 20,
+  cuotaNegociacion: null,
+  numCuotasNegociacion: null,
 };
 
 export const useFormStore = create<State & Actions>()(
@@ -75,6 +86,15 @@ export const useFormStore = create<State & Actions>()(
           (item: any, i: any) => i !== index
         );
         set(() => ({ creditors: newCreditors }));
+      },
+      setPaymentOptions: (paymentOptions) => {
+        set(() => ({ paymentOptions }));
+      },
+      setCuotaNegociacion: (cuotaNegociacion) => {
+        set((state) => ({ cuotaNegociacion }));
+      },
+      setNumCuotasNegociacion: (numCuotasNegociacion) => {
+        set((state) => ({ numCuotasNegociacion }));
       },
     }),
     {

@@ -71,7 +71,7 @@ const NuevoAcreedorForm = ({ creditors }: any) => {
       <form
         id="form-new-deuda"
         onSubmit={form.handleSubmit(onSubmit)}
-        className="flex space-x-2 items-end justify-between"
+        className="flex flex-col md:flex-row md:space-x-2 md:items-end justify-between space-y-4 md:space-y-0"
       >
         <FormField
           control={form.control}
@@ -152,7 +152,7 @@ const NuevoAcreedorForm = ({ creditors }: any) => {
             control={form.control}
             name="total_contrato"
             render={({ field }) => (
-              <FormItem>
+              <FormItem className="w-full md:w-auto">
                 <FormLabel>Importe total</FormLabel>
                 <FormControl>
                   <Input
@@ -166,7 +166,7 @@ const NuevoAcreedorForm = ({ creditors }: any) => {
           />
 
           <Button type="submit" form="form-new-deuda" className="w-auto">
-            Añadir
+            Añadir acreedor
           </Button>
         </div>
       </form>
