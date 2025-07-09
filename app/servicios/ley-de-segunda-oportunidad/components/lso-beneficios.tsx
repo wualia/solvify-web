@@ -9,6 +9,14 @@ import {
   ZoomIn,
 } from "lucide-react";
 
+import {
+  CancelacionLegal,
+  FinEmbargos,
+  EliminacionMorosidad,
+  RecuperacionEstabilidad,
+  PosibilidadEmprender,
+} from "@/components/icons";
+
 interface Feature {
   title: string;
   description: string;
@@ -26,34 +34,34 @@ const LSO_Beneficios = ({
   subheading = "Features",
   features = [
     {
-      title: "Cancelación legal y definitiva de las deudas",
+      title: "Cancelación legal de las deudas",
       description:
         "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt, accusantium quam. Temporibus quae quos deserunt!",
-      icon: <Timer className="size-4 md:size-6" />,
+      icon: <CancelacionLegal className="size-4 md:size-8" />,
     },
     {
       title: "Fin de los embargos y llamadas de acoso",
       description:
         "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt, accusantium quam. Temporibus quae quos deserunt!",
-      icon: <Zap className="size-4 md:size-6" />,
+      icon: <FinEmbargos className="size-4 md:size-8" />,
     },
     {
-      title: "Eliminación de los registros de morosidad",
+      title: "Eliminación de los registros morosos",
       description:
         "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt, accusantium quam. Temporibus quae quos deserunt!",
-      icon: <ZoomIn className="size-4 md:size-6" />,
+      icon: <EliminacionMorosidad className="size-4 md:size-8" />,
     },
     {
-      title: "Recuperación de la estabilidad financiera y emocional",
+      title: "Recuperación de la estabilidad financiera",
       description:
         "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt, accusantium quam. Temporibus quae quos deserunt!",
-      icon: <PersonStanding className="size-4 md:size-6" />,
+      icon: <RecuperacionEstabilidad className="size-4 md:size-8" />,
     },
     {
-      title: "Posibilidad de emprender o empezar de cero",
+      title: "Posibilidad de empezar de cero",
       description:
         "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt, accusantium quam. Temporibus quae quos deserunt!",
-      icon: <DollarSign className="size-4 md:size-6" />,
+      icon: <PosibilidadEmprender className="size-4 md:size-8" />,
     },
   ],
 }: Feature17Props) => {
@@ -73,11 +81,11 @@ const LSO_Beneficios = ({
               className="flex items-center gap-6 rounded-lg md:block p-5 bg-card"
               key={idx}
             >
-              <span className="md:mb-8 flex size-10 shrink-0 items-center justify-center rounded-full bg-primary text-background md:size-12 md:mx-auto">
+              <span className="md:mb-8 flex size-10 shrink-0 items-center justify-center rounded-full bg-primary text-background md:size-14">
                 {feature.icon}
               </span>
               <div>
-                <h3 className="font-medium md:mb-2 md:text-lg text-gray-700 dark:text-white md:text-center text-left">
+                <h3 className="font-medium md:mb-2 md:text-lg text-gray-700 dark:text-white  text-left">
                   {feature.title}
                 </h3>
               </div>
