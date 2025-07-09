@@ -42,7 +42,7 @@ const LeySegundaOportunidadPage = async () => {
       </div>
       <LSO_QueDeudas /> {/* <LSO_ComoFunciona /> */}
       <LSO_Solvify />
-      <div className="mx-auto max-w-5xl px-4 2xl:px-0 my-16">
+      <div className="mx-auto max-w-5xl px-4 2xl:px-0 mb-16">
         <h2 className="text-3xl font-semibold pb-6 text-gray-700 dark:text-white">
           Preguntas frecuentes
         </h2>

@@ -1,15 +1,6 @@
 import React from "react";
 
 import {
-  DollarSign,
-  MessagesSquare,
-  PersonStanding,
-  Timer,
-  Zap,
-  ZoomIn,
-} from "lucide-react";
-
-import {
   CancelacionLegal,
   FinEmbargos,
   EliminacionMorosidad,
@@ -37,36 +28,36 @@ const LSO_Beneficios = ({
       title: "Cancelación legal de las deudas",
       description:
         "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt, accusantium quam. Temporibus quae quos deserunt!",
-      icon: <CancelacionLegal className="size-4 md:size-8" />,
+      icon: <CancelacionLegal className="size-10 md:size-12" />,
     },
     {
       title: "Fin de los embargos y llamadas de acoso",
       description:
         "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt, accusantium quam. Temporibus quae quos deserunt!",
-      icon: <FinEmbargos className="size-4 md:size-8" />,
+      icon: <FinEmbargos className="size-10 md:size-12" />,
     },
     {
       title: "Eliminación de los registros morosos",
       description:
         "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt, accusantium quam. Temporibus quae quos deserunt!",
-      icon: <EliminacionMorosidad className="size-4 md:size-8" />,
+      icon: <EliminacionMorosidad className="size-10 md:size-12" />,
     },
     {
       title: "Recuperación de la estabilidad financiera",
       description:
         "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt, accusantium quam. Temporibus quae quos deserunt!",
-      icon: <RecuperacionEstabilidad className="size-4 md:size-8" />,
+      icon: <RecuperacionEstabilidad className="size-10 md:size-12" />,
     },
     {
       title: "Posibilidad de empezar de cero",
       description:
         "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt, accusantium quam. Temporibus quae quos deserunt!",
-      icon: <PosibilidadEmprender className="size-4 md:size-8" />,
+      icon: <PosibilidadEmprender className="size-10 md:size-12" />,
     },
   ],
 }: Feature17Props) => {
   return (
-    <section className="py-16">
+    <section className="pt-16">
       <div className="container mx-auto max-w-7xl px-4 2xl:px-0">
         <h2 className="text-3xl font-semibold lg:text-3xl text-gray-700 dark:text-white pb-6">
           {heading}
@@ -81,7 +72,7 @@ const LSO_Beneficios = ({
               className="flex items-center gap-6 rounded-lg md:block p-5 bg-card"
               key={idx}
             >
-              <span className="md:mb-8 flex size-10 shrink-0 items-center justify-center rounded-full bg-primary text-background md:size-14">
+              <span className="md:mb-8 flex size-10 shrink-0 items-center justify-center rounded-full  text-primary md:size-14">
                 {feature.icon}
               </span>
               <div>

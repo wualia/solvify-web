@@ -2,6 +2,8 @@ import {
   BoxesIcon,
   CheckIcon,
   XIcon,
+  CheckCircleIcon,
+  XCircleIcon,
   HeadphonesIcon,
   PuzzleIcon,
   ShieldCheckIcon,
@@ -15,7 +17,7 @@ const cards = [
     title: "Deudas que se pueden exonerar",
     description:
       "Discover our comprehensive suite of features designed to enhance workflows.",
-    icon: BoxesIcon,
+    icon: CheckCircleIcon,
     features: [
       "Préstamos personales",
       "Tarjetas de crédito y revolving",
@@ -31,7 +33,7 @@ const cards = [
     title: "Deudas que no se cancelan",
     description:
       "Enterprise-grade security features to keep your data safe and protected.",
-    icon: ShieldCheckIcon,
+    icon: XCircleIcon,
     features: [
       "Pensiones alimenticias (manutención de hijos)",
       "Multas penales",
