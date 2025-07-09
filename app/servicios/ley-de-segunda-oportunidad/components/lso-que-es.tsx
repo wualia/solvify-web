@@ -6,7 +6,7 @@ const LSO_QueEs = () => {
       <h2 className="text-3xl font-semibold pb-6 text-gray-700 dark:text-white">
         ¿Qué es la Ley de la Segunda Oportunidad?
       </h2>
-      <p className=" text-gray-500 dark:text-gray-300 pb-8 text-lg">
+      <p className=" text-gray-500 dark:text-gray-300 pb-8 text-lg max-w-5xl">
         La Ley de la Segunda Oportunidad permite a personas insolventes
         liberarse legalmente de sus deudas. En Solvify analizamos tu caso y
         gestionamos todo el proceso para que recuperes tu estabilidad económica

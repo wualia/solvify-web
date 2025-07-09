@@ -67,7 +67,7 @@ function Item({ header, children }: PropsWithChildren<{ header: string }>) {
 export default function Accordion({ faqs }: { faqs: any }) {
   return (
     <>
-      <div className="accordion border border-gray-200 dark:border-gray-800 rounded-lg">
+      <div className="accordion border border-gray-200 dark:border-gray-800 rounded-lg bg-card">
         {faqs.map((faq: any) => (
           <Item key={faq.id} header={faq.question}>
             <p className="text-gray-500 dark:text-gray-300">{faq.answer}</p>

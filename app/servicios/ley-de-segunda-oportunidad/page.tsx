@@ -36,14 +36,13 @@ const LeySegundaOportunidadPage = async () => {
       />
       <LSO_QueEs />
       <LSO_Beneficios />
-      <LSO_Quien />
-      <LSO_QueDeudas />{" "}
+      <LSO_Quien />{" "}
       <div className="mx-auto max-w-7xl px-4 2xl:px-0">
         <CTA_Services_LSO />
       </div>
-      <LSO_ComoFunciona />
+      <LSO_QueDeudas /> {/* <LSO_ComoFunciona /> */}
       <LSO_Solvify />
-      <div className="mx-auto max-w-7xl px-4 2xl:px-0 my-16">
+      <div className="mx-auto max-w-5xl px-4 2xl:px-0 my-16">
         <h2 className="text-3xl font-semibold pb-6 text-gray-700 dark:text-white">
           Preguntas frecuentes
         </h2>

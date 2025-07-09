@@ -67,17 +67,17 @@ const LSO_Beneficios = ({
           Acogerse a esta ley supone un antes y un después para miles de
           personas cada año
         </p>
-        <div className="mx-auto grid gap-x-10 gap-y-8 md:grid-cols-2 lg:grid-cols-3 md:gap-y-6 mt-10">
+        <div className="mx-auto grid gap-x-6 gap-y-8 md:grid-cols-2 lg:grid-cols-5 md:gap-y-6 mt-10">
           {features.map((feature, idx) => (
             <div
               className="flex items-center gap-6 rounded-lg md:block p-5 bg-card"
               key={idx}
             >
-              <span className="md:mb-8 flex size-10 shrink-0 items-center justify-center rounded-full bg-primary text-background md:size-12">
+              <span className="md:mb-8 flex size-10 shrink-0 items-center justify-center rounded-full bg-primary text-background md:size-12 md:mx-auto">
                 {feature.icon}
               </span>
               <div>
-                <h3 className="font-medium md:mb-2 md:text-xl text-gray-700 dark:text-white">
+                <h3 className="font-medium md:mb-2 md:text-lg text-gray-700 dark:text-white md:text-center text-left">
                   {feature.title}
                 </h3>
               </div>
