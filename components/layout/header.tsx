@@ -183,12 +183,12 @@ const Header = () => {
                       </div>
                     </Link>
                     <Link
-                      href="/servicios/negociacion-de-deudas"
+                      href="/servicios/negociacion-de-deuda"
                       onClick={setBigMenuOpen}
                     >
                       <div className="mb-1 hover:bg-accent hover:text-accent-foreground p-4 rounded-lg transition-colors cursor-pointer">
                         <h4 className="pb-2 text-sm font-semibold">
-                          Negociación de deudas
+                          Negociación de deuda
                         </h4>
                         <p className="text-sm text-muted-foreground">
                           Consigue descuentos sobre el total de tus deudas
@@ -221,7 +221,7 @@ const Header = () => {
                     >
                       <div className="mb-1 hover:bg-accent hover:text-accent-foreground p-4 rounded-lg transition-colors cursor-pointer">
                         <h4 className="pb-2 text-sm font-semibold">
-                          Reclamación tarjetas revolving
+                          Tarjetas revolving
                         </h4>
                         <p className="text-sm text-muted-foreground">
                           Detecta y elimina las trampas en los pagos de tus
@@ -235,7 +235,7 @@ const Header = () => {
                     >
                       <div className="mb-1 hover:bg-accent hover:text-accent-foreground p-4 rounded-lg transition-colors cursor-pointer">
                         <h4 className="pb-2 text-sm font-semibold">
-                          Reclamación cártel coches
+                          Cártel de coches
                         </h4>
                         <p className="text-sm text-muted-foreground">
                           Recupera hasta el 15% del precio de tu coche si lo

@@ -1,6 +1,6 @@
 // import React from "react";
-// import Link from "next/link";
-// import ModeToggle from "@/components/ui/toogleTheme";
+import Link from "next/link";
+import ModeToggle from "@/components/ui/toogleTheme";
 // import { FooterLinks } from "@/lib/data";
 
 // const Footer = () => {
@@ -57,7 +57,7 @@ const Footer = ({
     title: "Solvify",
     url: "https://solvify.es",
   },
-  tagline = "Te ayudamos a cancelar tus deudas",
+  tagline = "Te ayudamos a cancelar legalment tus deudas",
   servicesItems = [
     {
       title: "Servicios",
@@ -109,7 +109,9 @@ const Footer = ({
                 </a>
                 {/* <p className="text-xl font-semibold">{logo.title}</p> */}
               </div>
-              <p className="mt-4 font-bold">{tagline}</p>
+              <p className="mt-4 font-medium text-muted-foreground">
+                {tagline}
+              </p>
             </div>
             <div className="col-span-3 grid lg:grid-cols-3 gap-8">
               <div className="lg:col-span-2 ">
@@ -122,7 +124,7 @@ const Footer = ({
                           key={linkIdx}
                           className="font-medium hover:text-primary"
                         >
-                          <a href={link.url}>{link.text}</a>
+                          <Link href={link.url}>{link.text}</Link>
                         </li>
                       ))}
                     </ul>
@@ -139,7 +141,7 @@ const Footer = ({
                           key={linkIdx}
                           className="font-medium hover:text-primary"
                         >
-                          <a href={link.url}>{link.text}</a>
+                          <Link href={link.url}>{link.text}</Link>
                         </li>
                       ))}
                     </ul>
@@ -157,6 +159,7 @@ const Footer = ({
                 </li>
               ))}
             </ul>
+            <ModeToggle />
           </div>
         </footer>
       </div>
