@@ -9,6 +9,7 @@ type State = {
   lead: any;
   deal: any;
   reason: any;
+  creditors: any;
 };
 
 type Actions = {
@@ -19,6 +20,9 @@ type Actions = {
   setLead: (lead: any) => void;
   setDeal: (deal: any) => void;
   setReason: (reason: any) => void;
+  setCreditors: (creditors: any) => void;
+  addCreditor: (creditor: any) => void;
+  removeCreditor: (index: number) => void;
 };
 
 const initialState: State = {
@@ -29,6 +33,7 @@ const initialState: State = {
   lead: null,
   deal: null,
   reason: null,
+  creditors: [],
 };
 
 export const useFormStore = create<State & Actions>()(
@@ -55,6 +60,21 @@ export const useFormStore = create<State & Actions>()(
       },
       setReason: (reason: any) => {
         set((state) => ({ reason: reason }));
+      },
+      setCreditors: (creditors: any) => {
+        set((state) => ({ creditors: creditors }));
+      },
+      addCreditor: (creditor) => {
+        const oldCreditors = get().creditors;
+        let newCreditors = [...oldCreditors, creditor];
+        set(() => ({ creditors: newCreditors }));
+      },
+      removeCreditor: (index) => {
+        const oldCreditors = get().creditors;
+        let newCreditors = oldCreditors.filter(
+          (item: any, i: any) => i !== index
+        );
+        set(() => ({ creditors: newCreditors }));
       },
     }),
     {

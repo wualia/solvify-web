@@ -1,6 +1,6 @@
 import React from "react";
 import HeroServices from "@/components/services/hero";
-
+import CTA_Services_NEGO from "@/components/services/cta/nego";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,14 +13,14 @@ const NegociacionDeDeudasPage = () => {
   return (
     <div>
       <HeroServices
-        title="Negociación de deudas"
+        title="Negociación de deuda"
         description="Intermediación con entidades bancarias y financieras con el objetivo de conseguir descuentos sobre el total de tus deudas."
         image="/services-negociacion-deuda.webp"
         link="/servicios"
         hasAction={true}
         buttonText="Realizar estudio gratuito"
       />
-      <section className="mx-auto max-w-7xl px-4 2xl:px-0 py-12">
+      <section className="mx-auto max-w-5xl px-4 2xl:px-0 py-12">
         <h2 className="text-2xl font-medium pb-6 text-gray-700 dark:text-white">
           ¿Qué es la negociación de deudas?
         </h2>
@@ -31,7 +31,7 @@ const NegociacionDeDeudasPage = () => {
         </p>
       </section>
       <div className=" pb-12">
-        <section className="mx-auto max-w-7xl px-4 2xl:px-0 ">
+        <section className="mx-auto max-w-5xl px-4 2xl:px-0 ">
           <h2 className="text-2xl font-medium pb-6 text-gray-700 dark:text-white">
             ¿Qué beneficios obtienes?
           </h2>
@@ -49,7 +49,7 @@ const NegociacionDeDeudasPage = () => {
         </section>
       </div>
       <div className=" pb-12">
-        <section className="mx-auto max-w-7xl px-4 2xl:px-0 ">
+        <section className="mx-auto max-w-5xl px-4 2xl:px-0 ">
           <h2 className="text-2xl font-medium pb-6 text-gray-700 dark:text-white">
             ¿Qué deudas se pueden negociar?
           </h2>
@@ -67,7 +67,7 @@ const NegociacionDeDeudasPage = () => {
         </section>
       </div>
       <div className=" pb-12">
-        <section className="mx-auto max-w-7xl px-4 2xl:px-0 ">
+        <section className="mx-auto max-w-5xl px-4 2xl:px-0 ">
           <h2 className="text-2xl font-medium pb-6 text-gray-700 dark:text-white">
             ¿Cómo funciona?
           </h2>
@@ -83,6 +83,9 @@ const NegociacionDeDeudasPage = () => {
             </li>
           </ul>
         </section>
+      </div>
+      <div className="mx-auto max-w-5xl px-4 2xl:px-0 pb-16">
+        <CTA_Services_NEGO />
       </div>
     </div>
   );
