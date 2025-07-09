@@ -25,6 +25,7 @@ const cards = [
       "Embargos judiciales",
       "Parte de las deudas con Hacienda y Seguridad Social",
     ],
+    type: "positive",
   },
   {
     title: "Deudas que no se cancelan",
@@ -37,6 +38,7 @@ const cards = [
       "Indemnizaciones por delitos",
       "Hipotecas (salvo que se entregue la vivienda)",
     ],
+    type: "negative",
   },
 ];
 
@@ -64,7 +66,7 @@ const LSO_QueDeudas = () => {
                   <card.icon className="size-5 text-background" />
                 </span>
                 <div className="flex flex-col gap-2.5">
-                  <h3 className="text-2xl font-semibold">{card.title}</h3>
+                  <h3 className="text-xl font-semibold">{card.title}</h3>
                 </div>
               </div>
               <ul className="flex flex-col gap-3.5">
@@ -75,7 +77,11 @@ const LSO_QueDeudas = () => {
                       key={idx}
                       className="flex items-center gap-2 text-sm text-muted-foreground"
                     >
-                      <CheckIcon className="size-4 shrink-0 text-primary" />
+                      {card.type === "positive" ? (
+                        <CheckIcon className="size-4 shrink-0 text-primary" />
+                      ) : (
+                        <XIcon className="size-4 shrink-0 text-red-500" />
+                      )}
                       {feature}
                     </li>
                   </Fragment>
