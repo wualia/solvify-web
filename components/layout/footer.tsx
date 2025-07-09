@@ -99,14 +99,14 @@ const Footer = ({
           <div className="grid grid-cols-2 gap-8 lg:grid-cols-6">
             <div className="col-span-3 mb-8 lg:mb-0">
               <div className="flex items-center gap-2 lg:justify-start">
-                <a href="https://shadcnblocks.com">
+                <Link href="/">
                   <img
                     src={logo.src}
                     alt={logo.alt}
                     title={logo.title}
                     className="h-10"
                   />
-                </a>
+                </Link>
                 {/* <p className="text-xl font-semibold">{logo.title}</p> */}
               </div>
               <p className="mt-4 font-medium text-muted-foreground">

@@ -18,11 +18,9 @@ const ModeToggle = () => {
     <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
         <div className="flex cursor-pointer px-2">
-          <Sun className="w-5 h-5 text-gray-700 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 dark:text-white" />
-          <Moon className="absolute w-5 h-5 text-gray-700 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 dark:text-white" />
-          <p className="text-gray-700 dark:text-white text-sm ml-2">
-            Cambiar tema
-          </p>
+          <Sun className="w-5 h-5 text-muted-foreground rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 " />
+          <Moon className="absolute w-5 h-5 text-muted-foreground rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 " />
+          <p className="text-muted-foreground text-sm ml-2">Cambiar tema</p>
         </div>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
