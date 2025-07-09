@@ -8,6 +8,8 @@ import LSO_Beneficios from "./components/lso-beneficios";
 import LSO_QueEs from "./components/lso-que-es";
 import LSO_QueDeudas from "./components/lso-que-deudas";
 import LSO_Quien from "./components/lso-quien";
+import LSO_ComoFunciona from "./components/lso-como-funciona";
+import LSO_Solvify from "./components/lso-solvify";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -35,11 +37,12 @@ const LeySegundaOportunidadPage = async () => {
       <LSO_QueEs />
       <LSO_Beneficios />
       <LSO_Quien />
-      <LSO_QueDeudas />
-
+      <LSO_QueDeudas />{" "}
       <div className="mx-auto max-w-7xl px-4 2xl:px-0">
         <CTA_Services_LSO />
       </div>
+      <LSO_ComoFunciona />
+      <LSO_Solvify />
       <div className="mx-auto max-w-7xl px-4 2xl:px-0 my-16">
         <h2 className="text-3xl font-semibold pb-6 text-gray-700 dark:text-white">
           Preguntas frecuentes

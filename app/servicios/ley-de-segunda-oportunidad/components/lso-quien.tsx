@@ -9,12 +9,17 @@ const LSO_Quien = () => {
 
       <ul className="list-disc list-outside pl-4 text-lg">
         <li className="text-gray-500 dark:text-gray-300 pb-4">
-          Particulares con deudas personales: préstamos, tarjetas, avales,
-          embargos, etc.
+          <span className="font-semibold text-gray-700 dark:text-white">
+            Particulares
+          </span>{" "}
+          con deudas personales: préstamos, tarjetas, avales, embargos, etc.
         </li>
         <li className="text-gray-500 dark:text-gray-300 pb-4">
-          Autónomos que han acumulado deudas por su actividad económica,
-          incluyendo con Hacienda o la Seguridad Social.
+          <span className="font-semibold text-gray-700 dark:text-white">
+            Autónomos
+          </span>{" "}
+          que han acumulado deudas por su actividad económica, incluyendo con
+          Hacienda o la Seguridad Social.
         </li>
       </ul>
       <p className="text-gray-500 dark:text-gray-300 text-lg">
