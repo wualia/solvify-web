@@ -78,7 +78,7 @@ const LSO_QueDeudas = () => {
                       className="flex items-center gap-2 text-sm text-muted-foreground"
                     >
                       {card.type === "positive" ? (
-                        <CheckIcon className="size-4 shrink-0 text-primary" />
+                        <CheckIcon className="size-4 shrink-0 text-green-500" />
                       ) : (
                         <XIcon className="size-4 shrink-0 text-red-500" />
                       )}

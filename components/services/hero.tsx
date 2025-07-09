@@ -20,7 +20,7 @@ const HeroServices = ({
   hasAction,
 }: HeroServicesProps) => {
   return (
-    <div className="py-8 md:py-16 bg-gray-50 dark:bg-background">
+    <div className="py-8 md:py-16 bg-card">
       <div className="mx-auto max-w-7xl grid lg:grid-cols-2 items-center gap-8 px-4 2xl:px-0">
         <div>
           <p className="text-primary pb-2 text-xs uppercase tracking-wider font-medium text-center md:text-left">

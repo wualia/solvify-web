@@ -70,14 +70,14 @@ const LSO_Beneficios = ({
         <div className="mx-auto grid gap-x-10 gap-y-8 md:grid-cols-2 lg:grid-cols-3 md:gap-y-6 mt-10">
           {features.map((feature, idx) => (
             <div
-              className="flex gap-6 rounded-lg md:block md:p-5 bg-card"
+              className="flex items-center gap-6 rounded-lg md:block p-5 bg-card"
               key={idx}
             >
-              <span className="mb-8 flex size-10 shrink-0 items-center justify-center rounded-full bg-primary text-background md:size-12">
+              <span className="md:mb-8 flex size-10 shrink-0 items-center justify-center rounded-full bg-primary text-background md:size-12">
                 {feature.icon}
               </span>
               <div>
-                <h3 className="font-medium md:mb-2 md:text-xl">
+                <h3 className="font-medium md:mb-2 md:text-xl text-gray-700 dark:text-white">
                   {feature.title}
                 </h3>
               </div>
