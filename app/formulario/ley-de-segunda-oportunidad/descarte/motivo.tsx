@@ -25,7 +25,7 @@ const MotivoDescarte = () => {
 
   return (
     <div>
-      <p className="text-gray-500 text-center">
+      <p className="text-gray-500 dark:text-gray-300 text-center">
         No puedes acogerte a la Ley de Segunda Oportunidad
       </p>
       <div className="flex justify-center">
