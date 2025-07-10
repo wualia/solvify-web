@@ -117,11 +117,11 @@ const DisponibilidadComponent = ({ source }: { source: string }) => {
 
     switch (source) {
       case "ley-de-segunda-oportunidad":
-        annotationContent = `<p>Información LSO</p>
-        <p>Deuda total: ${deudaTotal}</p>
-        <p>Deuda total negociada: ${deudaTotalNegociada}</p>
-        <p>Cuota de negociación: ${cuotaNegociacion}</p>
-        <p>Número de cuotas: ${numCuotasNegociacion}</p>
+        annotationContent = `<p>Información LSO:</p>
+        <p>Tiene más de 8.000€ de deuda.</p>
+        <p>Tiene 2 o más deudas.</p>
+        <p>Tiene más de 6.000€ de deuda privada.</p>
+        <p>Ingresos superiores a 600€ al mes.</p>
         `;
         break;
       case "negociacion-de-deuda":
