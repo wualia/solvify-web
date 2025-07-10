@@ -30,65 +30,66 @@ const Mobile = () => {
           exit="hidden"
           variants={modalVariants}
           layout
-          className="bg-black z-50 fixed inset-0 w-full h-full flex flex-col"
+          className="bg-black z-50 fixed inset-0 flex flex-col min-h-dvh"
         >
-          <div className="flex justify-between items-center mb-8 border-b border-white/20 px-4 py-5">
+          <div className="flex justify-between items-center border-b border-white/20 px-4 py-5">
             <p className="text-gray-300 font-medium uppercase text-sm">Menú</p>
             <div onClick={() => setWebMobileOpen()} className="text-white">
               <CircleXIcon className="w-6 h-6 text-gray-300" />
             </div>
           </div>
-          <ul className="text-white flex-1 px-4">
+          <ul className="text-white flex-1 px-4 py-8 flex flex-col justify-between">
             <li
               onClick={() => goTo("/")}
-              className="pb-8 text-xl font-medium tracking-wider"
+              className="text-xl font-medium tracking-wider"
             >
               Inicio
             </li>
-            <li className=" pb-4 text-xl font-medium tracking-wider">
-              Servicios
+            <li className="text-xl font-medium tracking-wider">
+              Servicios{" "}
+              <ul className="pt-4 text-gray-300 text-base">
+                <li
+                  onClick={() => goTo("/servicios/ley-de-segunda-oportunidad")}
+                  className="border-b border-white/10 py-4"
+                >
+                  Ley de segunda oportunidad
+                </li>
+                <li
+                  onClick={() => goTo("/servicios/negociacion-de-deudas")}
+                  className="border-b border-white/10 py-4"
+                >
+                  Negociación de deuda
+                </li>
+                <li
+                  onClick={() => goTo("/servicios/tarjetas-revolving")}
+                  className="border-b border-white/10 py-4"
+                >
+                  Tarjetas revolving
+                </li>
+                <li
+                  onClick={() => goTo("/servicios/cartel-coches")}
+                  className="border-b border-white/10 py-4"
+                >
+                  Cártel de coches
+                </li>
+                <li
+                  onClick={() => goTo("/servicios/concurso-expres")}
+                  className="border-b border-white/10 py-4"
+                >
+                  Concurso exprés
+                </li>
+              </ul>
             </li>
-            <ul className="pb-8 text-gray-300">
-              <li
-                onClick={() => goTo("/servicios/ley-de-segunda-oportunidad")}
-                className="border-b border-white/10 py-4"
-              >
-                Ley de segunda oportunidad
-              </li>
-              <li
-                onClick={() => goTo("/servicios/negociacion-de-deudas")}
-                className="border-b border-white/10 py-4"
-              >
-                Negociación de deuda
-              </li>
-              <li
-                onClick={() => goTo("/servicios/tarjetas-revolving")}
-                className="border-b border-white/10 py-4"
-              >
-                Tarjetas revolving
-              </li>
-              <li
-                onClick={() => goTo("/servicios/cartel-coches")}
-                className="border-b border-white/10 py-4"
-              >
-                Cártel de coches
-              </li>
-              <li
-                onClick={() => goTo("/servicios/concurso-expres")}
-                className="border-b border-white/10 py-4"
-              >
-                Concurso exprés
-              </li>
-            </ul>
+
             <li
               onClick={() => goTo("/blog")}
-              className="pb-8 text-xl font-medium tracking-wider"
+              className=" text-xl font-medium tracking-wider"
             >
               Blog
             </li>
             <li
               onClick={() => goTo("/contacto")}
-              className="pb-8 text-xl font-medium tracking-wider"
+              className=" text-xl font-medium tracking-wider"
             >
               Contacto
             </li>
