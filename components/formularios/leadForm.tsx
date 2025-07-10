@@ -47,7 +47,11 @@ const LeadForm = ({ source }: { source: string }) => {
     queryFn: getCategories,
   });
 
-  const categoryId = categories?.find((item: any) => item.slug == "lso")?.id;
+  const categoryId = categories?.find(
+    (item: any) =>
+      item.slug ==
+      `${source === "ley-de-segunda-oportunidad" ? "lso" : "negociacion-de-deuda"}`
+  )?.id;
 
   const { mutateAsync: createLeadMutation, isPending } =
     useCreateLeadMutation();
