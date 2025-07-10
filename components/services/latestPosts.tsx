@@ -9,7 +9,7 @@ const LatestPosts = ({ relatedPosts }: { relatedPosts: any }) => {
     <div className=" py-8 mt-8">
       <div className="container mx-auto">
         <h3 className="text-3xl font-semibold text-gray-700 dark:text-white pb-8">
-          Últimos artículos sobre la Ley de Segunda Oportunidad
+          Últimos artículos sobre {relatedPosts[0].category.name}
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {relatedPosts.map((post: any) => (

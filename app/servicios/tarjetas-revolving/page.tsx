@@ -2,7 +2,7 @@ import React from "react";
 import HeroServices from "@/components/services/hero";
 import Accordion from "@/components/layout/accordion";
 import { REVOLVING_FAQ } from "@/lib/data";
-
+import LatestPosts from "@/components/services/latestPosts";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,7 +11,11 @@ export const metadata: Metadata = {
     "Estás pagando la deuda de tu tarjeta de crédito, pero parece que nunca terminas de pagarlo?",
 };
 
-const RevolvingPage = () => {
+const RevolvingPage = async () => {
+  const data = await fetch(
+    `${process.env.BLOG_URL}/api/posts?where[categorySlug][equals]=tarjetas-revolving&limit=3`
+  );
+  const posts = await data.json();
   return (
     <div>
       <HeroServices
@@ -91,6 +95,9 @@ const RevolvingPage = () => {
           Preguntas frecuentes
         </h2>
         <Accordion faqs={REVOLVING_FAQ} />
+      </div>
+      <div className="mx-auto max-w-7xl px-4 2xl:px-0 mb-16">
+        <LatestPosts relatedPosts={posts.docs} />
       </div>
     </div>
   );
