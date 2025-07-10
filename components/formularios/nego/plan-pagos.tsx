@@ -16,7 +16,12 @@ const PlanDePagos = () => {
   const [total_porcentaje_ahorro, set_total_porcentaje_ahorro] = useState(0);
   const [total_comision, set_total_comision] = useState(0);
 
-  const { creditors, comisionNegociacion } = useFormStore();
+  const {
+    creditors,
+    comisionNegociacion,
+    setDeudaTotal,
+    setDeudaTotalNegociada,
+  } = useFormStore();
 
   useEffect(() => {
     if (creditors) {
@@ -66,6 +71,8 @@ const PlanDePagos = () => {
       });
 
       set_total_deuda_intereses(totalDeudasConIntereses);
+      setDeudaTotal(totalDeudasConIntereses);
+      setDeudaTotalNegociada(totalDeudasConComision);
       set_total_deuda_negociada(totalDeudasConComision);
       set_total_ahorro(totalDeudasConIntereses - totalDeudasConComision);
       set_total_porcentaje_ahorro(
