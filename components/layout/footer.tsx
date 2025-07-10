@@ -57,7 +57,7 @@ const Footer = ({
     title: "Solvify",
     url: "https://solvify.es",
   },
-  tagline = "Te ayudamos a cancelar legalment tus deudas",
+  tagline = "Te ayudamos a cancelar legalmente tus deudas",
   servicesItems = [
     {
       title: "Servicios",
