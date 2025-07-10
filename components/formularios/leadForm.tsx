@@ -16,10 +16,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useParams, useRouter } from "next/navigation";
-// import useLeads from "@/app/hooks/useLeads";
-// import { DealStore } from "@/app/store/deals";
-// import useCategories from "@/app/hooks/useCategories";
-// import { getLeadById } from "@/api/leads";
 import Loader from "@/components/ui/loader";
 import { useFormStore } from "@/store/form";
 import { useCreateLeadMutation } from "@/hooks/useLeads";
