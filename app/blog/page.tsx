@@ -20,11 +20,11 @@ const BlogPage = async () => {
 
   return (
     <div>
-      <div className="mx-auto max-w-7xl px-4 2xl:px-0 py-8">
+      <div className="mx-auto max-w-7xl px-4 2xl:px-0 py-8 border-b">
         <h1 className="text-3xl font-semibold text-gray-700 dark:text-white">
           Blog de Solvify
         </h1>{" "}
-        <p className="text-gray-500 dark:text-gray-300 text-lg pt-4">
+        <p className="text-gray-500 dark:text-gray-300 text-lg pt-4 max-w-3xl">
           Descubre nuestros artículos y noticias sobre la ley de segunda
           oportunidad, tarjetas revolving, negociación de deuda, etc.
         </p>
@@ -49,7 +49,7 @@ const BlogPage = async () => {
                   <Badge variant="outline" className="text-sm">
                     {post.category.name}
                   </Badge>
-                  <h2 className="text-2xl md:text-2xl font-medium py-4 text-gray-700 dark:text-white">
+                  <h2 className="text-2xl md:text-2xl font-semibold py-4 text-gray-700 dark:text-white max-w-3xl">
                     {post.title}
                   </h2>
                   <p className="text-muted-foreground max-w-3xl">

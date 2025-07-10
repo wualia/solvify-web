@@ -62,18 +62,15 @@ const BlogCategoryPage = async ({
   );
   const categoryData = await categoriesData.json();
 
-  console.log("posts", posts);
-  console.log("categoryData", categoryData);
-
   return (
     <div>
-      <div className="mx-auto max-w-7xl px-4 2xl:px-0 py-8">
+      <div className="mx-auto max-w-7xl px-4 2xl:px-0 py-8 border-b">
         <h1 className="text-3xl font-semibold text-gray-700 dark:text-white">
           Posts sobre {categoryData.docs[0].name}
         </h1>
-        <p className="text-gray-500 dark:text-gray-300 text-lg pt-4">
+        <p className="text-gray-500 dark:text-gray-300 text-lg pt-4 max-w-3xl">
           Descubre nuestros artículos y noticias sobre{" "}
-          {categoryData.docs[0].name}
+          {categoryData.docs[0].name}.
         </p>
       </div>
       <div className="mx-auto max-w-7xl lg:py-8 grid lg:grid-cols-4 gap-4 items-start">
@@ -102,7 +99,7 @@ const BlogCategoryPage = async ({
                         <Badge variant="outline" className="text-sm">
                           {post.category.name}
                         </Badge>
-                        <h2 className="md:text-2xl font-medium py-4 text-gray-700 dark:text-white">
+                        <h2 className="md:text-2xl font-semibold py-4 text-gray-700 dark:text-white max-w-3xl">
                           {post.title}
                         </h2>
                         <p className="text-muted-foreground max-w-3xl">

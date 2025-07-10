@@ -33,7 +33,7 @@ const Content = ({ child }: { child: any }) => {
                   key={index}
                   className={cn(
                     item.format == 1
-                      ? "font-semibold"
+                      ? "font-semibold text-gray-700 dark:text-gray-200"
                       : "text-gray-500 dark:text-gray-400 leading-relaxed"
                   )}
                 >
@@ -69,8 +69,9 @@ const Content = ({ child }: { child: any }) => {
                       key={index}
                       className={cn(
                         item.format == 1
-                          ? "font-medium"
-                          : "text-gray-500 dark:text-gray-400 leading-relaxed"
+                          ? "font-semibold text-gray-700 dark:text-gray-200"
+                          : "text-gray-500 dark:text-gray-400",
+                        "leading-8"
                       )}
                     >
                       {item.text}
@@ -83,7 +84,8 @@ const Content = ({ child }: { child: any }) => {
                       rel="noopener noreferrer"
                       key={index}
                       className={cn(
-                        "text-primary font-medium underline leading-relaxed"
+                        "text-primary font-medium underline",
+                        "leading-relaxed"
                       )}
                     >
                       {item.children[0].text}
@@ -97,13 +99,43 @@ const Content = ({ child }: { child: any }) => {
       )}
 
       {child?.type === "list" && child?.tag === "ol" && (
-        <ol className="pb-6 list-decimal list-outside pl-4 text-gray-500 dark:text-gray-400 leading-relaxed">
+        <ul className="pb-6 list-decimal list-outside pl-4  leading-relaxed">
           {child.children.map((item: any, index: number) => (
-            <li key={index} className="pb-4">
-              {item.children[0].text}
+            <li key={index} className="pb-6">
+              {item.children.map((item: any, index: number) => (
+                <Fragment key={index}>
+                  {item.type === "text" && (
+                    <span
+                      key={index}
+                      className={cn(
+                        item.format == 1
+                          ? "font-semibold text-gray-700 dark:text-gray-200"
+                          : "text-gray-500 dark:text-gray-400",
+                        "leading-8"
+                      )}
+                    >
+                      {item.text}
+                    </span>
+                  )}
+                  {item.type === "link" && (
+                    <a
+                      href={item.fields.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      key={index}
+                      className={cn(
+                        "text-primary font-medium underline",
+                        "leading-relaxed"
+                      )}
+                    >
+                      {item.children[0].text}
+                    </a>
+                  )}
+                </Fragment>
+              ))}
             </li>
           ))}
-        </ol>
+        </ul>
       )}
     </>
   );
