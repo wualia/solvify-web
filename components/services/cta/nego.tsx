@@ -24,8 +24,8 @@ const CTA_Services_NEGO = () => {
           ¿ Quieres negociar tus deudas?
         </h2>
         <p className="text-lg md:text-xl max-w-2xl text-white pb-8 text-center md:text-left">
-          Realiza de manera gratuita el estudio de negociación y descubre si
-          puedes negociar tus deudas.
+          Realiza de manera gratuita el estudio de negociación y descubre que
+          cantidad de deuda podemos negociar por ti.
         </p>
         <div>
           <Button
@@ -38,7 +38,7 @@ const CTA_Services_NEGO = () => {
       </div>
       <div className="absolute inset-0 from-black/30 to-black/60 z-10 bg-gradient-to-r" />
       <Image
-        src="/hero-home.webp"
+        src="/services-negociacion-deuda.webp"
         width={1920}
         height={1080}
         alt="Imagen contacto Solvify"
