@@ -28,7 +28,15 @@ const DisponibilidadComponent = ({ source }: { source: string }) => {
   const [availability, setAvailability] = useState<any[]>([]);
   const [date, setDate] = useState<Date | undefined>(undefined);
   const [disabledDates, setDisabledDates] = useState<any[]>([]);
-  const { deal, lead } = useFormStore();
+  const {
+    deal,
+    lead,
+    deudaTotal,
+    deudaTotalNegociada,
+    cuotaNegociacion,
+    clearForm,
+    numCuotasNegociacion,
+  } = useFormStore();
   const { setDueDate } = useAvailabilityStore();
   const [annotations, setAnnotations] = useState<any[]>([]);
 
@@ -105,7 +113,47 @@ const DisponibilidadComponent = ({ source }: { source: string }) => {
 
     setDueDate(due_date_with_offset);
 
+    let annotationContent = "";
+
+    switch (source) {
+      case "ley-de-segunda-oportunidad":
+        annotationContent = `<p>Información LSO</p>
+        <p>Deuda total: ${deudaTotal}</p>
+        <p>Deuda total negociada: ${deudaTotalNegociada}</p>
+        <p>Cuota de negociación: ${cuotaNegociacion}</p>
+        <p>Número de cuotas: ${numCuotasNegociacion}</p>
+        `;
+        break;
+      case "negociacion-de-deuda":
+        annotationContent = `<p>Información Negociación de Deuda</p>
+        <p>Deuda total: ${deudaTotal.toLocaleString("es-AR")} €</p>
+        <p>Deuda total negociada: ${deudaTotalNegociada.toLocaleString("es-AR")} €</p>
+        <p>Cuota de negociación: ${cuotaNegociacion.toLocaleString("es-AR")} €</p>
+        <p>Número de cuotas: ${numCuotasNegociacion.toLocaleString("es-AR")}</p>
+        `;
+        break;
+    }
+
     const annotationBody = {
+      annotation_type: "Comentario",
+      content: annotationContent,
+      spent_time: "0",
+      is_completed: true,
+      is_private: true,
+      priority: "1",
+      status: "completada",
+      due_date: new Date(),
+      user_assigned_id: deal?.user_assigned_id,
+    };
+
+    await createPublicTask({
+      body: annotationBody,
+      object_reference_type: "deals",
+      object_reference_id: deal?.id,
+      annotation_id: annotations[0]?.id,
+    });
+
+    const taskBody = {
       annotation_type: "Llamada agendada",
       content: `Llamada agendada por ${lead?.first_name} ${lead?.last_name}`,
       spent_time: "0",
@@ -118,7 +166,7 @@ const DisponibilidadComponent = ({ source }: { source: string }) => {
     };
 
     await createPublicTask({
-      body: annotationBody,
+      body: taskBody,
       object_reference_type: "deals",
       object_reference_id: deal?.id,
       annotation_id: annotations[0]?.id,
@@ -131,6 +179,8 @@ const DisponibilidadComponent = ({ source }: { source: string }) => {
       lead_id: lead?.id,
       deal_id: deal?.id,
     });
+
+    clearForm();
 
     setLoading(false);
     router.push(`/formulario/ley-de-segunda-oportunidad/agendado`);
