@@ -6,6 +6,9 @@ import AcreedoresForm from "./acreedoresForm";
 import NuevoAcreedorForm from "./nuevoAcreedor";
 import PlanDePagos from "./plan-pagos";
 import { useFormStore } from "@/store/form";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 const FormNego = () => {
   const [creditorsNegotiation, setCreditorsNegotiation] = useState([]);
@@ -23,7 +26,18 @@ const FormNego = () => {
         <NuevoAcreedorForm creditors={creditorsNegotiation} />
         <AcreedoresForm />
       </div>
-      {creditors.length > 0 && <PlanDePagos />}
+      {creditors.length > 0 && (
+        <>
+          <PlanDePagos />
+          <div className="flex justify-end">
+            <Link href="/formulario/negociacion-de-deuda/datos">
+              <Button className="mt-4">
+                Continuar <ArrowRight className="w-4 h-4" />
+              </Button>
+            </Link>
+          </div>
+        </>
+      )}
     </div>
   );
 };

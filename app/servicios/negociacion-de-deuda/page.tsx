@@ -16,7 +16,7 @@ const NegociacionDeDeudasPage = () => {
         title="Negociación de deuda"
         description="Intermediación con entidades bancarias y financieras con el objetivo de conseguir descuentos sobre el total de tus deudas."
         image="/services-negociacion-deuda.webp"
-        link="/servicios"
+        link="/formulario/negociacion-de-deuda"
         hasAction={true}
         buttonText="Realizar estudio gratuito"
       />

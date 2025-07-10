@@ -1,5 +1,5 @@
 import React from "react";
-import LeadForm from "@/components/formularios/lso/leadForm";
+import LeadForm from "@/components/formularios/leadForm";
 
 const DatosLSO = () => {
   return (
@@ -17,7 +17,7 @@ const DatosLSO = () => {
         <p className="text-gray-500 dark:text-gray-300 text-center">
           Por favor, ingresa tus datos para continuar
         </p>
-        <LeadForm />
+        <LeadForm source="ley-de-segunda-oportunidad" />
       </div>
     </div>
   );

@@ -19,61 +19,66 @@ const PlanDePagos = () => {
   const { creditors, comisionNegociacion } = useFormStore();
 
   useEffect(() => {
-    setSummary([]);
+    if (creditors) {
+      setSummary([]);
 
-    creditors.forEach((creditor: any) => {
-      const importeConIntereses = creditor.total_contrato.toFixed(0);
+      console.log("creditors:", creditors);
 
-      const importeConDescuento = (
-        creditor.total_contrato *
-        (1 - creditor.descuento / 100)
-      ).toFixed(0);
+      creditors.forEach((creditor: any) => {
+        const importeConIntereses = creditor.total_contrato.toFixed(0);
 
-      const diferencia =
-        Number(importeConIntereses) - Number(importeConDescuento);
+        const importeConDescuento = (
+          creditor.total_contrato *
+          (1 - creditor.descuento / 100)
+        ).toFixed(0);
 
-      const comision = (
-        Number(diferencia) *
-        (comisionNegociacion / 100)
-      ).toFixed(0);
+        const diferencia =
+          Number(importeConIntereses) - Number(importeConDescuento);
 
-      const importeConComision = Number(importeConDescuento) + Number(comision);
+        const comision = (
+          Number(diferencia) *
+          (comisionNegociacion / 100)
+        ).toFixed(0);
 
-      const ahorro = Number(importeConIntereses) - Number(importeConComision);
+        const importeConComision =
+          Number(importeConDescuento) + Number(comision);
 
-      const porcentaje_ahorro =
-        (1 - Number(importeConComision) / Number(importeConIntereses)) * 100;
+        const ahorro = Number(importeConIntereses) - Number(importeConComision);
 
-      totalDeudasConIntereses += Number(importeConIntereses);
-      totalDeudasConComision += Number(importeConComision);
-      totalComision += Number(comision);
+        const porcentaje_ahorro =
+          (1 - Number(importeConComision) / Number(importeConIntereses)) * 100;
 
-      setSummary((summary: any) => [
-        ...summary,
-        {
-          name: creditor.name,
-          importe_con_intereses: importeConIntereses,
-          importe_negociado: importeConComision,
-          comision: comision,
-          ahorro: ahorro,
-          porcentaje_ahorro: porcentaje_ahorro,
-        },
-      ]);
-    });
+        totalDeudasConIntereses += Number(importeConIntereses);
+        totalDeudasConComision += Number(importeConComision);
+        totalComision += Number(comision);
 
-    set_total_deuda_intereses(totalDeudasConIntereses);
-    set_total_deuda_negociada(totalDeudasConComision);
-    set_total_ahorro(totalDeudasConIntereses - totalDeudasConComision);
-    set_total_porcentaje_ahorro(
-      (1 - totalDeudasConComision / totalDeudasConIntereses) * 100
-    );
+        setSummary((summary: any) => [
+          ...summary,
+          {
+            name: creditor.name,
+            importe_con_intereses: importeConIntereses,
+            importe_negociado: importeConComision,
+            comision: comision,
+            ahorro: ahorro,
+            porcentaje_ahorro: porcentaje_ahorro,
+          },
+        ]);
+      });
 
-    set_total_comision(totalComision);
+      set_total_deuda_intereses(totalDeudasConIntereses);
+      set_total_deuda_negociada(totalDeudasConComision);
+      set_total_ahorro(totalDeudasConIntereses - totalDeudasConComision);
+      set_total_porcentaje_ahorro(
+        (1 - totalDeudasConComision / totalDeudasConIntereses) * 100
+      );
+
+      set_total_comision(totalComision);
+    }
   }, [creditors]);
 
   return (
     <div className="mt-8">
-      <p className="pb-4 pl-2 font-semibold">2. Resumen de los acreedores</p>
+      <p className="pb-4 pl-2 font-semibold">Resumen de la negociación</p>
       <div className="border rounded-lg py-4 px-8 bg-white dark:bg-transparent">
         <div className="grid lg:grid-cols-3 text-gray-500 dark:text-gray-300 text-sm">
           <div className="text-center">

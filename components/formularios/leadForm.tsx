@@ -42,7 +42,7 @@ const formSchema = z.object({
   email: z.string().email({ message: "Email obligatorio" }),
 });
 
-const LeadForm = () => {
+const LeadForm = ({ source }: { source: string }) => {
   const router = useRouter();
   const { setLead, setDeal } = useFormStore();
 
@@ -96,7 +96,7 @@ const LeadForm = () => {
     });
 
     form.reset();
-    router.push(`/formulario/ley-de-segunda-oportunidad/completado`);
+    router.push(`/formulario/${source}/completado`);
   };
 
   return (

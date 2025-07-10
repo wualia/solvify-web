@@ -1,7 +1,7 @@
 import React from "react";
 import Agendar from "@/components/formularios/agendar";
 
-const CompletadoLSO = () => {
+const CompletadoNEGO = () => {
   return (
     <div className="mx-auto max-w-5xl px-4 2xl:px-0 mt-4 md:mt-16 mb-16">
       <div className=" bg-card p-4 lg:p-8 rounded-lg mb-8 border border-gray-200 dark:border-white/10">
@@ -18,10 +18,10 @@ const CompletadoLSO = () => {
           En breves nos pondremos en contacto contigo, pero si lo prefieres
           puedes agendar una llamada con nosotros cuando te vaya mejor.
         </p>
-        <Agendar source="ley-de-segunda-oportunidad" />
+        <Agendar source="negociacion-de-deuda" />
       </div>
     </div>
   );
 };
 
-export default CompletadoLSO;
+export default CompletadoNEGO;

@@ -4,11 +4,11 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 
-const Agendar = () => {
+const Agendar = ({ source }: { source: string }) => {
   const router = useRouter();
 
   const handleContinuar = () => {
-    router.push("/formulario/ley-de-segunda-oportunidad/agendar");
+    router.push(`/formulario/${source}/agendar`);
   };
   return (
     <div className="flex justify-center">

@@ -1,5 +1,5 @@
 import React from "react";
-import BookDetail from "./bookDetail";
+import BookDetail from "@/components/formularios/bookDetail";
 
 const AgendadoLSO = () => {
   return (

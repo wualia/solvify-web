@@ -110,7 +110,7 @@ const PriceOptions = ({ totalDeudasConComision }: any) => {
   return (
     <div className="mt-8">
       <p className="pb-4 pl-2 font-semibold">
-        3. Selecciona la cuota mensual que mejor se adapte a tu situación
+        Selecciona la cuota mensual que mejor se adapte a tu situación
       </p>
       <div className="border rounded-lg p-4 bg-white dark:bg-transparent">
         <div className=" flex justify-between mt-4 space-x-4">

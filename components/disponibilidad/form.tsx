@@ -17,7 +17,7 @@ import { getPublicAnnotationsByDeal } from "@/api/annotations";
 import Loader from "@/components/ui/loader";
 import { editDealStatus } from "@/api/deals";
 
-const DisponibilidadComponent = () => {
+const DisponibilidadComponent = ({ source }: { source: string }) => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [loadingInfo, setLoadingInfo] = useState(false);
@@ -195,8 +195,8 @@ const DisponibilidadComponent = () => {
                             selectedHour === item.time
                               ? "default"
                               : item.state == "busy"
-                              ? "secondary"
-                              : "outline"
+                                ? "secondary"
+                                : "outline"
                           }
                           onClick={
                             item.state == "busy"
