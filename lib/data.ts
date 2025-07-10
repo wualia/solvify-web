@@ -81,6 +81,79 @@ export const NEGO_FAQ = [
   },
 ];
 
+export const REVOLVING_FAQ = [
+  {
+    id: 1,
+    question: "¿Cómo sé si mi tarjeta es revolving?",
+    answer:
+      "Si pagas cuotas fijas mensuales y la deuda nunca baja, probablemente lo sea",
+  },
+  {
+    id: 2,
+    question: "¿Cuánto dinero puedo recuperar?",
+    answer:
+      "Depende del tiempo que la has usado y los intereses pagados. En muchos casos, recuperamos entre 3.000 € y 12.000 €.",
+  },
+  {
+    id: 3,
+    question: "¿Cuánto tarda el proceso?",
+    answer:
+      "Entre 2 y 6 meses en vía extrajudicial. Judicialmente, puede tardar algo más, pero merece la pena.",
+  },
+  {
+    id: 4,
+    question: "¿Qué pasa si pierdo el caso?",
+    answer: "En Solvify solo cobramos si tú ganas. Nos la jugamos contigo.",
+  },
+];
+
+export const CARTEL_COCHES_FAQ = [
+  {
+    id: 1,
+    question: "¿Qué coches están afectados?",
+    answer:
+      "Turismos, todoterrenos o furgonetas compradas entre 2006 y 2013 de más de 20 marcas.",
+  },
+  {
+    id: 2,
+    question: "¿Puedo reclamar si ya no tengo el coche?",
+    answer:
+      "Sí, solo necesitas la factura o el contrato de compra y la ficha técnica.",
+  },
+  {
+    id: 3,
+    question: "¿Cuánto cuesta reclamar?",
+    answer:
+      "Con Solvify, nada por adelantado. Solo cobramos si recuperas tu dinero.",
+  },
+  {
+    id: 4,
+    question: "¿Cuánto tarda el proceso?",
+    answer: "Aproximadamente entre 6 y 12 meses. El resultado merece la pena.",
+  },
+];
+
+export const CONCURSO_EXPRES_FAQ = [
+  {
+    id: 1,
+    question:
+      "¿Qué diferencia hay entre el concurso exprés y la Ley de la Segunda Oportunidad?",
+    answer:
+      "El concurso exprés es una modalidad dentro de la Ley de la Segunda Oportunidad para personas sin patrimonio. Es más rápido y sencillo.",
+  },
+  {
+    id: 2,
+    question: "¿Cuánto tarda el proceso?",
+    answer: "Entre 1 y 3 meses, dependiendo del juzgado.",
+  },
+  {
+    id: 3,
+    question: "¿Podré volver a tener crédito después del concurso?",
+    answer:
+      "Sí. Una vez canceladas tus deudas, podrás empezar a recuperar tu historial financiero.",
+  },
+];
+
 export const blogCategories = [
   {
     id: 1,

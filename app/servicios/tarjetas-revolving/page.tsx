@@ -1,5 +1,7 @@
 import React from "react";
 import HeroServices from "@/components/services/hero";
+import Accordion from "@/components/layout/accordion";
+import { REVOLVING_FAQ } from "@/lib/data";
 
 import type { Metadata } from "next";
 
@@ -21,7 +23,7 @@ const RevolvingPage = () => {
         buttonText="Realizar estudio gratuito"
       />
       <section className="mx-auto max-w-5xl px-4 2xl:px-0 py-12">
-        <h2 className="text-2xl font-medium pb-6 text-gray-700 dark:text-white">
+        <h2 className="text-3xl font-semibold pb-6 text-gray-700 dark:text-white">
           ¿Qué es una tarjeta revolving?
         </h2>
         <p className=" text-gray-500 dark:text-gray-300 text-lg">
@@ -32,7 +34,7 @@ const RevolvingPage = () => {
       </section>{" "}
       <div className=" pb-12">
         <section className="mx-auto max-w-5xl px-4 2xl:px-0 ">
-          <h2 className="text-2xl font-medium pb-6 text-gray-700 dark:text-white">
+          <h2 className="text-3xl font-semibold pb-6 text-gray-700 dark:text-white">
             ¿Qué beneficios obtienes?
           </h2>
           <ul className="list-disc list-outside pl-4 text-lg">
@@ -50,7 +52,7 @@ const RevolvingPage = () => {
       </div>
       <div className=" pb-12">
         <section className="mx-auto max-w-5xl px-4 2xl:px-0 ">
-          <h2 className="text-2xl font-medium pb-6 text-gray-700 dark:text-white">
+          <h2 className="text-3xl font-semibold pb-6 text-gray-700 dark:text-white">
             ¿Cómo saber si tienes una revolving?
           </h2>
           <ul className="list-disc list-outside pl-4 text-lg">
@@ -68,7 +70,7 @@ const RevolvingPage = () => {
       </div>
       <div className=" pb-12">
         <section className="mx-auto max-w-5xl px-4 2xl:px-0 ">
-          <h2 className="text-2xl font-medium pb-6 text-gray-700 dark:text-white">
+          <h2 className="text-3xl font-semibold pb-6 text-gray-700 dark:text-white">
             ¿Qué incluye nuestro servicio?
           </h2>
           <ul className="list-disc list-outside pl-4 text-lg">
@@ -83,6 +85,12 @@ const RevolvingPage = () => {
             </li>
           </ul>
         </section>
+      </div>
+      <div className="mx-auto max-w-5xl px-4 2xl:px-0 mb-16">
+        <h2 className="text-3xl font-semibold pb-6 text-gray-700 dark:text-white">
+          Preguntas frecuentes
+        </h2>
+        <Accordion faqs={REVOLVING_FAQ} />
       </div>
     </div>
   );
