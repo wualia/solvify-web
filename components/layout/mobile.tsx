@@ -38,7 +38,7 @@ const Mobile = () => {
               <CircleXIcon className="w-6 h-6 text-gray-300" />
             </div>
           </div>
-          <ul className="text-white flex-1 px-4 py-8 flex flex-col justify-between">
+          <ul className="text-white flex-1 px-4 py-8 md:py-24 flex flex-col justify-between">
             <li
               onClick={() => goTo("/")}
               className="text-xl font-medium tracking-wider"
