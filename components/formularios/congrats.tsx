@@ -5,12 +5,17 @@ import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { track } from "@vercel/analytics";
 
-const Congrats = () => {
+const Congrats = ({ source }: { source: string }) => {
   const router = useRouter();
 
   useEffect(() => {
     track("Completa formulario", {
-      formulario: "LSO",
+      formulario:
+        source === "ley-de-segunda-oportunidad"
+          ? "LSO"
+          : source === "negociacion-de-deuda"
+            ? "NEGO"
+            : "OTRO",
     });
   }, []);
 

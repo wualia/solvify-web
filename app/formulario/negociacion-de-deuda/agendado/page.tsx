@@ -17,7 +17,7 @@ const AgendadoNEGO = () => {
         <p className="text-gray-500 dark:text-gray-300 text-center mx-auto max-w-xl">
           A continuación te dejamos los datos de la llamada agendada:
         </p>
-        <BookDetail />
+        <BookDetail source="negociacion-de-deuda" />
       </div>
     </div>
   );

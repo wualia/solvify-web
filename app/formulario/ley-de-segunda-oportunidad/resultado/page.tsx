@@ -1,6 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
-import Congrats from "./congrats";
+import Congrats from "@/components/formularios/congrats";
 
 export const metadata: Metadata = {
   title: "Resultado Ley de Segunda Oportunidad",
@@ -22,7 +22,7 @@ const ResultadoLSO = () => {
         <p className="text-gray-500 dark:text-gray-300 text-center">
           Segun tus respuestas, puedes acogerte a la Ley de Segunda Oportunidad
         </p>
-        <Congrats />
+        <Congrats source="ley-de-segunda-oportunidad" />
       </div>
     </div>
   );

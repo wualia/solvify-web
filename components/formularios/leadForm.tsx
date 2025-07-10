@@ -91,7 +91,12 @@ const LeadForm = ({ source }: { source: string }) => {
     setDeal(leadDeals[0].deals[0]);
 
     track("Rellena datos personales", {
-      formulario: "LSO",
+      formulario:
+        source === "ley-de-segunda-oportunidad"
+          ? "LSO"
+          : source === "negociacion-de-deuda"
+            ? "NEGO"
+            : "OTRO",
       lead: `${values.first_name} ${values.last_name}`,
     });
 

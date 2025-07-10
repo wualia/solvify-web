@@ -23,7 +23,7 @@ const PriceOptions = ({ totalDeudasConComision }: any) => {
     setCuotaNegociacion(option);
   };
 
-  let options = [];
+  const options = [];
 
   for (let i = 1; i <= 7; i++) {
     switch (i) {

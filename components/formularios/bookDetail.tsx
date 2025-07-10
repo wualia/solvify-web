@@ -10,14 +10,19 @@ import { useRouter } from "next/navigation";
 import { track } from "@vercel/analytics";
 import { Calendar, User } from "@/components/icons";
 
-const BookDetail = () => {
+const BookDetail = ({ source }: { source: string }) => {
   const { deal } = useFormStore();
   const { dueDate } = useAvailabilityStore();
   const router = useRouter();
 
   useEffect(() => {
     track("Llamada agendada", {
-      formulario: "LSO",
+      formulario:
+        source === "ley-de-segunda-oportunidad"
+          ? "LSO"
+          : source === "negociacion-de-deuda"
+            ? "NEGO"
+            : "OTRO",
       agendado: `con ${deal?.user_assigned?.first_name} el ${format(
         dueDate,
         "d MMMM yyyy",

@@ -9,10 +9,18 @@ import { useFormStore } from "@/store/form";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { track } from "@vercel/analytics";
 
 const FormNego = () => {
   const [creditorsNegotiation, setCreditorsNegotiation] = useState([]);
-  const { creditors } = useFormStore();
+  const { creditors, source } = useFormStore();
+
+  useEffect(() => {
+    track("Empieza formulario", {
+      formulario: "NEGO",
+      source: source,
+    });
+  }, []);
 
   useEffect(() => {
     getNegoAndRevolvingCreditors().then((res) => {
