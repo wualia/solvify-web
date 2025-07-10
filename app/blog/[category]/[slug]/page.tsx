@@ -64,7 +64,7 @@ const PostDetail = async ({
     <article className="mx-auto max-w-7xl px-4 2xl:px-0 py-8">
       <div className="border-b border-gray-200 dark:border-gray-800 pb-4">
         <header className="pb-8">
-          <h1 className="text-3xl md:text-4xl font-medium pb-8 text-gray-700 dark:text-white">
+          <h1 className="text-3xl md:text-4xl font-medium pb-8 text-gray-700 dark:text-white max-w-5xl leading-12">
             {post.docs[0]?.title}
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
