@@ -11,7 +11,8 @@ import { Analytics } from "@vercel/analytics/next";
 const plusJakarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Solvify",
+  title:
+    "Solvify | Expertos en la Ley de Segunda Oportunidad y Negociación de Deuda",
   description:
     "Te ayudamos a resolver tus problemas económicos, gracias a la Ley de Segunda Oportunidad, tarjetas revolving, cártel de coches o concurso exprés",
 };
