@@ -8,7 +8,6 @@ import LSO_Beneficios from "./components/lso-beneficios";
 import LSO_QueEs from "./components/lso-que-es";
 import LSO_QueDeudas from "./components/lso-que-deudas";
 import LSO_Quien from "./components/lso-quien";
-import LSO_ComoFunciona from "./components/lso-como-funciona";
 import LSO_Solvify from "./components/lso-solvify";
 import type { Metadata } from "next";
 import LSO_testimonials from "./components/lso-testimonials";

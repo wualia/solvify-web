@@ -61,6 +61,26 @@ export const LSO_FAQ = [
   },
 ];
 
+export const NEGO_FAQ = [
+  {
+    id: 1,
+    question: "¿Es legal negociar deudas con bancos y financieras?",
+    answer:
+      "Sí, y en muchos casos, es la mejor alternativa para evitar intereses abusivos o juicios.",
+  },
+  {
+    id: 2,
+    question: "¿Qué tipo de deudas puedo negociar?",
+    answer:
+      "Tarjetas revolving, préstamos personales, microcréditos, embargos, deudas con fondos buitre, etc.",
+  },
+  {
+    id: 3,
+    question: "¿Qué pasa si no consigo un acuerdo?",
+    answer: "Si no logramos reducir tu deuda, no cobramos. Así de claro.",
+  },
+];
+
 export const blogCategories = [
   {
     id: 1,

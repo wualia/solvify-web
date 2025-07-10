@@ -2,6 +2,8 @@ import React from "react";
 import HeroServices from "@/components/services/hero";
 import CTA_Services_NEGO from "@/components/services/cta/nego";
 import type { Metadata } from "next";
+import Accordion from "@/components/layout/accordion";
+import { NEGO_FAQ } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Negociación de deudas | Solvify",
@@ -86,6 +88,12 @@ const NegociacionDeDeudasPage = () => {
       </div>
       <div className="mx-auto max-w-5xl px-4 2xl:px-0 pb-16">
         <CTA_Services_NEGO />
+      </div>{" "}
+      <div className="mx-auto max-w-5xl px-4 2xl:px-0 mb-16">
+        <h2 className="text-3xl font-semibold pb-6 text-gray-700 dark:text-white">
+          Preguntas frecuentes
+        </h2>
+        <Accordion faqs={NEGO_FAQ} />
       </div>
     </div>
   );
