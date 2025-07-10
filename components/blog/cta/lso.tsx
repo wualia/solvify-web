@@ -17,9 +17,9 @@ const LsoCTA = () => {
   return (
     <div className="bg-black dark:bg-card p-8 rounded-lg">
       <h2 className="text-2xl font-medium pb-4 text-white max-w-lg text-center md:text-left">
-        ¿ Quieres saber si te puedes acoger?
+        ¿ Quieres saber si te puedes acoger ?
       </h2>
-      <p className="pb-4 text-gray-200 dark:text-gray-400 text-center md:text-left">
+      <p className="pb-8 text-gray-200 dark:text-gray-400 text-center md:text-left">
         Realiza de manera gratuita el cuestionario y descubre si tienes derecho
         a la Ley de Segunda Oportunidad.
       </p>

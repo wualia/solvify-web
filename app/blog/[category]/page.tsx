@@ -99,7 +99,7 @@ const BlogCategoryPage = async ({
                         <Badge variant="outline" className="text-sm">
                           {post.category.name}
                         </Badge>
-                        <h2 className="md:text-2xl font-semibold py-4 text-gray-700 dark:text-white max-w-3xl">
+                        <h2 className="md:text-2xl font-semibold py-4 text-gray-700 dark:text-white max-w-2xl">
                           {post.title}
                         </h2>
                         <p className="text-muted-foreground max-w-3xl">
