@@ -13,7 +13,7 @@ import { track } from "@vercel/analytics";
 
 const FormNego = () => {
   const [creditorsNegotiation, setCreditorsNegotiation] = useState([]);
-  const { creditors, source } = useFormStore();
+  const { creditors, source, clearForm } = useFormStore();
 
   useEffect(() => {
     track("Empieza formulario", {
@@ -37,9 +37,12 @@ const FormNego = () => {
       {creditors.length > 0 && (
         <>
           <PlanDePagos />
-          <div className="flex justify-end">
+          <div className="flex justify-end gap-4 mt-4">
+            <Button variant="outline" onClick={() => clearForm()}>
+              Volver a empezar
+            </Button>
             <Link href="/formulario/negociacion-de-deuda/datos">
-              <Button className="mt-4">
+              <Button>
                 Continuar <ArrowRight className="w-4 h-4" />
               </Button>
             </Link>

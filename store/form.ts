@@ -30,6 +30,7 @@ type Actions = {
   setPaymentOptions: (paymentOptions: any) => void;
   setCuotaNegociacion: (cuotaNegociacion: any) => void;
   setNumCuotasNegociacion: (numCuotasNegociacion: any) => void;
+  clearForm: () => void;
 };
 
 const initialState: State = {
@@ -95,6 +96,9 @@ export const useFormStore = create<State & Actions>()(
       },
       setNumCuotasNegociacion: (numCuotasNegociacion) => {
         set((state) => ({ numCuotasNegociacion }));
+      },
+      clearForm: () => {
+        set(() => ({ ...initialState }));
       },
     }),
     {
