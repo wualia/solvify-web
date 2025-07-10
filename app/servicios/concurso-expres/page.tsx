@@ -20,7 +20,7 @@ const ConcursoExpres = () => {
         hasAction={true}
         buttonText="Realizar estudio gratuito"
       />
-      <section className="mx-auto max-w-7xl px-4 2xl:px-0 py-12">
+      <section className="mx-auto max-w-5xl px-4 2xl:px-0 py-12">
         <h2 className="text-2xl font-medium pb-6 text-gray-700 dark:text-white">
           ¿Qué es el concurso exprés?
         </h2>
@@ -31,7 +31,7 @@ const ConcursoExpres = () => {
         </p>
       </section>
       <div className=" pb-12">
-        <section className="mx-auto max-w-7xl px-4 2xl:px-0 ">
+        <section className="mx-auto max-w-5xl px-4 2xl:px-0 ">
           <h2 className="text-2xl font-medium pb-6 text-gray-700 dark:text-white">
             ¿Qué beneficios obtienes?
           </h2>
@@ -49,7 +49,7 @@ const ConcursoExpres = () => {
         </section>
       </div>
       <div className=" pb-12">
-        <section className="mx-auto max-w-7xl px-4 2xl:px-0 ">
+        <section className="mx-auto max-w-5xl px-4 2xl:px-0 ">
           <h2 className="text-2xl font-medium pb-6 text-gray-700 dark:text-white">
             ¿Quién puede acogerse?
           </h2>
@@ -67,7 +67,7 @@ const ConcursoExpres = () => {
         </section>
       </div>
       <div className=" pb-12">
-        <section className="mx-auto max-w-7xl px-4 2xl:px-0 ">
+        <section className="mx-auto max-w-5xl px-4 2xl:px-0 ">
           <h2 className="text-2xl font-medium pb-6 text-gray-700 dark:text-white">
             ¿Qué incluye el servicio?
           </h2>
