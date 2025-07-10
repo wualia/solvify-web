@@ -84,10 +84,10 @@ const LSO_testimonials = () => {
   return (
     <section className="pb-24">
       <div className="flex flex-col items-center gap-4">
-        <div className="flex items-center gap-1 text-sm font-semibold">
+        <div className="flex items-center gap-1 text-xs font-semibold bg-primary/10 text-primary px-4 py-2 rounded-full tracking-wide">
           CASOS DE ÉXITO
         </div>
-        <h2 className="text-center text-3xl font-semibold lg:text-4xl">
+        <h2 className="text-center text-3xl font-semibold text-gray-700 dark:text-white">
           Testimonios de nuestros clientes
         </h2>
       </div>
@@ -128,7 +128,7 @@ const LSO_testimonials = () => {
                         <Star className="size-5 fill-amber-500 text-amber-500" />
                       </div> */}
                     </div>
-                    <div className="flex flex-col gap-2">
+                    <div className="flex flex-col">
                       <div className="flex justify-between items-baseline">
                         <p className="text-sm text-muted-foreground">
                           Deuda cancelada:
