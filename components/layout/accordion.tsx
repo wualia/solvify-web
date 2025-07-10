@@ -58,7 +58,7 @@ function Item({ header, children }: PropsWithChildren<{ header: string }>) {
             {children}
           </motion.div>
         </motion.div>
-        <hr className="border-gray-200 dark:border-gray-800 h-[1px] bg-gray-200 dark:bg-gray-800" />
+        <hr className=" h-[1px] bg-gray-200 dark:bg-white/10" />
       </motion.section>
     </MotionConfig>
   );
@@ -67,7 +67,7 @@ function Item({ header, children }: PropsWithChildren<{ header: string }>) {
 export default function Accordion({ faqs }: { faqs: any }) {
   return (
     <>
-      <div className="accordion border border-gray-200 dark:border-gray-800 rounded-lg bg-card">
+      <div className="accordion border border-gray-200 dark:border-white/10 rounded-lg bg-card">
         {faqs.map((faq: any) => (
           <Item key={faq.id} header={faq.question}>
             <p className="text-gray-500 dark:text-gray-300">{faq.answer}</p>

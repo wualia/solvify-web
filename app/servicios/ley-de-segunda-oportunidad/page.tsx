@@ -11,6 +11,7 @@ import LSO_Quien from "./components/lso-quien";
 import LSO_ComoFunciona from "./components/lso-como-funciona";
 import LSO_Solvify from "./components/lso-solvify";
 import type { Metadata } from "next";
+import LSO_testimonials from "./components/lso-testimonials";
 
 export const metadata: Metadata = {
   title: "Ley de la Segunda Oportunidad | Solvify",
@@ -42,6 +43,7 @@ const LeySegundaOportunidadPage = async () => {
       </div>
       <LSO_QueDeudas /> {/* <LSO_ComoFunciona /> */}
       <LSO_Solvify />
+      <LSO_testimonials />
       <div className="mx-auto max-w-5xl px-4 2xl:px-0 mb-16">
         <h2 className="text-3xl font-semibold pb-6 text-gray-700 dark:text-white">
           Preguntas frecuentes
