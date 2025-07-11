@@ -8,7 +8,7 @@ import { format } from "date-fns";
 import { de, es } from "date-fns/locale";
 import { addHours, addMinutes } from "date-fns";
 import { useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { getPublicSalesAvailability } from "@/api/availability";
 import { useFormStore } from "@/store/form";
 import { useAvailabilityStore } from "@/store/availability";
@@ -18,9 +18,13 @@ import Loader from "@/components/ui/loader";
 import { editDealStatus } from "@/api/deals";
 import { getDealByIdPublic } from "@/api/deals";
 
-const DisponibilidadComponent = ({ source }: { source: string }) => {
-  const searchParams = useSearchParams();
-  const deal_id = searchParams.get("deal_id");
+const DisponibilidadComponent = ({
+  source,
+  deal_id,
+}: {
+  source: string;
+  deal_id: string | null;
+}) => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [loadingInfo, setLoadingInfo] = useState(false);
