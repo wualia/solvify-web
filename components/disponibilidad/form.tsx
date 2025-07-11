@@ -66,7 +66,7 @@ const DisponibilidadComponent = ({
       lead_id: deal.lead_id,
     });
 
-    console.log("lead", lead[0]);
+    console.log("lead del deal", lead[0]);
     setLead(lead[0]);
   };
 
