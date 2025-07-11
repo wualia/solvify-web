@@ -58,7 +58,6 @@ const DisponibilidadComponent = ({
   const getDeal = async () => {
     const deal = await getDealByIdPublic(deal_id);
 
-    console.log("deal", deal);
     setDeal(deal);
 
     const lead = await getLeadById({
@@ -66,7 +65,6 @@ const DisponibilidadComponent = ({
       lead_id: deal.lead_id,
     });
 
-    console.log("lead del deal", lead[0]);
     setLead(lead[0]);
   };
 
@@ -176,10 +174,7 @@ const DisponibilidadComponent = ({
       ) : (
         <div className="space-y-4">
           <p className="md:text-lg font-medium text-center">
-            Agendar llamada{" "}
-            {deal?.user_assigned
-              ? `con ${deal?.user_assigned?.first_name}`
-              : ""}
+            Agendar llamada con {deal?.user_assigned?.first_name}
           </p>
 
           <Card className="gap-0 p-0 overflow-hidden">

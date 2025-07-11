@@ -49,14 +49,12 @@ const BookDetail = ({ source }: { source: string }) => {
           </p>
         </div>
 
-        {deal?.user_assigned && (
-          <div className="flex items-center justify-center gap-2">
-            <User className="w-6 h-6 text-primary dark:text-white" />
-            <p className="text-gray-700 dark:text-white  font-medium">
-              {deal?.user_assigned?.first_name} {deal?.user_assigned?.last_name}
-            </p>
-          </div>
-        )}
+        <div className="flex items-center justify-center gap-2">
+          <User className="w-6 h-6 text-primary dark:text-white" />
+          <p className="text-gray-700 dark:text-white  font-medium">
+            {deal?.user_assigned?.first_name} {deal?.user_assigned?.last_name}
+          </p>
+        </div>
       </div>
       <div className="flex justify-center mt-8">
         <Button className="w-full md:w-auto md:px-16" onClick={handleBack}>
