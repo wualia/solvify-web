@@ -17,6 +17,7 @@ import { getPublicAnnotationsByDeal } from "@/api/annotations";
 import Loader from "@/components/ui/loader";
 import { editDealStatus } from "@/api/deals";
 import { getDealByIdPublic } from "@/api/deals";
+import { getLeadById } from "@/api/leads";
 
 const DisponibilidadComponent = ({
   source,
@@ -35,7 +36,7 @@ const DisponibilidadComponent = ({
   const [availability, setAvailability] = useState<any[]>([]);
   const [date, setDate] = useState<Date | undefined>(undefined);
   const [disabledDates, setDisabledDates] = useState<any[]>([]);
-  const { deal, lead, clearForm } = useFormStore();
+  const { deal, lead, setLead, setDeal, clearForm } = useFormStore();
   const { setDueDate } = useAvailabilityStore();
   const [annotations, setAnnotations] = useState<any[]>([]);
   const [dealParam, setDealParam] = useState<any>(null);
@@ -61,14 +62,24 @@ const DisponibilidadComponent = ({
   }, [deal]);
 
   const getDeal = async () => {
-    const res = await getDealByIdPublic(deal_id);
-    setDealParam(res);
+    const deal = await getDealByIdPublic(deal_id);
+
+    console.log("deal", deal);
+    setDeal(deal);
+
+    const lead = await getLeadById({
+      category_id: deal.lead_id,
+      lead_id: deal.lead_id,
+    });
+
+    console.log("lead", lead[0]);
+    setLead(lead[0]);
   };
 
   const getAnnotations = async () => {
     const res = await getPublicAnnotationsByDeal({
       object_reference_type: "deals",
-      object_reference_id: deal_id ? deal_id : deal?.id,
+      object_reference_id: deal?.id,
     });
 
     setAnnotations(
@@ -86,7 +97,7 @@ const DisponibilidadComponent = ({
       },
       {
         name: "user_assigned_id",
-        value: dealParam ? dealParam.user_assigned_id : deal?.user_assigned_id,
+        value: deal?.user_assigned_id,
       },
     ];
 
@@ -135,15 +146,13 @@ const DisponibilidadComponent = ({
       priority: "0",
       status: "pendiente",
       due_date: due_date_with_offset,
-      user_assigned_id: dealParam
-        ? dealParam.user_assigned_id
-        : deal?.user_assigned_id,
+      user_assigned_id: deal?.user_assigned_id,
     };
 
     await createPublicTask({
       body: taskBody,
       object_reference_type: "deals",
-      object_reference_id: dealParam ? dealParam.id : deal?.id,
+      object_reference_id: deal?.id,
       annotation_id: annotations[0]?.id,
     });
 
@@ -152,7 +161,7 @@ const DisponibilidadComponent = ({
         status: "Agendado",
       },
       lead_id: lead?.id,
-      deal_id: dealParam ? dealParam?.id : deal?.id,
+      deal_id: deal?.id,
     });
 
     clearForm();
@@ -174,10 +183,7 @@ const DisponibilidadComponent = ({
       ) : (
         <div className="space-y-4">
           <p className="md:text-lg font-medium text-center">
-            Agendar llamada con{" "}
-            {dealParam
-              ? dealParam.user_assigned?.first_name
-              : deal?.user_assigned?.first_name}
+            Agendar llamada con {deal?.user_assigned?.first_name}
           </p>
 
           <Card className="gap-0 p-0 overflow-hidden">
