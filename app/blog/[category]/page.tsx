@@ -41,17 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }`,
     metadataBase: new URL(`${process.env.SITE_URL}`),
     alternates: {
-      canonical: `/blog/${
-        category == "ley-de-segunda-oportunidad"
-          ? "Ley de la Segunda Oportunidad"
-          : category == "negociacion-de-deuda"
-            ? "Negociación de deuda"
-            : category == "tarjetas-revolving"
-              ? "Tarjetas revolving"
-              : category == "concurso-expres"
-                ? "Concurso exprés"
-                : "Cartel de coches"
-      }`,
+      canonical: `/blog/${category}`,
     },
     openGraph: {
       title: `Blog | ${
