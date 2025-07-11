@@ -1,7 +1,6 @@
 "use client";
 
 import React, { Suspense } from "react";
-import { Metadata } from "next";
 import DisponibilidadComponent from "@/components/disponibilidad/form";
 import { useSearchParams } from "next/navigation";
 

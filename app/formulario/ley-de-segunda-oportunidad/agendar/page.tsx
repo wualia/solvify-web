@@ -10,7 +10,10 @@ const AgendarLSO = () => {
             AGENDAR LLAMADA
           </h1>
         </div>
-        <DisponibilidadComponent source="ley-de-segunda-oportunidad" />
+        <DisponibilidadComponent
+          source="ley-de-segunda-oportunidad"
+          deal_id={null}
+        />
       </div>
     </div>
   );

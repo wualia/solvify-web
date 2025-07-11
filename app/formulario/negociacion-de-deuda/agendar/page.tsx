@@ -10,7 +10,7 @@ const AgendarNEGO = () => {
             AGENDAR LLAMADA
           </h1>
         </div>
-        <DisponibilidadComponent source="negociacion-de-deuda" />
+        <DisponibilidadComponent source="negociacion-de-deuda" deal_id={null} />
       </div>
     </div>
   );
