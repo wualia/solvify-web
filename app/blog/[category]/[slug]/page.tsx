@@ -21,7 +21,7 @@ export async function generateMetadata(
   { params, searchParams }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const slug = (await params).slug;
+  const { slug } = await params;
 
   const data = await fetch(
     `${process.env.BLOG_URL}/api/posts?where[slug][equals]=${slug}`

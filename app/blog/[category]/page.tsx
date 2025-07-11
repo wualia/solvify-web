@@ -14,9 +14,7 @@ type Props = {
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const category = (await params).category;
-
-  console.log("category:", category);
+  const { category } = await params;
 
   const data = await fetch(
     `${process.env.BLOG_URL}/api/posts?where[categorySlug][equals]=${category}`
@@ -144,9 +142,9 @@ const BlogCategoryPage = async ({
           <MobileCategories />
         </div>
         <div className="lg:col-span-3 space-y-4 px-4 2xl:px-0">
-          <Suspense fallback={<BlogPostsSkeleton />}>
-            <BlogPostsByCategory category={category} />
-          </Suspense>
+          {/* <Suspense fallback={<BlogPostsSkeleton />}> */}
+          <BlogPostsByCategory category={category} />
+          {/* </Suspense> */}
         </div>
       </div>
     </div>
