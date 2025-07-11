@@ -55,12 +55,6 @@ const DisponibilidadComponent = ({
     }
   }, [deal_id]);
 
-  useEffect(() => {
-    if (deal) {
-      getAnnotations();
-    }
-  }, [deal]);
-
   const getDeal = async () => {
     const deal = await getDealByIdPublic(deal_id);
 
@@ -74,17 +68,6 @@ const DisponibilidadComponent = ({
 
     console.log("lead", lead[0]);
     setLead(lead[0]);
-  };
-
-  const getAnnotations = async () => {
-    const res = await getPublicAnnotationsByDeal({
-      object_reference_type: "deals",
-      object_reference_id: deal?.id,
-    });
-
-    setAnnotations(
-      res.filter((item: any) => item.annotation_type == "Seguimiento")
-    );
   };
 
   const getAvailability = async () => {
@@ -114,6 +97,14 @@ const DisponibilidadComponent = ({
   const onSubmit = async () => {
     setLoading(true);
 
+    const res = await getPublicAnnotationsByDeal({
+      object_reference_type: "deals",
+      object_reference_id: deal?.id,
+    });
+
+    const annotations = res.filter(
+      (item: any) => item.annotation_type == "Seguimiento"
+    );
     const offset = new Date().getTimezoneOffset();
     const due_date_no_hours = new Date(selectedDate);
     due_date_no_hours.setHours(0, 0, 0, 0);
