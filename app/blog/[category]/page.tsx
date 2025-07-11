@@ -74,7 +74,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 const BlogPostsByCategory = async ({ category }: { category: string }) => {
   const data = await fetch(
-    `${process.env.BLOG_URL}/api/posts?where[categorySlug][equals]=${category}`
+    `${process.env.BLOG_URL}/api/posts?where[categorySlug][equals]=${category}&select[title]=true&select[excerpt]=true&select[updatedAt]=true&select[categorySlug]=true&select[slug]=true&select[category]=true`
   );
   const posts = await data.json();
   return (

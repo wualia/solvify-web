@@ -27,8 +27,13 @@ export const metadata: Metadata = {
 };
 
 const BlogPosts = async () => {
-  const data = await fetch(`${process.env.BLOG_URL}/api/posts`);
+  const data = await fetch(
+    `${process.env.BLOG_URL}/api/posts?select[title]=true&select[excerpt]=true&select[updatedAt]=true&select[categorySlug]=true&select[slug]=true&select[category]=true`
+  );
   const posts = await data.json();
+
+  console.log("posts:", posts);
+
   return (
     <>
       {posts.docs?.map((post: any) => (
