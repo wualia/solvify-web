@@ -73,6 +73,8 @@ const DisponibilidadComponent = ({
   const getAvailability = async () => {
     setLoadingAvailability(true);
 
+    console.log("deal", deal);
+
     const body = [
       {
         name: "from_date",
