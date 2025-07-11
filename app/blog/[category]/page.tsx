@@ -16,6 +16,8 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const category = (await params).category;
 
+  console.log("category:", category);
+
   const data = await fetch(
     `${process.env.BLOG_URL}/api/posts?where[categorySlug][equals]=${category}`
   );
@@ -28,15 +30,43 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = await data.json();
 
   return {
-    title: `Blog | ${categoryData.docs[0].name} | Solvify`,
-    description: `Blog de Solvify, noticias y artículos sobre ${categoryData.docs[0].name}`,
+    title: `Blog | ${
+      category == "ley-de-segunda-oportunidad"
+        ? "Ley de la Segunda Oportunidad"
+        : categoryData.docs[0].name
+    } | Solvify`,
+    description: `Blog de Solvify, noticias y artículos sobre ${
+      category == "ley-de-segunda-oportunidad"
+        ? "Ley de la Segunda Oportunidad"
+        : category == "negociacion-de-deuda"
+          ? "Negociación de deuda"
+          : category == "tarjetas-revolving"
+            ? "Tarjetas revolving"
+            : category == "concurso-expres"
+              ? "Concurso exprés"
+              : "Cartel de coches"
+    }`,
     metadataBase: new URL(`${process.env.SITE_URL}`),
     alternates: {
       canonical: `/blog/${post.docs[0]?.categorySlug}`,
     },
     openGraph: {
-      title: `Blog | ${categoryData.docs[0].name} | Solvify`,
-      description: `Blog de Solvify, noticias y artículos sobre ${categoryData.docs[0].name}`,
+      title: `Blog | ${
+        category == "ley-de-segunda-oportunidad"
+          ? "Ley de la Segunda Oportunidad"
+          : categoryData.docs[0].name
+      } | Solvify`,
+      description: `Blog de Solvify, noticias y artículos sobre ${
+        category == "ley-de-segunda-oportunidad"
+          ? "Ley de la Segunda Oportunidad"
+          : category == "negociacion-de-deuda"
+            ? "Negociación de deuda"
+            : category == "tarjetas-revolving"
+              ? "Tarjetas revolving"
+              : category == "concurso-expres"
+                ? "Concurso exprés"
+                : "Cartel de coches"
+      }`,
       siteName: "Solvify",
       type: "website",
     },
