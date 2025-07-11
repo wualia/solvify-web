@@ -5,6 +5,17 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Solvify - Aviso Legal",
   description: "Aviso legal de la página web de Solvify",
+  metadataBase: new URL(`${process.env.SITE_URL}`),
+  alternates: {
+    canonical: `/legal/aviso-legal/`,
+  },
+  openGraph: {
+    title: "Solvify - Aviso Legal",
+    description: "Aviso legal de la página web de Solvify",
+    siteName: "Solvify",
+    type: "website",
+    images: [process.env.BLOG_URL + "/about-us.webp"],
+  },
 };
 
 const AvisoLegal = () => {

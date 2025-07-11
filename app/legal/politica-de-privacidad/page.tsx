@@ -4,6 +4,17 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Solvify - Política de Privacidad",
   description: "Política de Privacidad de la página web de Solvify",
+  metadataBase: new URL(`${process.env.SITE_URL}`),
+  alternates: {
+    canonical: `/legal/politica-de-privacidad/`,
+  },
+  openGraph: {
+    title: "Solvify - Política de Privacidad",
+    description: "Política de Privacidad de la página web de Solvify",
+    siteName: "Solvify",
+    type: "website",
+    images: [process.env.BLOG_URL + "/about-us.webp"],
+  },
 };
 
 const PoliticaDePrivacidad = () => {
