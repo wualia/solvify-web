@@ -4,7 +4,7 @@ import MobileCategories from "@/components/blog/mobileCategories";
 import Link from "next/link";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
-import type { Metadata, ResolvingMetadata } from "next";
+import type { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
 import BlogPostsSkeleton from "@/components/blog/skeleton";
 
@@ -13,10 +13,7 @@ type Props = {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
-export async function generateMetadata(
-  { params, searchParams }: Props,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const category = (await params).category;
 
   const data = await fetch(
