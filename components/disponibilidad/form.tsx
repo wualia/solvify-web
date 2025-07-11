@@ -183,7 +183,10 @@ const DisponibilidadComponent = ({
       ) : (
         <div className="space-y-4">
           <p className="md:text-lg font-medium text-center">
-            Agendar llamada con {deal?.user_assigned?.first_name}
+            Agendar llamada{" "}
+            {deal?.user_assigned
+              ? `con ${deal?.user_assigned?.first_name}`
+              : ""}
           </p>
 
           <Card className="gap-0 p-0 overflow-hidden">
