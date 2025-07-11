@@ -6,7 +6,7 @@ const BlogPostsSkeleton = () => {
       {Array(3)
         .fill(0)
         .map((_, index) => (
-          <div className="border-b last-of-type:border-b-0 py-4">
+          <div className="border-b last-of-type:border-b-0 py-4" key={index}>
             <div>
               <div className="pb-4">
                 <Skeleton className="h-6 w-56" />
