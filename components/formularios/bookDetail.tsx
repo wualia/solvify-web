@@ -22,7 +22,7 @@ const BookDetail = ({ source }: { source: string }) => {
           ? "LSO"
           : source === "negociacion-de-deuda"
             ? "NEGO"
-            : "OTRO",
+            : "WEB",
       agendado: `con ${deal?.user_assigned?.first_name} el ${format(
         dueDate,
         "d MMMM yyyy",
