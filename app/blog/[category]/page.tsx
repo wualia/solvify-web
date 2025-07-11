@@ -33,7 +33,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `Blog | ${
       category == "ley-de-segunda-oportunidad"
         ? "Ley de la Segunda Oportunidad"
-        : categoryData.docs[0].name
+        : category == "negociacion-de-deuda"
+          ? "Negociación de deuda"
+          : category == "tarjetas-revolving"
+            ? "Tarjetas revolving"
+            : category == "concurso-expres"
+              ? "Concurso exprés"
+              : "Cartel de coches"
     } | Solvify`,
     description: `Blog de Solvify, noticias y artículos sobre ${
       category == "ley-de-segunda-oportunidad"
@@ -54,7 +60,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `Blog | ${
         category == "ley-de-segunda-oportunidad"
           ? "Ley de la Segunda Oportunidad"
-          : categoryData.docs[0].name
+          : category == "negociacion-de-deuda"
+            ? "Negociación de deuda"
+            : category == "tarjetas-revolving"
+              ? "Tarjetas revolving"
+              : category == "concurso-expres"
+                ? "Concurso exprés"
+                : "Cartel de coches"
       } | Solvify`,
       description: `Blog de Solvify, noticias y artículos sobre ${
         category == "ley-de-segunda-oportunidad"
