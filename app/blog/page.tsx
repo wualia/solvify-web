@@ -13,6 +13,17 @@ export const metadata: Metadata = {
   title: "Blog | Solvify",
   description:
     "Blog de Solvify, noticias y artículos sobre la ley de segunda oportunidad, tarjetas revolving, negociación de deuda, etc.",
+  metadataBase: new URL(`${process.env.SITE_URL}`),
+  alternates: {
+    canonical: `/blog/`,
+  },
+  openGraph: {
+    title: "Blog | Solvify",
+    description:
+      "Blog de Solvify, noticias y artículos sobre la ley de segunda oportunidad, tarjetas revolving, negociación de deuda, etc.",
+    siteName: "Solvify",
+    type: "website",
+  },
 };
 
 const BlogPosts = async () => {
