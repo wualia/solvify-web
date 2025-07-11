@@ -8,6 +8,18 @@ export const metadata: Metadata = {
   title: "Cartel de coches | Solvify",
   description:
     "Si compraste un coche entre 2006 y 2013 podrías recuperar hasta el 15% del precio que pagaste por él.",
+  metadataBase: new URL(`${process.env.SITE_URL}`),
+  alternates: {
+    canonical: `/servicios/cartel-coches/`,
+  },
+  openGraph: {
+    title: "Cartel de coches | Solvify",
+    description:
+      "Si compraste un coche entre 2006 y 2013 podrías recuperar hasta el 15% del precio que pagaste por él.",
+    siteName: "Solvify",
+    type: "website",
+    images: [process.env.BLOG_URL + "/services-cartel-coches.webp"],
+  },
 };
 
 const CartelCochesPage = () => {

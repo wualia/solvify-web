@@ -9,6 +9,18 @@ export const metadata: Metadata = {
   title: "Negociación de deudas | Solvify",
   description:
     "Reduce tus deudas negociando directamente con tus acreedores. En Solvify conseguimos acuerdos legales que se adaptan a tu capacidad de pago. Consulta gratuita.",
+  metadataBase: new URL(`${process.env.SITE_URL}`),
+  alternates: {
+    canonical: `/servicios/negociacion-de-deuda/`,
+  },
+  openGraph: {
+    title: "Negociación de deudas | Solvify",
+    description:
+      "Reduce tus deudas negociando directamente con tus acreedores. En Solvify conseguimos acuerdos legales que se adaptan a tu capacidad de pago. Consulta gratuita.",
+    siteName: "Solvify",
+    type: "website",
+    images: [process.env.BLOG_URL + "/services-negociacion-deuda.webp"],
+  },
 };
 
 const NegociacionDeDeudasPage = () => {

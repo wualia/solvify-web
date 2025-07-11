@@ -9,6 +9,18 @@ export const metadata: Metadata = {
   title: "Tarjetas Revolving | Solvify",
   description:
     "Estás pagando la deuda de tu tarjeta de crédito, pero parece que nunca terminas de pagarlo?",
+  metadataBase: new URL(`${process.env.SITE_URL}`),
+  alternates: {
+    canonical: `/servicios/tarjetas-revolving/`,
+  },
+  openGraph: {
+    title: "Tarjetas Revolving | Solvify",
+    description:
+      "Estás pagando la deuda de tu tarjeta de crédito, pero parece que nunca terminas de pagarlo?",
+    siteName: "Solvify",
+    type: "website",
+    images: [process.env.BLOG_URL + "/services-revolving.webp"],
+  },
 };
 
 const RevolvingPage = async () => {

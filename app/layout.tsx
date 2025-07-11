@@ -25,7 +25,7 @@ export const metadata: Metadata = {
       "Te ayudamos a resolver tus problemas económicos, gracias a la Ley de Segunda Oportunidad, tarjetas revolving, cártel de coches o concurso exprés",
     siteName: "Solvify",
     type: "website",
-    images: [process.env.BLOG_URL + "/about-us.webp"],
+    images: [process.env.BLOG_URL + "/hero-home.webp"],
   },
 };
 

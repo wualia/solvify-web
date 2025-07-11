@@ -8,6 +8,18 @@ export const metadata: Metadata = {
   title: "Concurso exprés | Solvify",
   description:
     "Si tienes una sociedad que tiene deudas y quieres cancelarlas, también tienes la oportunidad de hacerlo legalmente.",
+  metadataBase: new URL(`${process.env.SITE_URL}`),
+  alternates: {
+    canonical: `/servicios/concurso-expres/`,
+  },
+  openGraph: {
+    title: "Concurso exprés | Solvify",
+    description:
+      "Si tienes una sociedad que tiene deudas y quieres cancelarlas, también tienes la oportunidad de hacerlo legalmente.",
+    siteName: "Solvify",
+    type: "website",
+    images: [process.env.BLOG_URL + "/services-concurso-expres.webp"],
+  },
 };
 
 const ConcursoExpres = () => {
