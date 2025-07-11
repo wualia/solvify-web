@@ -1,40 +1,50 @@
 "use client";
 
-import React, { useEffect } from "react";
-import { Calendar } from "@/components/ui/calendar";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { format } from "date-fns";
-import { es } from "date-fns/locale";
-import { addHours, addMinutes } from "date-fns";
-import { useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import React, { useEffect, useState } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
 import { getPublicSalesAvailability } from "@/api/availability";
-import { useFormStore } from "@/store/form";
-import { useAvailabilityStore } from "@/store/availability";
-import { createPublicTask } from "@/api/tasks";
-import { getPublicAnnotationsByDeal } from "@/api/annotations";
-import Loader from "@/components/ui/loader";
-import { editDealStatus } from "@/api/deals";
 
-const DisponibilidadComponent = ({ source }: { source: string }) => {
+import { Button } from "@/components/ui/button";
+import { Calendar } from "@/components/ui/calendar";
+import { es } from "date-fns/locale";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
+
+import Loader from "@/app/components/layout/loaders/loader";
+import { addMinutes, addHours, format, add, subDays } from "date-fns";
+import {
+  createPublicAnnotation,
+  getPublicAnnotationsByDeal,
+} from "@/api/annotations";
+import { getUserByIdPublic } from "@/api/users";
+import LoaderComponent from "@/app/components/layout/loaders/component";
+import { getPublicLeadById } from "@/api/leads";
+import { createPublicTask } from "@/api/tasks";
+import { AnnotationStore } from "@/app/store/annotations";
+import { getDealByIdPublic } from "@/api/deals";
+import { track } from "@vercel/analytics";
+import { getExpedienteByIdPublic } from "@/api/expedientes";
+
+const AvailabilityComponent = () => {
   const searchParams = useSearchParams();
-  const deal_id = searchParams.get("deal_id");
-  const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [loadingInfo, setLoadingInfo] = useState(false);
-  const [loadingAvailability, setLoadingAvailability] = useState(false);
-  const [selectedDate, setSelectedDate] = useState<any>(null);
-  const [selectedHour, setSelectedHour] = useState<any>(null);
-  const [range, setRange] = useState<any[]>([]);
-  const [availability, setAvailability] = useState<any[]>([]);
-  const [date, setDate] = useState<Date | undefined>(undefined);
-  const [disabledDates, setDisabledDates] = useState<any[]>([]);
-  const { deal, lead, clearForm } = useFormStore();
-  const { setDueDate } = useAvailabilityStore();
-  const [annotations, setAnnotations] = useState<any[]>([]);
+  const deal_id = searchParams.get("deal_id");
+  const project_id = searchParams.get("project_id");
+  const type = searchParams.get("type");
+  const source = searchParams.get("source");
+  const [date, setDate] = useState<Date | undefined>(new Date());
+  const [annotations, setAnnotations] = useState<any>(null);
+  const [loadingAvailability, setLoadingAvailability] = useState<any>(false);
 
-  console.log("deal_id:", deal_id);
+  const { info, setInfo, setDueDate } = AnnotationStore();
+
+  const router = useRouter();
+
+  const [availability, setAvailability] = useState([]);
+  const [selectedDate, setSelectedDate] = useState<any>(null);
+  const [selectedHour, setSelectedHour] = useState("");
+  const [range, setRange] = useState<any>(null);
 
   useEffect(() => {
     if (selectedDate) {
@@ -43,15 +53,83 @@ const DisponibilidadComponent = ({ source }: { source: string }) => {
   }, [selectedDate]);
 
   useEffect(() => {
-    if (deal) {
-      getAnnotations();
+    if (type == "deal") {
+      getDeal();
     }
-  }, [deal]);
+
+    if (type == "project") {
+      getProject();
+    }
+
+    //   getDeal();
+    //   if (source == "welcome") {
+    //     track("Llamada agendada por welcome");
+    //   } else if (source == "no-localizable") {
+    //     track("Llamada agendada por lead ilocalizable");
+    //   } else if (source == "recover-lead") {
+    //     track("Llamada agendada para recuperar lead");
+    //   } else if (source == "not-showed-up") {
+    //     track("Llamada agendada por lead no asistió");
+    //   } else if (source == "email") {
+    //     track("Llamada agendada por email lead no contesta");
+    //   } else {
+    //     track("Llamada agendada por whatsapp");
+    //   }
+    // }
+
+    // if
+  }, [type]);
+
+  // useEffect(() => {
+  //   if (deal || project) {
+  //     getAnnotations();
+  //   }
+  // }, [deal, project]);
+
+  const getDeal = async () => {
+    setLoadingInfo(true);
+
+    const deal = await getDealByIdPublic({ deal_id });
+
+    const lead = await getPublicLeadById({
+      lead_id: deal?.lead_id,
+    });
+
+    getAnnotations();
+
+    setInfo({
+      user_first_name: lead[0]?.first_name,
+      user_last_name: lead[0]?.last_name,
+      owner_first_name: deal?.user_assigned?.first_name,
+      owner_last_name: deal?.user_assigned?.last_name,
+      owner_assigned_id: deal?.user_assigned?.id,
+    });
+
+    setLoadingInfo(false);
+  };
+
+  const getProject = async () => {
+    setLoadingInfo(true);
+
+    const res = await getExpedienteByIdPublic({ project_id });
+
+    getAnnotations();
+
+    setInfo({
+      user_first_name: res.project?.created_by_user?.first_name,
+      user_last_name: res.project?.created_by_user?.last_name,
+      owner_first_name: "Claudia",
+      owner_last_name: "Gómez",
+      owner_assigned_id: "1590d7cd-6ad0-49ad-b1c9-cdbd8f238fc9",
+    });
+
+    setLoadingInfo(false);
+  };
 
   const getAnnotations = async () => {
     const res = await getPublicAnnotationsByDeal({
-      object_reference_type: "deals",
-      object_reference_id: deal_id ? deal_id : deal?.id,
+      object_reference_type: type == "project" ? "projects" : "deals",
+      object_reference_id: type == "project" ? project_id : deal_id,
     });
 
     setAnnotations(
@@ -69,7 +147,7 @@ const DisponibilidadComponent = ({ source }: { source: string }) => {
       },
       {
         name: "user_assigned_id",
-        value: deal?.user_assigned_id,
+        value: info?.owner_assigned_id,
       },
     ];
 
@@ -82,6 +160,13 @@ const DisponibilidadComponent = ({ source }: { source: string }) => {
 
     setLoadingAvailability(false);
   };
+
+  const disabledDates = [
+    {
+      before: new Date(),
+      dayOfWeek: [0, 6],
+    },
+  ];
 
   const onSubmit = async () => {
     setLoading(true);
@@ -109,40 +194,31 @@ const DisponibilidadComponent = ({ source }: { source: string }) => {
 
     setDueDate(due_date_with_offset);
 
-    const taskBody = {
+    const annotationBody = {
       annotation_type: "Llamada agendada",
-      content: `Llamada agendada por ${lead?.first_name} ${lead?.last_name}`,
+      content: ` ${type == "project" ? "Onboarding agendado" : "Llamada agendada"} por ${info?.user_first_name} ${info?.user_last_name}`,
       spent_time: "0",
       is_completed: false,
       is_private: true,
       priority: "0",
       status: "pendiente",
       due_date: due_date_with_offset,
-      user_assigned_id: deal?.user_assigned_id,
+      user_assigned_id: info?.owner_assigned_id,
     };
 
     await createPublicTask({
-      body: taskBody,
-      object_reference_type: "deals",
-      object_reference_id: deal?.id,
+      body: annotationBody,
+      object_reference_type: type == "project" ? "projects" : "deals",
+      object_reference_id: type == "project" ? project_id : deal_id,
       annotation_id: annotations[0]?.id,
     });
 
-    await editDealStatus({
-      body: {
-        status: "Agendado",
-      },
-      lead_id: lead?.id,
-      deal_id: deal?.id,
-    });
-
-    clearForm();
     setLoading(false);
-    router.push(`/formulario/${source}/agendado`);
+    router.push(`/disponibilidad/agendado`);
   };
 
   return (
-    <div className="mt-4">
+    <>
       {loadingInfo ? (
         <div className="flex justify-center items-center py-10 border rounded-lg">
           <div>
@@ -154,8 +230,8 @@ const DisponibilidadComponent = ({ source }: { source: string }) => {
         </div>
       ) : (
         <div className="space-y-4">
-          <p className="md:text-lg font-medium text-center">
-            Agendar llamada con {deal?.user_assigned?.first_name}
+          <p className="md:text-lg font-medium">
+            Agendar llamada con {info?.owner_first_name}
           </p>
 
           <Card className="gap-0 p-0 overflow-hidden">
@@ -184,7 +260,7 @@ const DisponibilidadComponent = ({ source }: { source: string }) => {
                 <div className="grid gap-2">
                   {loadingAvailability ? (
                     <div className="flex justify-center items-center py-20">
-                      <div className="flex flex-col items-center">
+                      <div>
                         <Loader size={16} color="#38869E" strokeWidth={2} />
                         <p className="text-sm text-center text-muted-foreground pt-4">
                           Cargando horas disponibles
@@ -255,8 +331,8 @@ const DisponibilidadComponent = ({ source }: { source: string }) => {
           </Card>
         </div>
       )}
-    </div>
+    </>
   );
 };
 
-export default DisponibilidadComponent;
+export default AvailabilityComponent;
