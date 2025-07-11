@@ -55,7 +55,7 @@ const NegociacionDeudas = () => {
               className=" w-full md:w-auto bg-black dark:bg-white dark:text-black"
               size="lg"
             >
-              <Link href="/servicios/negociacion-de-deudas">Saber más</Link>
+              <Link href="/servicios/negociacion-de-deuda">Saber más</Link>
             </Button>
           </div>
         </div>

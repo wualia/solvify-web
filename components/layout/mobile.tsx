@@ -55,7 +55,7 @@ const Mobile = () => {
                   Ley de segunda oportunidad
                 </li>
                 <li
-                  onClick={() => goTo("/servicios/negociacion-de-deudas")}
+                  onClick={() => goTo("/servicios/negociacion-de-deuda")}
                   className="border-b border-white/10 py-4"
                 >
                   Negociación de deuda
