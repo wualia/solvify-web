@@ -16,6 +16,18 @@ export const metadata: Metadata = {
   title: "Ley de la Segunda Oportunidad | Solvify",
   description:
     "Descubre cómo Solvify puede ayudarte a cancelar tus deudas con la Ley de la Segunda Oportunidad. Estudio gratuito y atención en toda España. Empieza hoy tu nueva vida financiera.",
+  metadataBase: new URL(`${process.env.SITE_URL}`),
+  alternates: {
+    canonical: `/servicios/ley-de-segunda-oportunidad/`,
+  },
+  openGraph: {
+    title: "Ley de la Segunda Oportunidad | Solvify",
+    description:
+      "Descubre cómo Solvify puede ayudarte a cancelar tus deudas con la Ley de la Segunda Oportunidad. Estudio gratuito y atención en toda España. Empieza hoy tu nueva vida financiera.",
+    siteName: "Solvify",
+    type: "website",
+    images: [process.env.BLOG_URL + "/services-lso.webp"],
+  },
 };
 
 const LeySegundaOportunidadPage = async () => {

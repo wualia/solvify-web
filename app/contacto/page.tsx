@@ -8,6 +8,17 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Contacto | Solvify",
   description: "Contacta con Solvify para resolver tus dudas y consultas.",
+  metadataBase: new URL(`${process.env.SITE_URL}`),
+  alternates: {
+    canonical: `/contacto/`,
+  },
+  openGraph: {
+    title: "Contacto | Solvify",
+    description: "Contacta con Solvify para resolver tus dudas y consultas.",
+    siteName: "Solvify",
+    type: "website",
+    images: [process.env.BLOG_URL + "/about-us.webp"],
+  },
 };
 
 const ContactoPage = () => {

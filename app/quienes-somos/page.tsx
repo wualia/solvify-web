@@ -7,6 +7,18 @@ export const metadata: Metadata = {
   title: "Quienes somos | Solvify",
   description:
     "Solvify es  una legaltech especializada en la cancelación de deudas personales y en la defensa de los derechos de las personas frente a situaciones de sobreendeudamiento.",
+  metadataBase: new URL(`${process.env.SITE_URL}`),
+  alternates: {
+    canonical: `/quienes-somos/`,
+  },
+  openGraph: {
+    title: "Quienes somos | Solvify",
+    description:
+      "Solvify es  una legaltech especializada en la cancelación de deudas personales y en la defensa de los derechos de las personas frente a situaciones de sobreendeudamiento.",
+    siteName: "Solvify",
+    type: "website",
+    images: [process.env.BLOG_URL + "/about-us.webp"],
+  },
 };
 
 const QuienesSomos = () => {
