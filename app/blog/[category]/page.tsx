@@ -16,12 +16,6 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { category } = await params;
 
-  const data = await fetch(
-    `${process.env.BLOG_URL}/api/posts?where[categorySlug][equals]=${category}`
-  );
-
-  const post = await data.json();
-
   return {
     title: `Blog | ${
       category == "ley-de-segunda-oportunidad"
@@ -47,7 +41,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }`,
     metadataBase: new URL(`${process.env.SITE_URL}`),
     alternates: {
-      canonical: `/blog/${post.docs[0]?.categorySlug}`,
+      canonical: `/blog/${
+        category == "ley-de-segunda-oportunidad"
+          ? "Ley de la Segunda Oportunidad"
+          : category == "negociacion-de-deuda"
+            ? "Negociación de deuda"
+            : category == "tarjetas-revolving"
+              ? "Tarjetas revolving"
+              : category == "concurso-expres"
+                ? "Concurso exprés"
+                : "Cartel de coches"
+      }`,
     },
     openGraph: {
       title: `Blog | ${
@@ -142,9 +146,9 @@ const BlogCategoryPage = async ({
           <MobileCategories />
         </div>
         <div className="lg:col-span-3 space-y-4 px-4 2xl:px-0">
-          {/* <Suspense fallback={<BlogPostsSkeleton />}> */}
-          <BlogPostsByCategory category={category} />
-          {/* </Suspense> */}
+          <Suspense fallback={<BlogPostsSkeleton />}>
+            <BlogPostsByCategory category={category} />
+          </Suspense>
         </div>
       </div>
     </div>
