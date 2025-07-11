@@ -22,11 +22,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     `${process.env.BLOG_URL}/api/posts?where[categorySlug][equals]=${category}`
   );
 
-  const categoriesData = await fetch(
-    `${process.env.BLOG_URL}/api/categories?where[slug][equals]=${category}`
-  );
-  const categoryData = await categoriesData.json();
-
   const post = await data.json();
 
   return {
