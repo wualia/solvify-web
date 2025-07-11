@@ -5,7 +5,7 @@ import { Calendar } from "@/components/ui/calendar";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { format } from "date-fns";
-import { es } from "date-fns/locale";
+import { de, es } from "date-fns/locale";
 import { addHours, addMinutes } from "date-fns";
 import { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -16,6 +16,7 @@ import { createPublicTask } from "@/api/tasks";
 import { getPublicAnnotationsByDeal } from "@/api/annotations";
 import Loader from "@/components/ui/loader";
 import { editDealStatus } from "@/api/deals";
+import { getDealByIdPublic } from "@/api/deals";
 
 const DisponibilidadComponent = ({ source }: { source: string }) => {
   const searchParams = useSearchParams();
@@ -33,6 +34,7 @@ const DisponibilidadComponent = ({ source }: { source: string }) => {
   const { deal, lead, clearForm } = useFormStore();
   const { setDueDate } = useAvailabilityStore();
   const [annotations, setAnnotations] = useState<any[]>([]);
+  const [dealParam, setDealParam] = useState<any>(null);
 
   console.log("deal_id:", deal_id);
 
@@ -43,10 +45,21 @@ const DisponibilidadComponent = ({ source }: { source: string }) => {
   }, [selectedDate]);
 
   useEffect(() => {
+    if (deal_id) {
+      getDeal();
+    }
+  }, [deal_id]);
+
+  useEffect(() => {
     if (deal) {
       getAnnotations();
     }
   }, [deal]);
+
+  const getDeal = async () => {
+    const res = await getDealByIdPublic(deal_id);
+    setDealParam(res);
+  };
 
   const getAnnotations = async () => {
     const res = await getPublicAnnotationsByDeal({
@@ -69,7 +82,7 @@ const DisponibilidadComponent = ({ source }: { source: string }) => {
       },
       {
         name: "user_assigned_id",
-        value: deal?.user_assigned_id,
+        value: dealParam ? dealParam.user_assigned_id : deal?.user_assigned_id,
       },
     ];
 
@@ -118,13 +131,15 @@ const DisponibilidadComponent = ({ source }: { source: string }) => {
       priority: "0",
       status: "pendiente",
       due_date: due_date_with_offset,
-      user_assigned_id: deal?.user_assigned_id,
+      user_assigned_id: dealParam
+        ? dealParam.user_assigned_id
+        : deal?.user_assigned_id,
     };
 
     await createPublicTask({
       body: taskBody,
       object_reference_type: "deals",
-      object_reference_id: deal?.id,
+      object_reference_id: dealParam ? dealParam.id : deal?.id,
       annotation_id: annotations[0]?.id,
     });
 
@@ -133,7 +148,7 @@ const DisponibilidadComponent = ({ source }: { source: string }) => {
         status: "Agendado",
       },
       lead_id: lead?.id,
-      deal_id: deal?.id,
+      deal_id: dealParam ? dealParam?.id : deal?.id,
     });
 
     clearForm();
@@ -155,7 +170,10 @@ const DisponibilidadComponent = ({ source }: { source: string }) => {
       ) : (
         <div className="space-y-4">
           <p className="md:text-lg font-medium text-center">
-            Agendar llamada con {deal?.user_assigned?.first_name}
+            Agendar llamada con{" "}
+            {dealParam
+              ? dealParam.user_assigned?.first_name
+              : deal?.user_assigned?.first_name}
           </p>
 
           <Card className="gap-0 p-0 overflow-hidden">
