@@ -35,8 +35,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       canonical: `/blog/${post.docs[0]?.categorySlug}`,
     },
     openGraph: {
-      title: `Blog ${post.docs[0]?.categorySlug} | Solvify`,
-      description: `Blog de Solvify, noticias y artículos sobre ${post.docs[0]?.categorySlug}`,
+      title: `Blog | ${categoryData.docs[0].name} | Solvify`,
+      description: `Blog de Solvify, noticias y artículos sobre ${categoryData.docs[0].name}`,
       siteName: "Solvify",
       type: "website",
     },
