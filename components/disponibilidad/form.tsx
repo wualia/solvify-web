@@ -163,7 +163,7 @@ const DisponibilidadComponent = ({
   return (
     <div className="mt-4">
       {loadingInfo ? (
-        <div className="flex justify-center items-center py-10 border rounded-lg">
+        <div className="flex justify-center items-center py-10 border rounded-lg bg-card">
           <div>
             <Loader size={16} color="#38869E" strokeWidth={2} />
             <p className="text-sm text-center text-muted-foreground pt-4">
