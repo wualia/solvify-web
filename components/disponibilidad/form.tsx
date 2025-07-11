@@ -73,7 +73,7 @@ const DisponibilidadComponent = ({
   const getAvailability = async () => {
     setLoadingAvailability(true);
 
-    console.log("deal", deal);
+    console.log("deal entro de getAvailability", deal);
 
     const body = [
       {
