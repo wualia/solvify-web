@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import DesktopCategories from "@/components/blog/desktopCategories";
 import MobileCategories from "@/components/blog/mobileCategories";
 import Link from "next/link";
@@ -6,6 +6,7 @@ import { format } from "date-fns";
 import { es } from "date-fns/locale";
 import type { Metadata, ResolvingMetadata } from "next";
 import { Badge } from "@/components/ui/badge";
+import BlogPostsSkeleton from "@/components/blog/skeleton";
 
 type Props = {
   params: Promise<{ category: string }>;
@@ -45,17 +46,45 @@ export async function generateMetadata(
   };
 }
 
+const BlogPostsByCategory = async ({ category }: { category: string }) => {
+  const data = await fetch(
+    `${process.env.BLOG_URL}/api/posts?where[categorySlug][equals]=${category}`
+  );
+  const posts = await data.json();
+  return (
+    <>
+      {posts.docs?.map((post: any) => (
+        <div key={post.id} className="border-b last-of-type:border-b-0 py-4">
+          <Link href={`/blog/${post.categorySlug}/${post.slug}`}>
+            <div>
+              <Badge variant="outline" className="text-sm">
+                {post.category.name}
+              </Badge>
+              <h2 className="text-2xl md:text-2xl font-semibold py-4 text-gray-700 dark:text-white max-w-2xl">
+                {post.title}
+              </h2>
+              <p className="text-muted-foreground max-w-3xl">{post.excerpt}</p>
+            </div>
+            <div className="flex items-center gap-4 py-4">
+              <p className="text-sm text-primary">
+                {format(new Date(post.updatedAt), "dd MMMM yyyy", {
+                  locale: es,
+                })}
+              </p>
+            </div>
+          </Link>
+        </div>
+      ))}
+    </>
+  );
+};
+
 const BlogCategoryPage = async ({
   params,
 }: {
   params: Promise<{ category: string }>;
 }) => {
   const { category } = await params;
-
-  const data = await fetch(
-    `${process.env.BLOG_URL}/api/posts?where[categorySlug][equals]=${category}`
-  );
-  const posts = await data.json();
 
   const categoriesData = await fetch(
     `${process.env.BLOG_URL}/api/categories?where[slug][equals]=${category}`
@@ -81,44 +110,9 @@ const BlogCategoryPage = async ({
           <MobileCategories />
         </div>
         <div className="lg:col-span-3 space-y-4 px-4 2xl:px-0">
-          <>
-            {posts.docs.length === 0 ? (
-              <></>
-            ) : (
-              <>
-                {posts.docs?.map((post: any) => (
-                  <div
-                    key={post.id}
-                    className="border-b last-of-type:border-b-0 py-4"
-                  >
-                    <Link
-                      href={`/blog/${post.categorySlug}/${post.slug}`}
-                      className=""
-                    >
-                      <div>
-                        <Badge variant="outline" className="text-sm">
-                          {post.category.name}
-                        </Badge>
-                        <h2 className="md:text-2xl font-semibold py-4 text-gray-700 dark:text-white max-w-2xl">
-                          {post.title}
-                        </h2>
-                        <p className="text-muted-foreground max-w-3xl">
-                          {post.excerpt}
-                        </p>
-                      </div>
-                      <div className="flex items-center gap-4 py-4">
-                        <p className="text-sm text-primary">
-                          {format(new Date(post.updatedAt), "dd MMMM yyyy", {
-                            locale: es,
-                          })}
-                        </p>
-                      </div>
-                    </Link>
-                  </div>
-                ))}
-              </>
-            )}
-          </>
+          <Suspense fallback={<BlogPostsSkeleton />}>
+            <BlogPostsByCategory category={category} />
+          </Suspense>
         </div>
       </div>
     </div>

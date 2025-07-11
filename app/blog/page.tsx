@@ -7,6 +7,7 @@ import DesktopCategories from "@/components/blog/desktopCategories";
 import MobileCategories from "@/components/blog/mobileCategories";
 
 import type { Metadata } from "next";
+import BlogPostsSkeleton from "@/components/blog/skeleton";
 
 export const metadata: Metadata = {
   title: "Blog | Solvify",
@@ -14,10 +15,38 @@ export const metadata: Metadata = {
     "Blog de Solvify, noticias y artículos sobre la ley de segunda oportunidad, tarjetas revolving, negociación de deuda, etc.",
 };
 
-const BlogPage = async () => {
+const BlogPosts = async () => {
   const data = await fetch(`${process.env.BLOG_URL}/api/posts`);
   const posts = await data.json();
+  return (
+    <>
+      {posts.docs?.map((post: any) => (
+        <div key={post.id} className="border-b last-of-type:border-b-0 py-4">
+          <Link href={`/blog/${post.categorySlug}/${post.slug}`}>
+            <div>
+              <Badge variant="outline" className="text-sm">
+                {post.category.name}
+              </Badge>
+              <h2 className="text-2xl md:text-2xl font-semibold py-4 text-gray-700 dark:text-white max-w-2xl">
+                {post.title}
+              </h2>
+              <p className="text-muted-foreground max-w-3xl">{post.excerpt}</p>
+            </div>
+            <div className="flex items-center gap-4 py-4">
+              <p className="text-sm text-primary">
+                {format(new Date(post.updatedAt), "dd MMMM yyyy", {
+                  locale: es,
+                })}
+              </p>
+            </div>
+          </Link>
+        </div>
+      ))}
+    </>
+  );
+};
 
+const BlogPage = async () => {
   return (
     <div>
       <div className="mx-auto max-w-7xl px-4 2xl:px-0 py-8 border-b">
@@ -37,35 +66,10 @@ const BlogPage = async () => {
         <div className="sticky top-16 flex lg:hidden overflow-x-scroll no-scrollbar border-b border-gray-100 dark:border-white/10 ">
           <MobileCategories />
         </div>
-
         <div className="lg:col-span-3 space-y-4 px-4 2xl:px-0">
-          {posts.docs?.map((post: any) => (
-            <div
-              key={post.id}
-              className="border-b last-of-type:border-b-0 py-4"
-            >
-              <Link href={`/blog/${post.categorySlug}/${post.slug}`}>
-                <div>
-                  <Badge variant="outline" className="text-sm">
-                    {post.category.name}
-                  </Badge>
-                  <h2 className="text-2xl md:text-2xl font-semibold py-4 text-gray-700 dark:text-white max-w-2xl">
-                    {post.title}
-                  </h2>
-                  <p className="text-muted-foreground max-w-3xl">
-                    {post.excerpt}
-                  </p>
-                </div>
-                <div className="flex items-center gap-4 py-4">
-                  <p className="text-sm text-primary">
-                    {format(new Date(post.updatedAt), "dd MMMM yyyy", {
-                      locale: es,
-                    })}
-                  </p>
-                </div>
-              </Link>
-            </div>
-          ))}
+          <Suspense fallback={<BlogPostsSkeleton />}>
+            <BlogPosts />
+          </Suspense>
         </div>
       </div>
     </div>
