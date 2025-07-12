@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     "Solvify | Expertos en la Ley de Segunda Oportunidad y Negociación de Deuda",
   description:
     "Te ayudamos a resolver tus problemas económicos, gracias a la Ley de Segunda Oportunidad, tarjetas revolving, cártel de coches o concurso exprés",
+  metadataBase: new URL(`${process.env.SITE_URL}`),
   alternates: {
     canonical: `/`,
   },
