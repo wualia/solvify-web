@@ -72,13 +72,13 @@ const Header = () => {
               )}
             >
               {
-                <div className="flex space-x-2 tracking-wide">
+                <div className="flex space-x-2 tracking-wide text-sm">
                   <Link
                     href="/"
                     onClick={bigMenuOpen ? setBigMenuOpen : () => {}}
                     className={cn(
                       pathname.length == 1 &&
-                        "text-primary font-semibold bg-white/10",
+                        "font-semibold bg-gray-50 dark:bg-white/10",
                       // scrollYProgress < 40
                       //   ? "text-white hover:bg-white/10"
                       //   : "hover:bg-gray-50 hover:dark:bg-background",
@@ -91,12 +91,9 @@ const Header = () => {
                     <p
                       className={cn(
                         pathname.includes("/servicios")
-                          ? "text-primary font-semibold bg-white/10"
+                          ? "font-semibold bg-gray-50 dark:bg-white/10"
                           : "",
-                        // scrollYProgress < 40
-                        //   ? "text-white hover:bg-white/10"
-                        //   : "hover:bg-gray-50 hover:dark:bg-background",
-                        " py-2 px-4 rounded-lg transition-colors"
+                        "py-2 px-4 rounded-lg transition-colors"
                       )}
                     >
                       Servicios
@@ -108,12 +105,9 @@ const Header = () => {
                     onClick={bigMenuOpen ? setBigMenuOpen : () => {}}
                     className={cn(
                       pathname.includes("/blog")
-                        ? "text-primary font-semibold bg-white/10"
+                        ? "font-semibold bg-gray-50 dark:bg-white/10"
                         : "",
-                      // scrollYProgress < 40
-                      //   ? "text-white hover:bg-white/10"
-                      //   : "hover:bg-gray-50 hover:dark:bg-background",
-                      " py-2 px-4 rounded-lg transition-colors"
+                      "py-2 px-4 rounded-lg transition-colors"
                     )}
                   >
                     Blog
@@ -124,11 +118,8 @@ const Header = () => {
                     onClick={bigMenuOpen ? setBigMenuOpen : () => {}}
                     className={cn(
                       pathname.includes("/contacto")
-                        ? "text-primary font-semibold bg-white/10"
+                        ? "font-semibold bg-gray-50 dark:bg-white/10"
                         : "",
-                      // scrollYProgress < 40
-                      //   ? "text-white hover:bg-white/10"
-                      //   : "hover:bg-gray-50 hover:dark:bg-background",
                       "py-2 px-4 rounded-lg transition-colors"
                     )}
                   >
@@ -138,7 +129,10 @@ const Header = () => {
               }
             </div>
             <div className="hidden lg:block">
-              <Button onClick={gotoAreaClientes} className="w-full">
+              <Button
+                onClick={gotoAreaClientes}
+                className="w-full bg-black dark:bg-white"
+              >
                 Área clientes
               </Button>
             </div>
