@@ -46,9 +46,9 @@ const HomeWhy = () => {
           <motion.div variants={item}>
             <div className="flex flex-col space-y-2 lg:space-y-0 text-center">
               <Fast className="text-white h-10 w-10 mx-auto" />
-              <h4 className="text-white font-medium text-lg dark:text-white pt-4">
+              <h3 className="text-white font-medium text-lg dark:text-white pt-4">
                 Mayor Rapidez
-              </h4>
+              </h3>
             </div>
 
             <p className="pt-4 text-center text-gray-200">
@@ -58,9 +58,9 @@ const HomeWhy = () => {
           <motion.div variants={item}>
             <div className="flex flex-col space-y-2 lg:space-y-0 text-center">
               <Cheap className="text-white h-10 w-10 mx-auto" />
-              <h4 className="text-white font-medium text-lg  dark:text-white pt-4">
+              <h3 className="text-white font-medium text-lg  dark:text-white pt-4">
                 Precios Competitivos
-              </h4>
+              </h3>
             </div>
 
             <p className="pt-4 text-center text-gray-200">
@@ -70,9 +70,9 @@ const HomeWhy = () => {
           <motion.div variants={item}>
             <div className="flex flex-col space-y-2 lg:space-y-0 text-center">
               <Team className="text-white h-10 w-10 mx-auto" />
-              <h4 className="text-white font-medium text-lg  dark:text-white pt-4">
+              <h3 className="text-white font-medium text-lg  dark:text-white pt-4">
                 Mejor equipo
-              </h4>
+              </h3>
             </div>
 
             <p className="pt-4 text-center text-gray-200">
@@ -82,9 +82,9 @@ const HomeWhy = () => {
           <motion.div variants={item}>
             <div className="flex flex-col space-y-2 lg:space-y-0 text-center">
               <Easy className="text-white h-10 w-10 mx-auto" />
-              <h4 className="text-white font-medium text-lg  dark:text-white pt-4">
+              <h3 className="text-white font-medium text-lg  dark:text-white pt-4">
                 Facilidad uso
-              </h4>
+              </h3>
             </div>
 
             <p className="pt-4 text-center text-gray-200">
@@ -94,9 +94,9 @@ const HomeWhy = () => {
           <motion.div variants={item}>
             <div className="flex flex-col space-y-2 lg:space-y-0 text-center">
               <Support className="text-white h-10 w-10 mx-auto" />
-              <h4 className="text-white font-medium text-lg  dark:text-white pt-4">
+              <h3 className="text-white font-medium text-lg  dark:text-white pt-4">
                 Respuesta inmediata
-              </h4>
+              </h3>
             </div>
 
             <p className="pt-4 text-center text-gray-200">
@@ -106,9 +106,9 @@ const HomeWhy = () => {
           <motion.div variants={item}>
             <div className="flex flex-col space-y-2 lg:space-y-0 text-center">
               <Multiple className="text-white h-10 w-10 mx-auto" />
-              <h4 className="text-white font-medium text-lg  dark:text-white pt-4">
+              <h3 className="text-white font-medium text-lg  dark:text-white pt-4">
                 Multiples servicios
-              </h4>
+              </h3>
             </div>
 
             <p className="pt-4 text-center text-gray-200">
