@@ -72,7 +72,7 @@ const Header = () => {
               )}
             >
               {
-                <div className="flex space-x-2 text-sm tracking-wide">
+                <div className="flex space-x-2 tracking-wide">
                   <Link
                     href="/"
                     onClick={bigMenuOpen ? setBigMenuOpen : () => {}}
