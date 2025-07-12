@@ -72,8 +72,8 @@ const CartelCoches = () => {
             <div className="absolute bg-gradient-to-b from-black/0 to-black/30 inset-0 h-full w-full z-30" />
             <Image
               src="/services-cartel-coches.webp"
-              width={1920}
-              height={1080}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               alt="Libertad financiera con Solvify"
               className="object-cover h-full w-full z-20 inset-0"
             />
