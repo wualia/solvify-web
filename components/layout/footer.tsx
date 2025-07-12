@@ -1,6 +1,7 @@
 // import React from "react";
 import Link from "next/link";
 import ModeToggle from "@/components/ui/toogleTheme";
+import Image from "next/image";
 // import { FooterLinks } from "@/lib/data";
 
 // const Footer = () => {
@@ -101,11 +102,13 @@ const Footer = ({
             <div className="col-span-3 mb-8 lg:mb-0">
               <div className="flex items-center gap-2 lg:justify-start">
                 <Link href="/">
-                  <img
+                  <Image
                     src={logo.src}
                     alt={logo.alt}
                     title={logo.title}
-                    className="h-10"
+                    width={100}
+                    height={100}
+                    className="h-10 w-auto"
                   />
                 </Link>
                 {/* <p className="text-xl font-semibold">{logo.title}</p> */}
