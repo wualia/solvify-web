@@ -109,7 +109,6 @@ const PostDetail = async ({
                 <Content child={child} key={index} />
               ))}
             </section>
-            //
           ))}
           <CtaComponent category={post.docs[0].categorySlug} />
           <div className="mt-8">

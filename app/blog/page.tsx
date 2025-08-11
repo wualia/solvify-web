@@ -32,8 +32,6 @@ const BlogPosts = async () => {
   );
   const posts = await data.json();
 
-  console.log("posts:", posts);
-
   return (
     <>
       {posts.docs?.map((post: any) => (
@@ -68,7 +66,7 @@ const BlogPage = async () => {
       <div className="mx-auto max-w-7xl px-4 2xl:px-0 py-8 border-b">
         <h1 className="text-3xl font-semibold text-gray-700 dark:text-white">
           Blog de Solvify
-        </h1>{" "}
+        </h1>
         <p className="text-gray-500 dark:text-gray-300 text-lg pt-4 max-w-3xl">
           Descubre nuestros artículos y noticias sobre la ley de segunda
           oportunidad, tarjetas revolving, negociación de deuda, etc.

@@ -17,6 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
+      <script
+        src="//code.tidio.co/lbzlcfjjozd34hf4eptvfv018ll5pnvc.js"
+        async
+      ></script>
       <body className={`${plusJakarta.className} antialiased`}>
         <ReactQueryProvider>
           <ThemeProvider
