@@ -17,10 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" suppressHydrationWarning>
-      <script
+      {/* <script
         src="//code.tidio.co/lbzlcfjjozd34hf4eptvfv018ll5pnvc.js"
         async
-      ></script>
+      ></script> */}
       <body className={`${plusJakarta.className} antialiased`}>
         <ReactQueryProvider>
           <ThemeProvider
